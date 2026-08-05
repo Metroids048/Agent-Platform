@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>任务详情 · 用户端</title>
+<link rel="stylesheet" href="../../assets/style.css">
+<script src="../../assets/user-auth.js?v=user-v4-auth"></script>
+</head>
+<body class="aioq-page" data-portal-surface="user" data-user-nav="expert" data-ops-module="expert" data-ops-page="专家工作台/task-view.html">
+<div class="aioq-shell aioq-shell--workspace" id="userPortalShell">
+  <aside class="aioq-sidebar" id="userPortalSidebar" data-user-portal></aside>
+  <main class="aioq-main aioq-main--workspace">
+    <div class="breadcrumb">
+      <a href="workbench.html" id="breadcrumbWorkbenchLink">专家工作台</a><span class="sep">›</span><span class="current">查看任务详情</span>
+    </div>
+    <div class="page-header"><div><h1 id="taskTitle">任务详情</h1><p id="opsViewNote" style="font-size:13px;color:var(--text-muted);"></p></div></div>
+    <div class="card">
+      <div class="ops-kv-grid">
+        <div class="ops-kv"><span class="k">责任团队</span><span id="taskTeam">—</span></div>
+        <div class="ops-kv"><span class="k">负责专家</span><span id="taskExpert">—</span></div>
+        <div class="ops-kv"><span class="k">截止时间</span><span id="taskDeadline">—</span></div>
+        <div class="ops-kv"><span class="k">状态</span><span id="taskStatus">—</span></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="historyModal">
+  <div class="modal-box modal-md aioq-stack-modal">
+    <div class="aioq-stack-modal-head">
+      <h2>历史对话</h2>
+      <button type="button" class="icon-btn" id="btnCloseHistory" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body aioq-history-modal-body">
+      <input type="search" class="aioq-history-search" id="historySearchInput" placeholder="搜索对话标题或智能体" aria-label="搜索历史记录">
+      <div class="aioq-history-scroll" id="historyList"></div>
+      <button type="button" class="btn btn-sm aioq-history-load-more hidden" id="btnHistoryLoadMore">加载更多</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="historyDeleteConfirmModal">
+  <div class="modal-box modal-sm">
+    <div class="modal-header">
+      <h2>删除对话</h2>
+      <button type="button" class="close" id="btnCloseHistoryDelete" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="aioq-muted">删除后无法恢复，确定要删除这条历史对话吗？</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" id="btnCancelHistoryDelete">取消</button>
+      <button type="button" class="btn btn-danger" id="btnConfirmHistoryDelete">删除</button>
+    </div>
+  </div>
+</div>
+
+<script src="../../assets/proto.js"></script>
+<script src="../../assets/user-portal-context.js"></script>
+<script src="../../assets/user-agent-resolver.js"></script>
+<script src="../../assets/user-personal-space.js"></script>
+<script src="../../assets/user-chat-portal.js"></script>
+<script src="../../assets/user-feedback-form.js"></script>
+<script src="../../assets/user-message-center.js"></script>
+<script src="../../assets/user-portal-bridge.js"></script>
+<script src="../../assets/user-portal-shell.js"></script>
+<script src="../../assets/ops-platform-shell.js"></script>
+<script src="../../assets/ops-expert-workbench.js"></script>
+<script>
+  OpsExpertWorkbench.initTaskViewPage();
+  UserPortalBridge.mountSidebar();
+</script>
+</body>
+</html>

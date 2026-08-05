@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bg{fill:#f8fafc}
+      .title{font:700 30px "Microsoft YaHei","PingFang SC",sans-serif;fill:#0f172a}
+      .sub{font:400 14px "Microsoft YaHei","PingFang SC",sans-serif;fill:#475569}
+      .laneTitle{font:700 17px "Microsoft YaHei","PingFang SC",sans-serif;fill:#0f172a}
+      .h{font:700 15px "Microsoft YaHei","PingFang SC",sans-serif;fill:#0f172a}
+      .p{font:400 12px "Microsoft YaHei","PingFang SC",sans-serif;fill:#334155}
+      .small{font:400 11px "Microsoft YaHei","PingFang SC",sans-serif;fill:#64748b}
+      .num{font:700 13px "Microsoft YaHei","PingFang SC",sans-serif;fill:#fff}
+      .lane1{fill:#fff7ed;stroke:#f59e0b;stroke-width:1.2}
+      .lane2{fill:#eff6ff;stroke:#60a5fa;stroke-width:1.2}
+      .lane3{fill:#f0fdf4;stroke:#86efac;stroke-width:1.2}
+      .lane4{fill:#eef2ff;stroke:#818cf8;stroke-width:1.2}
+      .lane5{fill:#f5f3ff;stroke:#c084fc;stroke-width:1.2}
+      .card{fill:#fff;stroke:#cbd5e1;stroke-width:1.1}
+      .n1{fill:#f59e0b}.n2{fill:#2563eb}.n3{fill:#16a34a}
+      .a-main{stroke:#2563eb;stroke-width:2.4;fill:none;marker-end:url(#mBlue)}
+      .a-run{stroke:#2563eb;stroke-width:1.8;fill:none;stroke-dasharray:6 4;marker-end:url(#mBlue)}
+      .a-pub{stroke:#f59e0b;stroke-width:1.8;fill:none;stroke-dasharray:6 4;marker-end:url(#mAmber)}
+      .a-cfg{stroke:#16a34a;stroke-width:1.8;fill:none;marker-end:url(#mGreen)}
+      .a-loop{stroke:#7c3aed;stroke-width:1.8;fill:none;stroke-dasharray:6 4;marker-end:url(#mPurple)}
+      .a-base{stroke:#94a3b8;stroke-width:1.5;fill:none;marker-end:url(#mGray)}
+    ]]></style>
+    <marker id="mBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+    <marker id="mAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#f59e0b"/></marker>
+    <marker id="mGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#16a34a"/></marker>
+    <marker id="mPurple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#7c3aed"/></marker>
+    <marker id="mGray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94a3b8"/></marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="40" y="42">AI应用开发平台数据流转图</text>
+  <text class="sub" x="40" y="68">序号表示业务先后，非物理层顺序：建设链路 2→3→4；使用闭环 1→5→7→6</text>
+
+  <!-- 用户端 -->
+  <rect class="lane1" x="40" y="95" width="1520" height="105" rx="10"/>
+  <text class="laneTitle" x="60" y="130">用户端</text>
+  <rect class="card" x="220" y="118" width="240" height="68" rx="8"/>
+  <circle class="n1" cx="242" cy="140" r="12"/><text class="num" x="238" y="145">1</text>
+  <text class="h" x="262" y="142">使用智能体</text>
+  <text class="p" x="262" y="164">对话、引用、提交反馈</text>
+  <rect class="card" x="1140" y="118" width="240" height="68" rx="8"/>
+  <circle class="n1" cx="1162" cy="140" r="12"/><text class="num" x="1158" y="145">6</text>
+  <text class="h" x="1182" y="142">反馈结果可见</text>
+  <text class="p" x="1182" y="164">处理状态、优化说明</text>
+
+  <!-- 运营管理 -->
+  <rect class="lane2" x="40" y="220" width="1520" height="130" rx="10"/>
+  <text class="laneTitle" x="60" y="255">运营管理平台</text>
+  <rect class="card" x="220" y="248" width="200" height="68" rx="8"/>
+  <circle class="n2" cx="242" cy="270" r="12"/><text class="num" x="238" y="275">2</text>
+  <text class="h" x="262" y="272">生成主数据</text>
+  <text class="p" x="262" y="294">档案、负责人、可见范围</text>
+  <rect class="card" x="500" y="248" width="200" height="68" rx="8"/>
+  <circle class="n2" cx="522" cy="270" r="12"/><text class="num" x="518" y="275">3</text>
+  <text class="h" x="542" y="272">发布审核</text>
+  <text class="p" x="542" y="294">状态、风险、范围、版本</text>
+  <rect class="card" x="900" y="248" width="200" height="68" rx="8"/>
+  <circle class="n2" cx="922" cy="270" r="12"/><text class="num" x="918" y="275">5</text>
+  <text class="h" x="942" y="272">汇聚运行计量</text>
+  <text class="p" x="942" y="294">用量、耗时、失败、成本</text>
+  <rect class="card" x="1140" y="248" width="240" height="68" rx="8"/>
+  <circle class="n2" cx="1162" cy="270" r="12"/><text class="num" x="1158" y="275">7</text>
+  <text class="h" x="1182" y="272">形成回流工单</text>
+  <text class="p" x="1182" y="294">知识/模型/资源/权限</text>
+
+  <!-- 专业平台 -->
+  <rect class="lane3" x="40" y="370" width="1520" height="120" rx="10"/>
+  <text class="laneTitle" x="60" y="405">专业平台</text>
+  <rect class="card" x="220" y="392" width="220" height="68" rx="8"/>
+  <circle class="n3" cx="242" cy="414" r="12"/><text class="num" x="238" y="419">4</text>
+  <text class="h" x="262" y="416">同步配置数据</text>
+  <text class="p" x="262" y="438">提示词、流程、工具挂载</text>
+  <rect class="card" x="520" y="392" width="170" height="68" rx="8"/>
+  <text class="h" x="548" y="416">知识中心</text>
+  <text class="p" x="548" y="438">补知识、修引用</text>
+  <rect class="card" x="760" y="392" width="170" height="68" rx="8"/>
+  <text class="h" x="788" y="416">模型服务</text>
+  <text class="p" x="788" y="438">评估、微调、档位</text>
+  <rect class="card" x="1000" y="392" width="170" height="68" rx="8"/>
+  <text class="h" x="1028" y="416">资源服务</text>
+  <text class="p" x="1028" y="438">部署、队列、成本</text>
+  <rect class="card" x="1240" y="392" width="170" height="68" rx="8"/>
+  <text class="h" x="1268" y="416">系统管理</text>
+  <text class="p" x="1268" y="438">权限、审计</text>
+
+  <!-- 海能底座 -->
+  <rect class="lane4" x="40" y="510" width="1520" height="105" rx="10"/>
+  <text class="laneTitle" x="60" y="545">海能底座</text>
+  <rect class="card" x="220" y="528" width="220" height="58" rx="8"/>
+  <text class="h" x="260" y="552">模型与推理</text>
+  <text class="p" x="260" y="572">推理结果、服务指标</text>
+  <rect class="card" x="520" y="528" width="220" height="58" rx="8"/>
+  <text class="h" x="560" y="552">知识与工具</text>
+  <text class="p" x="560" y="572">检索结果、引用来源</text>
+  <rect class="card" x="820" y="528" width="220" height="58" rx="8"/>
+  <text class="h" x="860" y="552">算力与部署</text>
+  <text class="p" x="860" y="572">训练、微调、在线服务</text>
+  <rect class="card" x="1120" y="528" width="220" height="58" rx="8"/>
+  <text class="h" x="1160" y="552">认证与计量</text>
+  <text class="p" x="1160" y="572">身份、用量、成本统计</text>
+
+  <!-- 治理输出 -->
+  <rect class="lane5" x="40" y="635" width="1520" height="90" rx="10"/>
+  <text class="laneTitle" x="60" y="668">治理输出</text>
+  <text class="p" x="220" y="668">数据类型：主数据、配置、运行、反馈、计量、审计</text>
+  <text class="p" x="220" y="692">治理目标：状态可追踪、配置可回溯、运行可监控、反馈可闭环、成本可估算、权限可审计</text>
+
+  <!-- 箭头放在最上层，尽量少、走正交折线 -->
+  <g id="links">
+    <!-- 建设主链：2→3→4 -->
+    <path class="a-main" d="M420 282 H500"/>
+    <path class="a-cfg" d="M600 316 L600 354 L330 354 L330 392"/>
+
+    <!-- 使用闭环：1→5→7→6 -->
+    <path class="a-run" d="M340 186 L340 210 L1000 210 L1000 248"/>
+    <path class="a-main" d="M1100 282 H1140"/>
+    <path class="a-loop" d="M1260 248 L1260 186"/>
+
+    <!-- 发布上线：3→1 -->
+    <path class="a-pub" d="M600 248 L600 210 L460 210 L460 186"/>
+
+    <!-- 回流：7→专业平台（只下一根，不逐个连） -->
+    <path class="a-cfg" d="M1260 316 L1260 360 L1325 360 L1325 392"/>
+
+    <!-- 专业平台横向协同 -->
+    <path class="a-cfg" d="M440 426 H520"/>
+    <path class="a-cfg" d="M690 426 H760"/>
+    <path class="a-cfg" d="M930 426 H1000"/>
+    <path class="a-cfg" d="M1170 426 H1240"/>
+
+    <!-- 调用底座 -->
+    <path class="a-base" d="M330 460 L330 528"/>
+    <path class="a-base" d="M605 460 L605 528"/>
+    <path class="a-base" d="M905 460 L905 528"/>
+    <path class="a-base" d="M1230 460 L1230 528"/>
+
+    <!-- 底座到治理 -->
+    <path class="a-base" d="M1230 586 L1230 635"/>
+  </g>
+
+  <text class="small" x="40" y="760">图例：蓝实线=运营主链　蓝虚线=运行/反馈数据　橙虚线=审核通过上线　绿线=配置/回流　紫虚线=用户侧闭环　灰线=底座调用与计量</text>
+  <text class="small" x="40" y="782">接口字段、关联键和待确认项见正文表格，图中不展开。</text>
+</svg>

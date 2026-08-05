@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">AI应用开发平台运营闭环与权限治理图</title>
+  <desc id="desc">展示运营闭环、权限控制和治理输出，不重复全景架构。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 32px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}.sub{font:400 16px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#475569}
+      .h{font:700 18px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}.p{font:400 13px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#334155}.small{font:400 12px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#64748b}.white{font:700 15px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#fff}
+      .blue{fill:#eff6ff;stroke:#3b82f6;stroke-width:1.6}.green{fill:#f0fdf4;stroke:#22c55e;stroke-width:1.5}.amber{fill:#fff7ed;stroke:#f59e0b;stroke-width:1.5}.purple{fill:#f5f3ff;stroke:#a855f7;stroke-width:1.5}.rose{fill:#fff1f2;stroke:#fb7185;stroke-width:1.4}.card{fill:#fff;stroke:#cbd5e1;stroke-width:1.2}.step{fill:#2563eb}.perm{fill:#7c3aed}.out{fill:#16a34a}.arrow{stroke:#2563eb;stroke-width:2.2;fill:none;marker-end:url(#arrowBlue)}.greenArrow{stroke:#16a34a;stroke-width:2.2;fill:none;marker-end:url(#arrowGreen)}.purpleArrow{stroke:#7c3aed;stroke-width:2;fill:none;stroke-dasharray:7 6;marker-end:url(#arrowPurple)}
+    </style>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#16a34a"/></marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#7c3aed"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="980"/>
+  <text class="title" x="32" y="48">AI应用开发平台运营闭环与权限治理图</text>
+  <text class="sub" x="32" y="76">这张图不重复全景架构，重点说明运营怎么闭环、权限怎么控制、治理结果怎么沉淀。</text>
+
+  <rect class="amber" x="40" y="125" width="300" height="700" rx="14"/>
+  <text class="h" x="138" y="164">功能边界</text>
+  <rect class="card" x="70" y="205" width="240" height="88" rx="10"/>
+  <text class="h" x="96" y="236">用户端</text><text class="p" x="96" y="260">搜索、使用、对话、反馈</text>
+  <rect class="card" x="70" y="330" width="240" height="112" rx="10"/>
+  <text class="h" x="96" y="360">运营平台</text><text class="p" x="96" y="386">管状态、管审批、管展示</text><text class="p" x="96" y="410">管反馈、管看板、管回流</text>
+  <rect class="card" x="70" y="480" width="240" height="112" rx="10"/>
+  <text class="h" x="96" y="510">开发与能力平台</text><text class="p" x="96" y="536">管配置、管运行、管日志</text><text class="p" x="96" y="560">承接知识、模型、资源优化</text>
+  <rect class="card" x="70" y="630" width="240" height="92" rx="10"/>
+  <text class="h" x="96" y="660">系统治理</text><text class="p" x="96" y="686">组织、角色、菜单、审计</text>
+
+  <rect class="blue" x="400" y="125" width="650" height="700" rx="14"/>
+  <text class="h" x="638" y="164">运营闭环</text>
+  <circle class="step" cx="520" cy="275" r="30"/><text class="white" x="516" y="281">1</text>
+  <rect class="card" x="560" y="240" width="250" height="70" rx="10"/><text class="h" x="590" y="268">上线前治理</text><text class="p" x="590" y="292">定位、知识来源、模型档位、风险提示</text>
+  <circle class="step" cx="895" cy="275" r="30"/><text class="white" x="891" y="281">2</text>
+  <rect class="card" x="645" y="340" width="250" height="70" rx="10"/><text class="h" x="675" y="368">用户端使用</text><text class="p" x="675" y="392">产生会话、引用、满意度和反馈</text>
+  <circle class="step" cx="895" cy="515" r="30"/><text class="white" x="891" y="521">3</text>
+  <rect class="card" x="560" y="480" width="250" height="70" rx="10"/><text class="h" x="590" y="508">反馈处理</text><text class="p" x="590" y="532">运营初筛、分派专家、形成工单</text>
+  <circle class="step" cx="520" cy="515" r="30"/><text class="white" x="516" y="521">4</text>
+  <rect class="card" x="645" y="600" width="250" height="70" rx="10"/><text class="h" x="675" y="628">回流优化</text><text class="p" x="675" y="652">配置、知识、模型、资源、权限修正</text>
+  <path class="arrow" d="M810 275 H865"/>
+  <path class="arrow" d="M895 305 V340"/>
+  <path class="arrow" d="M895 410 V485"/>
+  <path class="arrow" d="M865 515 H810"/>
+  <path class="arrow" d="M520 545 V600 H645"/>
+  <path class="arrow" d="M645 635 H520 V305"/>
+  <text class="small" x="565" y="725">闭环重点：每个反馈必须有归因、有处理人、有回流平台、有复查结果。</text>
+
+  <rect class="purple" x="1110" y="125" width="450" height="700" rx="14"/>
+  <text class="h" x="1256" y="164">权限治理</text>
+  <rect class="card" x="1160" y="205" width="350" height="64" rx="10"/><text class="h" x="1190" y="232">组织身份层</text><text class="p" x="1190" y="254">单位、部门、人员、租户、团队</text>
+  <rect class="card" x="1160" y="305" width="350" height="64" rx="10"/><text class="h" x="1190" y="332">角色菜单层</text><text class="p" x="1190" y="354">角色、菜单、功能、后台入口</text>
+  <rect class="card" x="1160" y="405" width="350" height="64" rx="10"/><text class="h" x="1190" y="432">应用对象层</text><text class="p" x="1190" y="454">智能体范围、知识库、工具可用性</text>
+  <rect class="card" x="1160" y="505" width="350" height="64" rx="10"/><text class="h" x="1190" y="532">运行资源层</text><text class="p" x="1190" y="554">模型档位、API Key、配额、计量</text>
+  <rect class="card" x="1160" y="605" width="350" height="64" rx="10"/><text class="h" x="1190" y="632">审计计量层</text><text class="p" x="1190" y="654">审核记录、配置变更、调用记录</text>
+  <path class="purpleArrow" d="M1335 269 V305"/><path class="purpleArrow" d="M1335 369 V405"/><path class="purpleArrow" d="M1335 469 V505"/><path class="purpleArrow" d="M1335 569 V605"/>
+
+  <rect class="green" x="400" y="855" width="1160" height="80" rx="14"/>
+  <text class="h" x="458" y="890">治理输出</text>
+  <text class="p" x="565" y="890">应用健康度、问题趋势、知识补充、模型优化、资源巡检、权限修正、成本治理、服务质量复盘</text>
+  <path class="greenArrow" d="M725 825 V855"/>
+  <path class="greenArrow" d="M1335 825 V855"/>
+</svg>

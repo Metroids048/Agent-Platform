@@ -1,0 +1,593 @@
+﻿# Cursor Global Skills Sync Report
+
+> Generated: 2026-06-26 15:41:24
+> Mode: Apply
+> Project: C:\Users\win\Desktop\Agent Platform
+> Target: C:\Users\win\.cursor\skills
+
+## Summary
+
+- Skills synced: 262
+- Skipped (exists, no -Force): 0
+- Pruned from global: 0
+- Duplicate names in source (kept shortest path): 88
+- Overlap with ~/.codex/skills: 171
+- Excluded by skills-sync.config.json: 37
+- Codex duplicates removed: 0
+- Refined skill bodies: 1
+
+## Token notes
+
+- Each synced skill adds `name` + `description` to every Cursor session.
+- `disable-model-invocation: true` is set by default so full SKILL.md loads only when matched.
+- Do not add hooks that inject the full skills catalog (duplicates native discovery).
+
+## Source duplicates (skipped)
+
+- **web-prototype**: kept `skills/pm-url2proto/SKILL.md`, skipped `skills/space-url2proto/SKILL.md`
+- **ai-coding-ok**: kept `skills/vendor/ai-coding-ok/SKILL.md`, skipped `.cursor/skills/ai-coding-ok/SKILL.md`
+- **global-delivery-gate**: kept `skills/global-delivery-gate/SKILL.md`, skipped `.cursor/skills/global-delivery-gate/SKILL.md`
+- **ai-coding-ok**: kept `skills/vendor/ai-coding-ok/SKILL.md`, skipped `skills/vendor/ai-coding-ok/skills/ai-coding-ok/SKILL.md`
+- **pdf**: kept `skills/vendor/pdf/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/pdf/SKILL.md`
+- **docx**: kept `skills/vendor/docx/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/docx/SKILL.md`
+- **pptx**: kept `skills/pptx/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/pptx/SKILL.md`
+- **xlsx**: kept `skills/vendor/xlsx/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/xlsx/SKILL.md`
+- **receiving-code-review**: kept `skills/receiving-code-review/SKILL.md`, skipped `skills/superpowers-main/skills/receiving-code-review/SKILL.md`
+- **ant**: kept `skills/vendor/awesome-ant/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/ant/SKILL.md`
+- **bold**: kept `skills/vendor/awesome-bold/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/bold/SKILL.md`
+- **cafe**: kept `skills/vendor/awesome-cafe/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/cafe/SKILL.md`
+- **flat**: kept `skills/vendor/awesome-flat/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/flat/SKILL.md`
+- **mono**: kept `skills/vendor/awesome-mono/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/mono/SKILL.md`
+- **neon**: kept `skills/vendor/awesome-neon/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/neon/SKILL.md`
+- **riso**: kept `skills/vendor/awesome-riso/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/riso/SKILL.md`
+- **sega**: kept `skills/vendor/awesome-sega/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/sega/SKILL.md`
+- **bento**: kept `skills/vendor/awesome-bento/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/bento/SKILL.md`
+- **clean**: kept `skills/vendor/awesome-clean/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/clean/SKILL.md`
+- **codex**: kept `skills/vendor/awesome-codex/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/codex/SKILL.md`
+- **lingo**: kept `skills/vendor/awesome-lingo/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/lingo/SKILL.md`
+- **paper**: kept `skills/vendor/awesome-paper/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/paper/SKILL.md`
+- **retro**: kept `skills/pm-skills-main/pm-execution/skills/retro/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/retro/SKILL.md`
+- **sleek**: kept `skills/vendor/awesome-sleek/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/sleek/SKILL.md`
+- **claude-api**: kept `skills/vendor/claude-api/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/claude-api/SKILL.md`
+- **claude**: kept `skills/vendor/awesome-claude/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/claude/SKILL.md`
+- **cosmic**: kept `skills/vendor/awesome-cosmic/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/cosmic/SKILL.md`
+- **doodle**: kept `skills/vendor/awesome-doodle/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/doodle/SKILL.md`
+- **levels**: kept `skills/vendor/awesome-levels/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/levels/SKILL.md`
+- **luxury**: kept `skills/vendor/awesome-luxury/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/luxury/SKILL.md`
+- **matrix**: kept `skills/vendor/awesome-matrix/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/matrix/SKILL.md`
+- **modern**: kept `skills/vendor/awesome-modern/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/modern/SKILL.md`
+- **pacman**: kept `skills/vendor/awesome-pacman/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/pacman/SKILL.md`
+- **shadcn**: kept `skills/vendor/awesome-shadcn/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/shadcn/SKILL.md`
+- **simple**: kept `skills/vendor/awesome-simple/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/simple/SKILL.md`
+- **sketch**: kept `skills/vendor/awesome-sketch/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/sketch/SKILL.md`
+- **tetris**: kept `skills/vendor/awesome-tetris/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/tetris/SKILL.md`
+- **mcp-builder**: kept `skills/mcp-builder/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/mcp-builder/SKILL.md`
+- **agentic**: kept `skills/vendor/awesome-agentic/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/agentic/SKILL.md`
+- **elegant**: kept `skills/vendor/awesome-elegant/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/elegant/SKILL.md`
+- **fantasy**: kept `skills/vendor/awesome-fantasy/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/fantasy/SKILL.md`
+- **fiction**: kept `skills/vendor/awesome-fiction/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/fiction/SKILL.md`
+- **minimal**: kept `skills/vendor/awesome-minimal/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/minimal/SKILL.md`
+- **premium**: kept `skills/vendor/awesome-premium/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/premium/SKILL.md`
+- **refined**: kept `skills/vendor/awesome-refined/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/refined/SKILL.md`
+- **vibrant**: kept `skills/vendor/awesome-vibrant/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/vibrant/SKILL.md`
+- **vintage**: kept `skills/vendor/awesome-vintage/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/vintage/SKILL.md`
+- **artistic**: kept `skills/vendor/awesome-artistic/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/artistic/SKILL.md`
+- **colorful**: kept `skills/vendor/awesome-colorful/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/colorful/SKILL.md`
+- **creative**: kept `skills/vendor/awesome-creative/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/creative/SKILL.md`
+- **dithered**: kept `skills/vendor/awesome-dithered/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/dithered/SKILL.md`
+- **dramatic**: kept `skills/vendor/awesome-dramatic/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/dramatic/SKILL.md`
+- **friendly**: kept `skills/vendor/awesome-friendly/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/friendly/SKILL.md`
+- **gradient**: kept `skills/vendor/awesome-gradient/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/gradient/SKILL.md`
+- **material**: kept `skills/vendor/awesome-material/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/material/SKILL.md`
+- **spacious**: kept `skills/vendor/awesome-spacious/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/spacious/SKILL.md`
+- **canvas-design**: kept `skills/vendor/canvas-design/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/canvas-design/SKILL.md`
+- **skill-creator**: kept `skills/skill-creator/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/skill-creator/SKILL.md`
+- **theme-factory**: kept `skills/vendor/theme-factory/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/theme-factory/SKILL.md`
+- **brutalism**: kept `skills/vendor/awesome-brutalism/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/brutalism/SKILL.md`
+- **corporate**: kept `skills/vendor/awesome-corporate/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/corporate/SKILL.md`
+- **dashboard**: kept `skills/vendor/awesome-dashboard/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/dashboard/SKILL.md`
+- **editorial**: kept `skills/vendor/awesome-editorial/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/editorial/SKILL.md`
+- **energetic**: kept `skills/vendor/awesome-energetic/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/energetic/SKILL.md`
+- **immersive**: kept `skills/vendor/awesome-immersive/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/immersive/SKILL.md`
+- **internal-comms**: kept `skills/vendor/internal-comms/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/internal-comms/SKILL.md`
+- **webapp-testing**: kept `skills/webapp-testing/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/webapp-testing/SKILL.md`
+- **enterprise**: kept `skills/vendor/awesome-enterprise/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/enterprise/SKILL.md`
+- **expressive**: kept `skills/vendor/awesome-expressive/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/expressive/SKILL.md`
+- **futuristic**: kept `skills/vendor/awesome-futuristic/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/futuristic/SKILL.md`
+- **impeccable**: kept `skills/vendor/awesome-impeccable/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/impeccable/SKILL.md`
+- **algorithmic-art**: kept `skills/vendor/algorithmic-art/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/algorithmic-art/SKILL.md`
+- **doc-coauthoring**: kept `skills/vendor/doc-coauthoring/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/doc-coauthoring/SKILL.md`
+- **frontend-design**: kept `skills/frontend-design/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/frontend-design/SKILL.md`
+- **application**: kept `skills/vendor/awesome-application/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/application/SKILL.md`
+- **neumorphism**: kept `skills/vendor/awesome-neumorphism/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/neumorphism/SKILL.md`
+- **perspective**: kept `skills/vendor/awesome-perspective/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/perspective/SKILL.md`
+- **publication**: kept `skills/vendor/awesome-publication/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/publication/SKILL.md`
+- **brand-guidelines**: kept `skills/vendor/brand-guidelines/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/brand-guidelines/SKILL.md`
+- **claymorphism**: kept `skills/vendor/awesome-claymorphism/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/claymorphism/SKILL.md`
+- **contemporary**: kept `skills/vendor/awesome-contemporary/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/contemporary/SKILL.md`
+- **neobrutalism**: kept `skills/vendor/awesome-neobrutalism/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/neobrutalism/SKILL.md`
+- **professional**: kept `skills/vendor/awesome-professional/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/professional/SKILL.md`
+- **skeumorphism**: kept `skills/vendor/awesome-skeumorphism/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/skeumorphism/SKILL.md`
+- **storytelling**: kept `skills/vendor/awesome-storytelling/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/storytelling/SKILL.md`
+- **slack-gif-creator**: kept `skills/vendor/slack-gif-creator/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/slack-gif-creator/SKILL.md`
+- **glassmorphism**: kept `skills/vendor/awesome-glassmorphism/SKILL.md`, skipped `skills/vendor/_cache/awesome-design-skills/skills/glassmorphism/SKILL.md`
+- **web-artifacts-builder**: kept `skills/vendor/web-artifacts-builder/SKILL.md`, skipped `skills/vendor/_cache/anthropics-skills/skills/web-artifacts-builder/SKILL.md`
+
+## Excluded by config (not synced)
+
+- apple-mail
+- apple-notes
+- ballot
+- bye
+- claude-code-prompts-reference
+- claude-memory-kit
+- design-style
+- devops-automation
+- dossier
+- lab-notes
+- most-capable-agent-reference
+- pandoc
+- pdf-zine
+- planning-with-files-ar
+- planning-with-files-de
+- planning-with-files-es
+- planning-with-files-zht
+- private-podcast-feed
+- SPACE-analytics
+- SPACE-experiment-designer
+- space-image2proto
+- SPACE-prd-writer
+- SPACE-prioritization-engine
+- SPACE-review-board
+- SPACE-roadmap-planner
+- SPACE-survey-designer
+- styleseed
+- tdd-mastery
+- text-to-speech
+- tmux-control
+- tracer-bullets
+- tracking-spec-writer
+- verification
+- verify-language
+- verify-patterns
+- verify-quality
+- verify-security
+
+## Remaining overlap with ~/.codex/skills
+
+- ab-test-analysis
+- accessibility-wcag
+- agentkit-seo
+- agent-verifier
+- ai-coding-ok
+- ai-delivery-gate
+- ai-review
+- analyze-feature-requests
+- ansoff-matrix
+- anysearch
+- api-design-patterns
+- authentication-patterns
+- aws-cloud-patterns
+- beachhead-segment
+- brainstorm-experiments-existing
+- brainstorm-experiments-new
+- brainstorm-ideas-existing
+- brainstorm-ideas-new
+- brainstorming
+- brainstorm-okrs
+- brandkit
+- business-model
+- chrome-browser
+- ci-cd-pipelines
+- ckm-banner-design
+- ckm-brand
+- ckm-design
+- ckm-design-system
+- ckm-slides
+- ckm-ui-styling
+- code-simplifier
+- cohort-analysis
+- competitive-battlecard
+- competitor-analysis
+- create-prd
+- customer-journey-map
+- database-optimization
+- data-engineering
+- deep-dive
+- design-patterns
+- design-taste-frontend
+- design-taste-frontend-v1
+- dispatching-parallel-agents
+- django-patterns
+- docker-best-practices
+- draft-nda
+- dummy-dataset
+- executing-plans
+- figma2code
+- figma-workflow
+- finishing-a-development-branch
+- frontend-excellence
+- full-output-enforcement
+- git-advanced
+- global-delivery-gate
+- global-session-core
+- golang-idioms
+- gpt-taste
+- grammar-check
+- graphql-design
+- growth-loops
+- gtm-motions
+- gtm-strategy
+- high-end-visual-design
+- ideal-customer-profile
+- identify-assumptions-existing
+- identify-assumptions-new
+- image2pencil
+- imagegen-frontend-mobile
+- imagegen-frontend-web
+- image-to-code
+- industrial-brutalist-ui
+- intended-vs-implemented
+- interview-script
+- issue-triage
+- job-stories
+- kubernetes-operations
+- last30days
+- lean-canvas
+- llm-integration
+- manage-skills
+- marketing-ideas
+- market-segments
+- market-sizing
+- mcp-development
+- metrics-dashboard
+- microservices-design
+- minimalist-ui
+- mobile-development
+- monetization-strategy
+- monitoring-observability
+- nextjs-mastery
+- north-star-metric
+- opportunity-solution-tree
+- ouro-loop
+- outcome-roadmap
+- performance
+- performance-optimization
+- pestle-analysis
+- planning-with-files
+- planning-with-files-zh
+- porters-five-forces
+- positioning-ideas
+- postgres-optimization
+- pre-mortem
+- pricing-strategy
+- prioritization-frameworks
+- prioritize-assumptions
+- prioritize-features
+- privacy-policy
+- product-name
+- product-strategy
+- product-vision
+- prompt-engineering
+- pr-review
+- pr-triage
+- python-best-practices
+- react-patterns
+- redesign-existing-projects
+- redis-patterns
+- release-notes
+- repo-recap
+- requesting-code-review
+- requirement-clarifier
+- retro
+- review-resume
+- rtk-tdd
+- rtk-triage
+- rust-systems
+- savethetokens
+- security-guardian
+- security-hardening
+- sentiment-analysis
+- ship
+- shipping-artifacts
+- springboot-patterns
+- sprint-plan
+- sql-queries
+- stakeholder-map
+- startup-canvas
+- stitch-design-taste
+- strategy-red-team
+- subagent-driven-development
+- summarize-interview
+- summarize-meeting
+- swot-analysis
+- systematic-debugging
+- tactus-design-style
+- task-intake-bridge
+- tdd-rust
+- test-driven-development
+- testing-strategies
+- test-scenarios
+- typescript-advanced
+- typescript-strict-patterns
+- ui-ux-pro-max
+- user-personas
+- user-segmentation
+- user-stories
+- using-git-worktrees
+- using-superpowers
+- value-proposition
+- value-prop-statements
+- vercel-react-best-practices
+- verification-before-completion
+- web-prototype
+- websocket-realtime
+- writing-plans
+- writing-skills
+- wwas
+- zero-to-one-gate
+
+## Synced skills
+
+- ab-test-analysis
+- accessibility-wcag
+- agentic
+- agentkit-seo
+- agent-verifier
+- ai-coding-ok
+- ai-delivery-gate
+- ai-review
+- algorithmic-art
+- analyze-feature-requests
+- ansoff-matrix
+- ant
+- anysearch
+- api-design-patterns
+- application
+- artistic
+- authentication-patterns
+- aws-cloud-patterns
+- beachhead-segment
+- bento
+- bold
+- brainstorm-experiments-existing
+- brainstorm-experiments-new
+- brainstorm-ideas-existing
+- brainstorm-ideas-new
+- brainstorming
+- brainstorm-okrs
+- brand-guidelines
+- brandkit
+- brutalism
+- business-model
+- cafe
+- canvas-design
+- chrome-browser
+- ci-cd-pipelines
+- ckm-banner-design
+- ckm-brand
+- ckm-design
+- ckm-design-system
+- ckm-slides
+- ckm-ui-styling
+- claude
+- claude-api
+- claymorphism
+- clean
+- code-simplifier
+- codex
+- cohort-analysis
+- colorful
+- competitive-battlecard
+- competitor-analysis
+- contemporary
+- continuous-learning
+- corporate
+- cosmic
+- create-prd
+- creative
+- customer-journey-map
+- dashboard
+- database-optimization
+- data-engineering
+- deep-dive
+- design-patterns
+- design-taste-frontend
+- design-taste-frontend-v1
+- dispatching-parallel-agents
+- dithered
+- django-patterns
+- doc-coauthoring
+- docker-best-practices
+- docx
+- doodle
+- draft-nda
+- dramatic
+- dummy-dataset
+- editorial
+- elegant
+- energetic
+- enterprise
+- executing-plans
+- expressive
+- fantasy
+- fetch-linuxdo-post
+- fiction
+- figma2code
+- figma-product-report
+- figma-workflow
+- finishing-a-development-branch
+- flat
+- friendly
+- frontend-design
+- frontend-excellence
+- full-output-enforcement
+- futuristic
+- git-advanced
+- glassmorphism
+- global-delivery-gate
+- global-session-core
+- golang-idioms
+- gpt-taste
+- gradient
+- grammar-check
+- graphql-design
+- growth-loops
+- gtm-motions
+- gtm-strategy
+- high-end-visual-design
+- ideal-customer-profile
+- idea-refine
+- identify-assumptions-existing
+- identify-assumptions-new
+- image2pencil
+- imagegen-frontend-mobile
+- imagegen-frontend-web
+- image-to-code
+- immersive
+- impeccable
+- industrial-brutalist-ui
+- intended-vs-implemented
+- internal-comms
+- interview-script
+- issue-triage
+- job-stories
+- kubernetes-operations
+- last30days
+- lean-canvas
+- levels
+- lingo
+- llm-integration
+- luxury
+- manage-skills
+- marketing-ideas
+- market-segments
+- market-sizing
+- material
+- matrix
+- mcp-builder
+- mcp-development
+- metrics-dashboard
+- microservices-design
+- minimal
+- minimalist-ui
+- mobile-development
+- modern
+- monetization-strategy
+- monitoring-observability
+- mono
+- neobrutalism
+- neon
+- neumorphism
+- nextjs-mastery
+- north-star-metric
+- opportunity-solution-tree
+- ouro-loop
+- outcome-roadmap
+- pacman
+- paper
+- pdf
+- performance
+- performance-optimization
+- perspective
+- pestle-analysis
+- planning-with-files
+- planning-with-files-zh
+- pm-competitor-deconstructor
+- pm-postmortem-writer
+- porters-five-forces
+- positioning-ideas
+- postgres-optimization
+- pptx
+- premium
+- pre-mortem
+- pricing-strategy
+- prioritization-frameworks
+- prioritize-assumptions
+- prioritize-features
+- privacy-policy
+- product-name
+- product-strategy
+- product-vision
+- professional
+- prompt-engineering
+- pr-review
+- pr-triage
+- publication
+- python-best-practices
+- react-patterns
+- receiving-code-review
+- redesign-existing-projects
+- redis-patterns
+- refined
+- release-notes
+- repo-recap
+- requesting-code-review
+- requirement-clarifier
+- retro
+- review-resume
+- riso
+- rtk-tdd
+- rtk-triage
+- rust-systems
+- savethetokens
+- security-guardian
+- security-hardening
+- sega
+- sentiment-analysis
+- shadcn
+- ship
+- shipping-artifacts
+- simple
+- sketch
+- skeumorphism
+- skill-creator
+- slack-gif-creator
+- sleek
+- spacious
+- springboot-patterns
+- sprint-plan
+- sql-queries
+- stakeholder-map
+- startup-canvas
+- stitch-design-taste
+- storytelling
+- strategy-red-team
+- subagent-driven-development
+- summarize-interview
+- summarize-meeting
+- swot-analysis
+- systematic-debugging
+- tactus-design-style
+- task-intake-bridge
+- tdd-rust
+- template-skill
+- terracotta
+- test-driven-development
+- testing-strategies
+- test-scenarios
+- tetris
+- theme-factory
+- typescript-advanced
+- typescript-strict-patterns
+- ui-ux-pro-max
+- user-personas
+- user-segmentation
+- user-stories
+- using-git-worktrees
+- using-superpowers
+- value-proposition
+- value-prop-statements
+- vercel-react-best-practices
+- verification-before-completion
+- vibrant
+- vintage
+- webapp-testing
+- web-artifacts-builder
+- web-prototype
+- websocket-realtime
+- writing-plans
+- writing-skills
+- wwas
+- xlsx
+- zero-to-one-gate

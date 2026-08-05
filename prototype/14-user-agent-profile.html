@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>用户与智能体画像 · 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="dashboard" data-ops-page="14-user-agent-profile.html" data-ops-subtitle="用户与智能体画像">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main">
+  <div class="page-header">
+    <div><h1>用户与智能体画像</h1><p>用户行为分段与智能体使用偏好 — 支撑运营决策</p></div>
+  </div>
+  <div class="ops-dash-kpis" id="dashKpis"></div>
+  <div class="card" style="padding:16px;margin-top:16px;">
+    <h3 style="font-size:15px;margin-bottom:12px;">用户分段</h3>
+    <div id="dashSegments"></div>
+  </div>
+</main>
+</div></div>
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-dashboards.js"></script>
+<script>OpsDashboards.initProfilePage(); OpsMessageCenter.mount();</script>
+</body>
+</html>

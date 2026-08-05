@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>审核专家任务 · 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="audit" data-ops-page="08-audit-expert.html" data-ops-subtitle="专家任务审核">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main audit-review-page">
+  <div class="breadcrumb"><a href="audit-workbench.html" id="breadcrumbAuditLink">审核工作台</a><span class="sep">›</span><span class="current">审核专家任务</span></div>
+  <div class="page-header">
+    <div><h1 id="auditExpertTitle">专家任务</h1><p style="font-size:13px;color:var(--text-muted);">运营审核专家提交的任务处理结果</p></div>
+    <div class="ops-inline-actions">
+      <button type="button" class="btn btn-ghost" id="btnAuditMore" title="更多操作">⋯</button>
+    </div>
+  </div>
+  <div class="ops-task-layout">
+    <div class="ops-task-main">
+      <div class="card audit-review-summary">
+        <div class="ops-kv-grid">
+          <div class="ops-kv"><span class="k">提交专家</span><span id="auditExpertName">—</span></div>
+          <div class="ops-kv"><span class="k">提交时间</span><span id="auditExpertTime">—</span></div>
+          <div class="ops-kv"><span class="k">处理摘要</span><span id="auditExpertSummary" style="font-size:13px;color:var(--text-muted);">—</span></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:16px;padding:0;overflow:hidden;">
+        <table class="data-table">
+          <thead><tr><th>节点</th><th>时间</th><th>操作人</th></tr></thead>
+          <tbody id="auditExpertHistoryBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="ops-task-side">
+      <div class="card">
+        <h4 style="font-size:14px;margin-bottom:12px;">审核操作</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <button type="button" class="btn btn-primary" id="btnApproveExpert">通过</button>
+          <button type="button" class="btn btn-danger" id="btnRejectExpert">退回</button>
+          <a href="audit-workbench.html" class="btn">返回审核工作台</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</div></div>
+
+<div class="modal-overlay hidden" id="rejectReasonModal">
+  <div class="modal-box modal-md">
+    <div class="modal-header"><h2>退回理由</h2><button type="button" class="close" data-close-modal="rejectReasonModal">✕</button></div>
+    <div class="modal-body">
+      <div class="form-row"><span class="form-label required">退回原因</span><div class="form-control"><textarea class="textarea" id="rejectExpertReason" placeholder="请填写退回理由"></textarea></div></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" data-close-modal="rejectReasonModal">取消</button>
+      <button type="button" class="btn btn-primary" style="background:var(--danger);border-color:var(--danger);" id="confirmRejectExpert">确认退回</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-context-menu.js"></script>
+<script src="assets/ops-dispatch.js"></script>
+<script src="assets/ops-expert-workbench.js"></script>
+<script src="assets/ops-audit-expert.js"></script>
+<script>OpsAuditExpert.initAuditExpertPage();</script>
+</body>
+</html>

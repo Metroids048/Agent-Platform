@@ -1,0 +1,65 @@
+/* Figma HTML capture: fixed viewport, no vh clipping */
+html.figma-capture,
+html.figma-capture body {
+  width: 1440px !important;
+  min-width: 1440px !important;
+  max-width: 1440px !important;
+  min-height: 920px !important;
+  overflow: visible !important;
+}
+
+html.figma-capture .dev-editor-page,
+html.figma-capture #opsEditorRoot {
+  height: 860px !important;
+  min-height: 860px !important;
+}
+
+html.figma-capture .dev-col-body,
+html.figma-capture .dev-col {
+  min-height: 720px !important;
+}
+
+html.figma-capture .editor-shell-preview,
+html.figma-capture .dev-col-preview .dev-col-body {
+  min-height: 680px !important;
+}
+
+html.figma-capture .dev-layout {
+  min-height: 856px !important;
+}
+
+html.figma-capture .chat-page,
+html.figma-capture .dev-chat-home {
+  min-height: 780px !important;
+}
+
+html.figma-capture .picker-page {
+  min-height: 780px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+html.figma-capture .picker-card {
+  flex: 1;
+  min-height: 620px !important;
+}
+
+html.figma-capture .picker-card .data-table {
+  min-height: 480px !important;
+}
+
+html.figma-capture .agent-tab-panel.active {
+  min-height: 860px !important;
+}
+
+html.figma-capture .app-frame {
+  min-height: 780px !important;
+}
+
+/* Hide overlays/modals during capture */
+html.figma-capture .proto-overlay,
+html.figma-capture .modal-overlay:not(.hidden),
+html.figma-capture #resourceOverlay,
+html.figma-capture .audit-banner:not(.hidden) {
+  display: none !important;
+}

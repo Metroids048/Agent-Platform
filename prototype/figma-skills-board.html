@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Skills 配置 · 原型页面集</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/figma-capture.css">
+<style>
+  html.figma-capture, html.figma-capture body {
+    width: 6720px !important;
+    min-width: 6720px !important;
+    max-width: 6720px !important;
+    min-height: 980px !important;
+    background: #eef1f5;
+    overflow: visible !important;
+  }
+  .skills-board-title {
+    padding: 20px 24px 8px;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .skills-board-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0 0 24px;
+  }
+  .skills-board-col {
+    flex-shrink: 0;
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+  .skills-board-col.w1440 { width: 1440px; }
+  .skills-board-col.w1280 { width: 1280px; }
+  .skills-board-col-header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .skills-board-col-header span.sub {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+  .hdr-01 { background: #087f5b; }
+  .hdr-02 { background: #003da6; }
+  .hdr-03 { background: #7048e8; }
+  .hdr-04 { background: #e67700; }
+  .hdr-05 { background: #212529; }
+  .skills-board-col object,
+  .skills-board-col iframe {
+    display: block;
+    border: 0;
+    width: 100%;
+    background: #fff;
+  }
+  .skills-board-col.w1440 object,
+  .skills-board-col.w1440 iframe { height: 920px; }
+  .skills-board-col.w1280 object,
+  .skills-board-col.w1280 iframe { height: 820px; }
+</style>
+<script src="assets/figma-capture.js"></script>
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+
+<h1 class="skills-board-title">Skills 配置 · 原型页面集</h1>
+
+<div class="skills-board-row">
+  <div class="skills-board-col w1440">
+    <div class="skills-board-col-header hdr-01">
+      01 · Skills 管理 <span class="sub">10-skills-management.html</span>
+    </div>
+    <object data="10-skills-management.html?figma=1" type="text/html" title="Skills 管理">Skills 管理</object>
+  </div>
+  <div class="skills-board-col w1440">
+    <div class="skills-board-col-header hdr-02">
+      02 · 智能体配置 <span class="sub">05-agent-detail.html · Skills 绑定</span>
+    </div>
+    <object data="05-agent-detail.html?figma=1" type="text/html" title="智能体配置">智能体配置</object>
+  </div>
+  <div class="skills-board-col w1280">
+    <div class="skills-board-col-header hdr-03">
+      03 · 用户对话 <span class="sub">09-user-chat.html · 临时 Skills +</span>
+    </div>
+    <object data="09-user-chat.html?figma=1" type="text/html" title="用户对话">用户对话</object>
+  </div>
+  <div class="skills-board-col w1280">
+    <div class="skills-board-col-header hdr-04">
+      04 · 运行数据 <span class="sub">05-agent-detail.html · 运行数据 Tab</span>
+    </div>
+    <object data="05-agent-detail.html?tab=monitor&figma=1" type="text/html" title="运行数据">运行数据</object>
+  </div>
+  <div class="skills-board-col w1280">
+    <div class="skills-board-col-header hdr-05">
+      05 · 选择 Skill <span class="sub">07-pick-resource.html · 运营绑定</span>
+    </div>
+    <object data="07-pick-resource.html?pick=skills&figma=1" type="text/html" title="选择 Skill">选择 Skill</object>
+  </div>
+</div>
+
+<script>
+  if (/[?&]figma=1(?:&|$)/.test(location.search) || location.hash.includes('figmacapture=')) {
+    window.__figmaBoardReady = new Promise(function (resolve) {
+      var embeds = document.querySelectorAll('.skills-board-col object');
+      var left = embeds.length;
+      if (!left) { setTimeout(resolve, 1200); return; }
+      embeds.forEach(function (el) {
+        el.addEventListener('load', function () {
+          left -= 1;
+          if (left <= 0) setTimeout(resolve, 1200);
+        });
+      });
+      setTimeout(resolve, 8000);
+    });
+  }
+</script>
+</body>
+</html>

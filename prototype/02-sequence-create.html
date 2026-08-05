@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>创建 Agent 时序图 · 敖钦 AI 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-brand">
+        <div class="topbar-logo">A</div>
+        <div class="topbar-brand-text">
+          <strong>敖钦 AI</strong>
+          <span>企业级中台</span>
+        </div>
+      </div>
+      <div class="topbar-modules">
+        <span>智能编码伙伴</span>
+        <span>资源服务中心</span>
+        <span>模型服务</span>
+      <a href="06-dev-platform.html" data-nav-dev>智能体开发</a>
+      <span>知识中心</span>
+      <a href="index.html" data-nav-ops>运营平台</a>
+      </div>
+      <div class="topbar-right">
+        <input class="topbar-search" placeholder="搜索模型或任务...">
+        <button class="icon-btn" title="通知">🔔</button>
+        <div class="avatar"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-frame">
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-title">数据</div>
+          <a href="#"><span class="icon">💬</span> 用户反馈</a>
+          <a href="#"><span class="icon">👥</span> 专家工作台</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">分析</div>
+          <a href="#"><span class="icon">📊</span> 业务看板</a>
+          <a href="#"><span class="icon">🧠</span> 模型看板</a>
+          <a href="#"><span class="icon">📈</span> 资源看板</a>
+          <a href="#"><span class="icon">👤</span> 用户与智能体画像</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">管理</div>
+          <a href="#"><span class="icon">⚙️</span> 模型运营</a>
+          <a href="index.html"><span class="icon">📦</span> 智能体运营</a>
+          <a href="#"><span class="icon">💰</span> 资源与成本管理</a>
+          <a href="#"><span class="icon">🛡️</span> 权限与开发者管理</a>
+        </div>
+        <div class="sidebar-footer" style="margin-top:auto;padding-top:16px;border-top:1px solid var(--border);">
+          <div class="sidebar-title">设计参考</div>
+          <a href="01-architecture.html"><span class="icon">🧭</span> 双平台架构图</a>
+          <a href="02-sequence-create.html" class="active"><span class="icon">🔁</span> 创建时序图</a>
+        </div>
+      </aside>
+
+    <main class="main">
+      <div class="breadcrumb">
+        <a href="index.html">原型总览</a>
+        <span class="sep">›</span>
+        <span class="current">2. 创建 Agent 时序图</span>
+      </div>
+      <div class="page-header">
+        <div>
+          <h1>创建智能体 — 用户操作流程</h1>
+          <div style="margin-top:6px;color:var(--text-secondary);font-size:13px;">
+            阶段一：创建时两平台必须同步完成；阶段二：配置、保存、试对话可以多次进行。
+          </div>
+        </div>
+        <div>
+          <a href="assets/sequence-create.svg" download class="btn">⬇ 下载 SVG（拖入 Figma）</a>
+        </div>
+      </div>
+
+      <div class="svg-container">
+        <object data="assets/sequence-create.svg" type="image/svg+xml" style="width:1240px; max-width:100%;"></object>
+      </div>
+
+      <div class="card" style="margin-top:20px;">
+        <h3 style="font-size:15px; margin-bottom:12px;">📌 关键节点说明</h3>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; font-size:13px;">
+          <div>
+            <div style="font-weight:600; color:var(--primary); margin-bottom:6px;">步骤 5 — 通知开发平台同步创建</div>
+            <p style="color:var(--text-secondary); line-height:1.6;">
+              用户在运营平台点确定后，运营平台要把基本信息告诉开发平台，让开发平台也创建同一个智能体。两边都创建成功，才能继续后面的配置。
+            </p>
+          </div>
+          <div>
+            <div style="font-weight:600; color:#FAAD14; margin-bottom:6px;">步骤 8 — 记录两边是同一个智能体</div>
+            <p style="color:var(--text-secondary); line-height:1.6;">
+              运营平台要记住「我这边这个智能体 = 开发平台那个智能体」。之后每次保存配置、试对话、看监控，都基于这个关联。
+            </p>
+          </div>
+          <div>
+            <div style="font-weight:600; color:#722ED1; margin-bottom:6px;">阶段二 — 虚线表示可多次进行</div>
+            <p style="color:var(--text-secondary); line-height:1.6;">
+              进入编辑器后，用户可以反复：选资源、保存配置、试对话。每一步独立，不需要等上一步完成。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <h3 style="font-size:15px;margin-bottom:12px;">🧪 用户流程原型</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px;">
+          <a href="04-create-modal.html" class="btn btn-sm">新建</a>
+          <a href="06-dev-editor.html?new=1" class="btn btn-sm">首次配置</a>
+          <a href="05-agent-detail.html" class="btn btn-sm">查看详情</a>
+          <a href="audit-workbench.html" class="btn btn-sm">审核</a>
+        </div>
+      </div>
+
+      <div class="mapping-card" style="margin-top:16px;">
+        <div class="side">
+          <div class="lbl">运营平台</div>
+          <div class="val">客服助手</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:2px;">状态：草稿 · 可见范围：私有</div>
+        </div>
+        <div class="arrow">↔</div>
+        <div class="side">
+          <div class="lbl">开发平台</div>
+          <div class="val">客服助手</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:2px;">同一智能体 · 已关联 · 待配置</div>
+        </div>
+        <div class="status"><span class="tag tag-published">已同步</span></div>
+      </div>
+    </main>
+    </div>
+  </div>
+<script src="assets/proto.js"></script>
+<script>Proto.initTopbar('ops'); Proto.wireFlowMapLinks();</script>
+</body>
+</html>

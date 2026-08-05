@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 760" width="1240" height="760" font-family="PingFang SC, Microsoft YaHei, system-ui, sans-serif">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1677FF"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#722ED1"/>
+    </marker>
+    <marker id="arr-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8C8C8C"/>
+    </marker>
+    <linearGradient id="gctrl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0F7FF"/>
+      <stop offset="100%" stop-color="#E6F4FF"/>
+    </linearGradient>
+    <linearGradient id="gexec" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6FFED"/>
+      <stop offset="100%" stop-color="#EBFAD5"/>
+    </linearGradient>
+    <linearGradient id="gportal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F9F0FF"/>
+      <stop offset="100%" stop-color="#EFDBFF"/>
+    </linearGradient>
+    <linearGradient id="guser" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFBE6"/>
+      <stop offset="100%" stop-color="#FFF1B8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1240" height="760" fill="#FAFBFC"/>
+
+  <text x="40" y="44" font-size="22" font-weight="700" fill="#1F2937">统一智能体运营平台 — 双平台协作架构</text>
+  <text x="40" y="68" font-size="13" fill="#6B7280">运营平台负责「管」：谁能用、什么状态、能不能发布；开发平台负责「跑」：实际执行、记录用量。</text>
+
+  <!-- 用户 -->
+  <rect x="40" y="100" width="200" height="500" rx="10" fill="url(#guser)" stroke="#FFD666" stroke-width="1.5"/>
+  <text x="140" y="128" text-anchor="middle" font-size="14" font-weight="600" fill="#874D00">用户</text>
+  <line x1="60" y1="142" x2="220" y2="142" stroke="#FFD666" stroke-width="1"/>
+
+  <g font-size="13" fill="#1F2937">
+    <rect x="60" y="160" width="160" height="64" rx="8" fill="#fff" stroke="#FFD666"/>
+    <text x="76" y="184" font-weight="600">👤 普通用户</text>
+    <text x="76" y="206" font-size="11" fill="#6B7280">搜索、收藏、使用智能体</text>
+
+    <rect x="60" y="240" width="160" height="64" rx="8" fill="#fff" stroke="#FFD666"/>
+    <text x="76" y="264" font-weight="600">🛠 创建者</text>
+    <text x="76" y="286" font-size="11" fill="#6B7280">创建、配置、调试、申请发布</text>
+
+    <rect x="60" y="320" width="160" height="64" rx="8" fill="#fff" stroke="#FFD666"/>
+    <text x="76" y="344" font-weight="600">🛡 管理员 / 审核员</text>
+    <text x="76" y="366" font-size="11" fill="#6B7280">审批、下架、监控告警</text>
+
+    <rect x="60" y="416" width="160" height="160" rx="8" fill="#FFFCEB" stroke="#FFD666" stroke-dasharray="4 3"/>
+    <text x="140" y="438" text-anchor="middle" font-size="12" font-weight="600" fill="#874D00">可见范围</text>
+    <text x="76" y="462" font-size="11" fill="#6B7280">• 私有（仅自己可见）</text>
+    <text x="76" y="482" font-size="11" fill="#6B7280">• 部门共享（可选部门/用户）</text>
+    <text x="76" y="502" font-size="11" fill="#6B7280">• 公开（需审核）</text>
+    <text x="76" y="534" font-size="11" fill="#6B7280">默认私有</text>
+    <text x="76" y="552" font-size="11" fill="#6B7280">对外发布前须审核</text>
+  </g>
+
+  <!-- 运营平台 -->
+  <rect x="280" y="100" width="380" height="500" rx="10" fill="url(#gctrl)" stroke="#91CAFF" stroke-width="1.5"/>
+  <text x="470" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#0958D9">运营平台（本系统）</text>
+  <text x="470" y="148" text-anchor="middle" font-size="11" fill="#1677FF">管状态 · 管审批 · 管展示</text>
+  <line x1="300" y1="162" x2="640" y2="162" stroke="#91CAFF" stroke-width="1"/>
+
+  <g font-size="12" fill="#1F2937">
+    <rect x="300" y="178" width="160" height="60" rx="8" fill="#fff" stroke="#91CAFF"/>
+    <text x="312" y="200" font-weight="600">🤖 智能体中心</text>
+    <text x="312" y="220" font-size="11" fill="#6B7280">搜索 / 卡片 / 收藏 / 创建</text>
+
+    <rect x="480" y="178" width="160" height="60" rx="8" fill="#fff" stroke="#91CAFF"/>
+    <text x="492" y="200" font-weight="600">📝 智能体编辑器</text>
+    <text x="492" y="220" font-size="11" fill="#6B7280">基础信息 / 模型 / 提示词</text>
+
+    <rect x="300" y="252" width="160" height="60" rx="8" fill="#fff" stroke="#91CAFF"/>
+    <text x="312" y="274" font-weight="600">🧪 调试沙箱</text>
+    <text x="312" y="294" font-size="11" fill="#6B7280">试对话，看效果</text>
+
+    <rect x="480" y="252" width="160" height="60" rx="8" fill="#fff" stroke="#91CAFF"/>
+    <text x="492" y="274" font-weight="600">✅ 审批与发布</text>
+    <text x="492" y="294" font-size="11" fill="#6B7280">提交审核 / 通过后上架</text>
+
+    <rect x="300" y="326" width="160" height="60" rx="8" fill="#fff" stroke="#91CAFF"/>
+    <text x="312" y="348" font-weight="600">📊 运行监控</text>
+    <text x="312" y="368" font-size="11" fill="#6B7280">调用量 / 用量 / 错误率</text>
+
+    <rect x="480" y="326" width="160" height="60" rx="8" fill="#fff" stroke="#91CAFF"/>
+    <text x="492" y="348" font-weight="600">⛔ 下架治理</text>
+    <text x="492" y="368" font-size="11" fill="#6B7280">下架 / 版本退役 / 回滚</text>
+
+    <rect x="300" y="412" width="340" height="80" rx="8" fill="#FFFFFF" stroke="#1677FF" stroke-width="1.5"/>
+    <text x="316" y="436" font-weight="700" fill="#0958D9">💾 智能体档案</text>
+    <text x="316" y="458" font-size="11" fill="#6B7280">• 草稿 / 发布版本 / 审批记录 / 当前状态</text>
+    <text x="316" y="476" font-size="11" fill="#6B7280">• 记录与开发平台的对应关系</text>
+
+    <rect x="300" y="504" width="340" height="76" rx="8" fill="#fff" stroke="#91CAFF"/>
+    <text x="316" y="528" font-weight="600">💬 对话入口与运营看板</text>
+    <text x="316" y="548" font-size="11" fill="#6B7280">用户从这里发起对话</text>
+    <text x="316" y="566" font-size="11" fill="#6B7280">展示趋势、费用估算、健康度</text>
+  </g>
+
+  <!-- 开发平台 -->
+  <rect x="800" y="100" width="400" height="500" rx="10" fill="url(#gexec)" stroke="#B7EB8F" stroke-width="1.5"/>
+  <text x="1000" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#389E0D">智能体开发平台</text>
+  <text x="1000" y="148" text-anchor="middle" font-size="11" fill="#52C41A">管资源 · 管运行 · 管日志</text>
+  <line x1="820" y1="162" x2="1180" y2="162" stroke="#B7EB8F" stroke-width="1"/>
+
+  <g font-size="12" fill="#1F2937">
+    <rect x="820" y="178" width="170" height="60" rx="8" fill="#fff" stroke="#B7EB8F"/>
+    <text x="832" y="200" font-weight="600">🧠 模型</text>
+    <text x="832" y="220" font-size="11" fill="#6B7280">大模型推理与多轮对话</text>
+
+    <rect x="1010" y="178" width="170" height="60" rx="8" fill="#fff" stroke="#B7EB8F"/>
+    <text x="1022" y="200" font-weight="600">🔧 工具</text>
+    <text x="1022" y="220" font-size="11" fill="#6B7280">外部能力接入</text>
+
+    <rect x="820" y="252" width="170" height="60" rx="8" fill="#fff" stroke="#B7EB8F"/>
+    <text x="832" y="274" font-weight="600">📚 知识库</text>
+    <text x="832" y="294" font-size="11" fill="#6B7280">文档检索与问答增强</text>
+
+    <rect x="1010" y="252" width="170" height="60" rx="8" fill="#fff" stroke="#B7EB8F"/>
+    <text x="1022" y="274" font-weight="600">🌊 工作流</text>
+    <text x="1022" y="294" font-size="11" fill="#6B7280">可视化编排复杂任务</text>
+
+    <rect x="820" y="326" width="360" height="60" rx="8" fill="#FFFFFF" stroke="#52C41A" stroke-width="1.5"/>
+    <text x="836" y="350" font-weight="700" fill="#389E0D">⚙ 智能体运行引擎</text>
+    <text x="836" y="370" font-size="11" fill="#6B7280">接收配置，实际执行对话与任务</text>
+
+    <rect x="820" y="412" width="360" height="80" rx="8" fill="#fff" stroke="#B7EB8F"/>
+    <text x="836" y="436" font-weight="600">📈 运行日志与用量</text>
+    <text x="836" y="458" font-size="11" fill="#6B7280">• 每次调用了多少、耗时多久、有无报错</text>
+    <text x="836" y="476" font-size="11" fill="#6B7280">• 用了哪些工具、命中了哪些知识</text>
+
+    <rect x="820" y="504" width="360" height="76" rx="8" fill="#FFFCEB" stroke="#FFD666" stroke-dasharray="3 3"/>
+    <text x="836" y="528" font-weight="600" fill="#874D00">🛡 运行保护</text>
+    <text x="836" y="548" font-size="11" fill="#6B7280">超时自动停止（默认 60 秒）</text>
+    <text x="836" y="566" font-size="11" fill="#6B7280">轮次上限（默认 10 轮）</text>
+  </g>
+
+  <!-- 企业平台 -->
+  <rect x="280" y="630" width="900" height="100" rx="10" fill="url(#gportal)" stroke="#D3ADF7" stroke-width="1.5"/>
+  <text x="730" y="660" text-anchor="middle" font-size="14" font-weight="700" fill="#531DAB">🏢 企业运营 / 运维平台</text>
+  <text x="304" y="688" font-size="12" fill="#1F2937">• 费用分摊与账单</text>
+  <text x="500" y="688" font-size="12" fill="#1F2937">• 跨平台告警</text>
+  <text x="700" y="688" font-size="12" fill="#1F2937">• 全平台运营看板</text>
+  <text x="900" y="688" font-size="12" fill="#1F2937">• 审计与合规</text>
+  <text x="304" y="710" font-size="11" fill="#6B7280">对话结束后汇总上报：哪个智能体、用了多少、预估费用</text>
+
+  <!-- 用户 -> 运营平台 -->
+  <line x1="240" y1="350" x2="298" y2="350" stroke="#FAAD14" stroke-width="2" marker-end="url(#arr-gray)"/>
+  <rect x="244" y="334" width="50" height="18" rx="9" fill="#FFFBE6" stroke="#FFD666"/>
+  <text x="269" y="347" text-anchor="middle" font-size="10" fill="#874D00">使用</text>
+
+  <!-- 5 个协作环节 -->
+  <line x1="640" y1="208" x2="818" y2="208" stroke="#1677FF" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+  <rect x="656" y="192" width="146" height="32" rx="10" fill="#fff" stroke="#1677FF"/>
+  <text x="729" y="206" text-anchor="middle" font-size="11" fill="#1677FF" font-weight="600">① 同步创建智能体</text>
+  <text x="729" y="218" text-anchor="middle" font-size="10" fill="#6B7280">用户点确定时</text>
+
+  <line x1="818" y1="282" x2="640" y2="282" stroke="#1677FF" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+  <rect x="656" y="266" width="146" height="32" rx="10" fill="#fff" stroke="#1677FF"/>
+  <text x="729" y="280" text-anchor="middle" font-size="11" fill="#1677FF" font-weight="600">② 获取可用资源</text>
+  <text x="729" y="292" text-anchor="middle" font-size="10" fill="#6B7280">进入编辑器时</text>
+
+  <line x1="640" y1="356" x2="818" y2="356" stroke="#1677FF" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+  <rect x="656" y="340" width="146" height="32" rx="10" fill="#fff" stroke="#1677FF"/>
+  <text x="729" y="354" text-anchor="middle" font-size="11" fill="#1677FF" font-weight="600">③ 同步配置</text>
+  <text x="729" y="366" text-anchor="middle" font-size="10" fill="#6B7280">用户保存时</text>
+
+  <line x1="640" y1="452" x2="818" y2="452" stroke="#1677FF" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+  <rect x="656" y="436" width="146" height="32" rx="10" fill="#fff" stroke="#1677FF"/>
+  <text x="729" y="450" text-anchor="middle" font-size="11" fill="#1677FF" font-weight="600">④ 发起对话</text>
+  <text x="729" y="462" text-anchor="middle" font-size="10" fill="#6B7280">调试或正式使用时</text>
+
+  <line x1="818" y1="542" x2="640" y2="542" stroke="#1677FF" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+  <rect x="656" y="526" width="146" height="32" rx="10" fill="#fff" stroke="#1677FF"/>
+  <text x="729" y="540" text-anchor="middle" font-size="11" fill="#1677FF" font-weight="600">⑤ 回传运行数据</text>
+  <text x="729" y="552" text-anchor="middle" font-size="10" fill="#6B7280">监控看板展示时</text>
+
+  <!-- 汇总上报 -->
+  <line x1="470" y1="600" x2="470" y2="628" stroke="#722ED1" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr-purple)"/>
+  <rect x="378" y="608" width="184" height="20" rx="10" fill="#F9F0FF" stroke="#D3ADF7"/>
+  <text x="470" y="622" text-anchor="middle" font-size="11" fill="#722ED1" font-weight="600">汇总：审批与状态变更</text>
+
+  <line x1="1000" y1="600" x2="1000" y2="628" stroke="#722ED1" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr-purple)"/>
+  <rect x="884" y="608" width="232" height="20" rx="10" fill="#F9F0FF" stroke="#D3ADF7"/>
+  <text x="1000" y="622" text-anchor="middle" font-size="11" fill="#722ED1" font-weight="600">汇总：用量 / 耗时 / 费用</text>
+
+  <!-- 图例 -->
+  <g transform="translate(40,640)">
+    <rect x="0" y="0" width="200" height="100" rx="8" fill="#fff" stroke="#E5E7EB"/>
+    <text x="10" y="20" font-size="12" font-weight="700" fill="#1F2937">图例</text>
+    <line x1="10" y1="38" x2="40" y2="38" stroke="#1677FF" stroke-width="2.2"/>
+    <text x="48" y="42" font-size="11" fill="#1F2937">实时协作</text>
+    <line x1="10" y1="60" x2="40" y2="60" stroke="#722ED1" stroke-width="2" stroke-dasharray="4 3"/>
+    <text x="48" y="64" font-size="11" fill="#1F2937">事后汇总</text>
+    <rect x="10" y="76" width="16" height="12" fill="#fff" stroke="#1677FF"/>
+    <text x="34" y="86" font-size="11" fill="#1F2937">核心数据存储</text>
+  </g>
+</svg>

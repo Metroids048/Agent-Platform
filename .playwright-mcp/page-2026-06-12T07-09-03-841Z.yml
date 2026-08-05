@@ -1,0 +1,111 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: 敖
+      - generic [ref=e6]:
+        - strong [ref=e7]: 敖钦 AI 工作台
+        - generic [ref=e8]: 个人资产与偏好
+    - link "工作台" [ref=e9] [cursor=pointer]:
+      - /url: index.html
+      - img [ref=e11]
+      - generic [ref=e13]: 工作台
+    - link "智能体广场" [ref=e14] [cursor=pointer]:
+      - /url: agent-square.html
+      - img [ref=e16]
+      - generic [ref=e21]: 智能体广场
+    - link "我的空间" [ref=e22] [cursor=pointer]:
+      - /url: my-space.html
+      - img [ref=e24]
+      - generic [ref=e26]: 我的空间
+    - generic [ref=e27]:
+      - link "历史记录 ›" [ref=e28] [cursor=pointer]:
+        - /url: index.html#history
+        - text: 历史记录
+        - generic [ref=e29]: ›
+      - button "消息中心" [ref=e30] [cursor=pointer]
+      - link "专家工作台" [ref=e31] [cursor=pointer]:
+        - /url: 专家工作台/workbench.html
+      - button "帮助" [ref=e32] [cursor=pointer]
+  - main [ref=e33]:
+    - generic [ref=e34]:
+      - button "收起侧栏" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - generic [ref=e38]:
+        - text: 我的空间
+        - heading "管理个人资料、笔记和智能体沉淀" [level=1] [ref=e39]
+        - paragraph [ref=e40]: 个人空间（原型 mock）：笔记、草稿智能体、技术信息与偏好设置。
+      - link "返回工作台" [ref=e41] [cursor=pointer]:
+        - /url: index.html
+    - generic [ref=e42]:
+      - generic [ref=e44]:
+        - generic [ref=e45]: 张
+        - generic [ref=e46]:
+          - heading "张三" [level=2] [ref=e47]
+          - paragraph [ref=e48]: 海能集团 · 平台团队
+          - generic [ref=e49]: 普通用户
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - heading "个人笔记" [level=2] [ref=e53]
+            - generic [ref=e54]: 可从历史对话保存，也可在对话中引用
+          - button "+ 新建笔记" [ref=e55] [cursor=pointer]
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - generic [ref=e58]:
+                - strong [ref=e59]: 差旅报销材料清单
+                - paragraph [ref=e60]: 发票、审批单、行程单需要一并上传；缺失材料时先补充说明。
+                - generic [ref=e61]: 历史对话 · 2026-06-12
+              - button "删除笔记" [ref=e62] [cursor=pointer]: ×
+            - generic [ref=e63]:
+              - generic [ref=e64]:
+                - strong [ref=e65]: QHSE 检查常用关注点
+                - paragraph [ref=e66]: 重点关注现场风险识别、整改责任人、整改期限和复查记录。
+                - generic [ref=e67]: 个人整理 · 2026-06-12
+              - button "删除笔记" [ref=e68] [cursor=pointer]: ×
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - heading "我的智能体" [level=2] [ref=e71]
+            - generic [ref=e72]: 包含个人草稿、我创建的和历史沉淀
+          - generic [ref=e74]:
+            - generic [ref=e75]: 我
+            - generic [ref=e76]:
+              - strong [ref=e77]: 我的值班交接助手
+              - paragraph [ref=e78]: 根据值班记录和个人笔记生成交接摘要，当前为个人草稿。
+            - generic [ref=e79]: 个人草稿
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - heading "技术信息" [level=2] [ref=e82]
+            - generic [ref=e83]: 组织归属、角色权限和用量概览（mock）
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - generic [ref=e87]: 所属组织
+              - text: 海能集团
+            - generic [ref=e88]:
+              - generic [ref=e89]: 所属部门
+              - text: 平台团队
+            - generic [ref=e90]:
+              - generic [ref=e91]: 用户角色
+              - text: 普通用户
+            - generic [ref=e92]:
+              - generic [ref=e93]: 认证状态
+              - text: 统一认证待确认
+            - generic [ref=e94]:
+              - generic [ref=e95]: 本月对话
+              - text: mock · 23 次
+            - generic [ref=e96]:
+              - generic [ref=e97]: 智能体使用
+              - text: mock · 5 个
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - heading "偏好设置" [level=2] [ref=e100]
+            - generic [ref=e101]: 轻量偏好设置，真实登录接口待确认
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - checkbox "默认开启深度思考" [ref=e104]
+              - text: 默认开启深度思考
+            - generic [ref=e105]:
+              - text: 默认知识库
+              - combobox "默认知识库" [ref=e106]:
+                - option "企业知识库" [selected]
+                - option "QHSE 知识库"
+                - option "个人笔记"

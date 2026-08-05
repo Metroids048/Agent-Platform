@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>任务详情 · 运营视角</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="expert" data-ops-page="12-expert-task-view.html" data-ops-subtitle="任务详情">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main">
+  <div class="breadcrumb">
+    <a href="12-expert-workbench.html" id="breadcrumbWorkbenchLink">专家工作台</a><span class="sep">›</span><span class="current">查看任务详情</span>
+  </div>
+  <div class="page-header"><div><h1 id="taskTitle">任务详情</h1><p id="opsViewNote" style="font-size:13px;color:var(--text-muted);"></p></div></div>
+  <div class="card">
+    <div class="ops-kv-grid">
+      <div class="ops-kv"><span class="k">责任团队</span><span id="taskTeam">—</span></div>
+      <div class="ops-kv"><span class="k">负责专家</span><span id="taskExpert">—</span></div>
+      <div class="ops-kv"><span class="k">截止时间</span><span id="taskDeadline">—</span></div>
+      <div class="ops-kv"><span class="k">状态</span><span id="taskStatus">—</span></div>
+    </div>
+  </div>
+</main>
+</div></div>
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-expert-workbench.js"></script>
+<script>OpsExpertWorkbench.initTaskViewPage();</script>
+</body>
+</html>

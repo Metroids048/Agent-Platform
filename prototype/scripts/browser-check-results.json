@@ -1,0 +1,78 @@
+{
+  "at": "2026-06-26T07:46:46.440Z",
+  "mode": "jsdom",
+  "results": [
+    {
+      "name": "Skills 列表 ≥6 行",
+      "pass": true
+    },
+    {
+      "name": "index 页 v1.1 壳结构",
+      "pass": true
+    },
+    {
+      "name": "ops-v11-app 卡片 data-agent-status",
+      "pass": true
+    },
+    {
+      "name": "运营页 Tab 数量 = 3",
+      "pass": true
+    },
+    {
+      "name": "运营页保留前往开发平台按钮",
+      "pass": true
+    },
+    {
+      "name": "运营页不含配置 tab",
+      "pass": true
+    },
+    {
+      "name": "CSS 仍保留 mode-setup 规则（开发平台编辑器使用）",
+      "pass": true
+    },
+    {
+      "name": "审核工作台页可加载（v1.1 结构）",
+      "pass": true
+    },
+    {
+      "name": "审核详情页 DOM 契约",
+      "pass": true
+    },
+    {
+      "name": "getAuditItem 采购申请助手",
+      "pass": true
+    },
+    {
+      "name": "buildAgentListActionsHtml 已上架",
+      "pass": true
+    },
+    {
+      "name": "buildAgentListActionsHtml 已停用",
+      "pass": true
+    },
+    {
+      "name": "buildAgentListActionsHtml 审核中",
+      "pass": true
+    },
+    {
+      "name": "用户反馈列表页 DOM 契约",
+      "pass": true
+    },
+    {
+      "name": "权限管理列表页 DOM 契约",
+      "pass": true
+    },
+    {
+      "name": "用户端极简聊天页 DOM 契约",
+      "pass": true
+    },
+    {
+      "name": "用户端聊天状态边界",
+      "pass": true
+    },
+    {
+      "name": "Web 用户端 v4 模型选择与总结笔记 DOM 契约",
+      "pass": true
+    }
+  ]
+}

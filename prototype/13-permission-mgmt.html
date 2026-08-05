@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>权限与开发者管理 · 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="permission" data-ops-page="13-permission-mgmt.html" data-ops-subtitle="权限管理">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main">
+  <div class="page-header">
+    <div><h1>权限与开发者管理</h1><p>管理平台开发者账号、角色与组织架构</p></div>
+    <div class="ops-inline-actions">
+      <a href="#" class="btn btn-primary" id="btnAddDeveloper">＋ 新增开发者</a>
+    </div>
+  </div>
+  <div class="ops-tabs" id="permModuleTabs">
+    <button type="button" class="active" data-ops-tab="developers">开发者管理</button>
+    <button type="button" data-ops-tab="org">组织架构</button>
+  </div>
+  <div class="ops-tab-panel active" data-ops-panel="developers">
+    <div class="card" style="padding:0;overflow:hidden;margin-top:12px;">
+      <table class="data-table">
+        <thead><tr><th>姓名</th><th>邮箱</th><th>角色</th><th>部门</th><th>状态</th><th style="width:220px;">操作</th></tr></thead>
+        <tbody id="devListBody"></tbody>
+      </table>
+    </div>
+    <div class="pagination-bar"><span class="pagination-info">共 8 位开发者（演示数据）</span></div>
+  </div>
+  <div class="ops-tab-panel" data-ops-panel="org">
+    <div class="card org-tree" style="margin-top:12px;">
+      <ul>
+        <li><strong>敖钦 AI 平台</strong>
+          <ul>
+            <li><strong>研发部</strong><ul><li>平台团队</li><li>模型团队</li><li>应用团队</li></ul></li>
+            <li><strong>运营部</strong><ul><li>智能体运营</li><li>用户反馈治理</li></ul></li>
+            <li><strong>专家网络</strong><ul><li>领域专家池</li><li>任务审核组</li></ul></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+</div></div>
+
+<div class="modal-overlay hidden" id="deleteConfirmModal">
+  <div class="modal-box modal-sm">
+    <div class="modal-header"><h2>删除确认</h2><button type="button" class="close" data-close-modal="deleteConfirmModal">✕</button></div>
+    <div class="modal-body"><p style="font-size:14px;">确认删除该开发者账号？此操作不可恢复。</p></div>
+    <div class="modal-footer">
+      <button type="button" class="btn" data-close-modal="deleteConfirmModal">取消</button>
+      <button type="button" class="btn btn-danger" id="confirmDeleteDev">确认删除</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-permission-mgmt.js"></script>
+<script>OpsPermissionMgmt.initListPage();</script>
+</body>
+</html>

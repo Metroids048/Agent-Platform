@@ -1,0 +1,154 @@
+- generic [ref=f2e78]:
+  - generic [ref=f2e80]:
+    - generic [ref=f2e82]: AI应用开发平台
+    - generic [ref=f2e83]:
+      - list [ref=f2e85]:
+        - listitem [ref=f2e86] [cursor=pointer]:
+          - generic [ref=f2e87]: 运营管理
+        - listitem [ref=f2e88] [cursor=pointer]:
+          - generic [ref=f2e89]: 智能体开发
+        - listitem [ref=f2e90] [cursor=pointer]:
+          - generic [ref=f2e91]: 模型协同
+        - listitem [ref=f2e92] [cursor=pointer]:
+          - generic [ref=f2e93]: 知识库
+        - listitem [ref=f2e94] [cursor=pointer]:
+          - generic [ref=f2e95]: 智能编码助手
+      - generic [ref=f2e97] [cursor=pointer]:
+        - generic [ref=f2e99]: 
+        - generic [ref=f2e100]: 欢迎您，单位管理员
+  - generic [ref=f2e101]:
+    - complementary [ref=f2e102]:
+      - generic [ref=f2e103]:
+        - menu [ref=f2e110]:
+          - listitem [ref=f2e1484] [cursor=pointer]:
+            - menuitem "测试" [expanded] [ref=f2e1485]:
+              - generic [ref=f2e1486]:
+                - generic "测试" [ref=f2e1488]
+                - img [ref=f2e1490]:
+                  - img [ref=f2e1491]
+            - list [ref=f2e1495]:
+              - menuitem " 测试" [ref=f2e1496]:
+                - generic [ref=f2e1498]: 
+                - generic "测试" [ref=f2e1500]
+          - listitem [ref=f2e1501] [cursor=pointer]:
+            - menuitem "智能体中心" [expanded] [ref=f2e1502]:
+              - generic [ref=f2e1503]:
+                - generic "智能体中心" [ref=f2e1505]
+                - img [ref=f2e1507]:
+                  - img [ref=f2e1508]
+            - list [ref=f2e1512]:
+              - menuitem " 智能体" [ref=f2e1513]:
+                - generic [ref=f2e1515]: 
+                - generic "智能体" [ref=f2e1517]
+              - menuitem " 能力网关" [ref=f2e1518]:
+                - generic [ref=f2e1520]: 
+                - generic "能力网关" [ref=f2e1522]
+          - listitem [ref=f2e1523] [cursor=pointer]:
+            - menuitem "组件中心" [expanded] [ref=f2e1524]:
+              - generic [ref=f2e1525]:
+                - generic "组件中心" [ref=f2e1527]
+                - img [ref=f2e1529]:
+                  - img [ref=f2e1530]
+            - list [ref=f2e1534]:
+              - menuitem " 工作流" [ref=f2e1535]:
+                - generic [ref=f2e1537]: 
+                - generic "工作流" [ref=f2e1539]
+              - menuitem " 工具" [ref=f2e1540]:
+                - generic [ref=f2e1542]: 
+                - generic "工具" [ref=f2e1544]
+              - menuitem " MCP广场" [ref=f2e1545]:
+                - generic [ref=f2e1547]: 
+                - generic "MCP广场" [ref=f2e1549]
+              - menuitem " 智能体组件" [ref=f2e1550]:
+                - generic [ref=f2e1552]: 
+                - generic "智能体组件" [ref=f2e1554]
+              - menuitem " Skills中心" [ref=f2e1555]:
+                - generic [ref=f2e1557]: 
+                - generic "Skills中心" [ref=f2e1559]
+          - listitem [ref=f2e1560] [cursor=pointer]:
+            - menuitem "提示词工程" [expanded] [ref=f2e1561]:
+              - generic [ref=f2e1562]:
+                - generic "提示词工程" [ref=f2e1564]
+                - img [ref=f2e1566]:
+                  - img [ref=f2e1567]
+            - list [ref=f2e1571]:
+              - menuitem " 提示词模板" [ref=f2e1572]:
+                - generic [ref=f2e1574]: 
+                - generic "提示词模板" [ref=f2e1576]
+              - menuitem " 提示词框架" [ref=f2e1577]:
+                - generic [ref=f2e1579]: 
+                - generic "提示词框架" [ref=f2e1581]
+          - listitem [ref=f2e1582] [cursor=pointer]:
+            - menuitem "知识中心" [expanded] [ref=f2e1583]:
+              - generic [ref=f2e1584]:
+                - generic "知识中心" [ref=f2e1586]
+                - img [ref=f2e1588]:
+                  - img [ref=f2e1589]
+            - list [ref=f2e1593]:
+              - menuitem " 知识库接入" [ref=f2e1594]:
+                - generic [ref=f2e1596]: 
+                - generic "知识库接入" [ref=f2e1598]
+          - listitem [ref=f2e1599] [cursor=pointer]:
+            - menuitem "系统管理" [expanded] [ref=f2e1600]:
+              - generic [ref=f2e1601]:
+                - generic "系统管理" [ref=f2e1603]
+                - img [ref=f2e1605]:
+                  - img [ref=f2e1606]
+            - list [ref=f2e1610]:
+              - menuitem " 模型管理" [ref=f2e1611]:
+                - generic [ref=f2e1613]: 
+                - generic "模型管理" [ref=f2e1615]
+              - menuitem " 凭证管理" [ref=f2e1616]:
+                - generic [ref=f2e1618]: 
+                - generic "凭证管理" [ref=f2e1620]
+              - menuitem " 标签管理" [ref=f2e1621]:
+                - generic [ref=f2e1623]: 
+                - generic "标签管理" [ref=f2e1625]
+              - menuitem " 工作流节点管理" [ref=f2e1626]:
+                - generic [ref=f2e1628]: 
+                - generic "工作流节点管理" [ref=f2e1630]
+        - generic [ref=f2e280] [cursor=pointer]:
+          - img "sidebar" [ref=f2e281]:
+            - img [ref=f2e282]
+          - text: 关闭
+    - main [ref=f2e284]:
+      - generic [ref=f2e1633]:
+        - generic [ref=f2e1636]:
+          - generic [ref=f2e1639]:
+            - generic [ref=f2e1640]: 今
+            - generic [ref=f2e1641]: 天
+            - generic [ref=f2e1642]: 有
+            - generic [ref=f2e1643]: 什
+            - generic [ref=f2e1644]: 么
+            - generic [ref=f2e1645]: 可
+            - generic [ref=f2e1646]: 以
+            - generic [ref=f2e1647]: 帮
+            - generic [ref=f2e1648]: 到
+            - generic [ref=f2e1649]: 你
+            - generic [ref=f2e1650]: ？
+          - generic [ref=f2e1652]:
+            - generic [ref=f2e1654]:
+              - textbox [ref=f2e1656]:
+                - paragraph [ref=f2e1657]: 开始对话吧
+              - generic [ref=f2e1658]:
+                - generic [ref=f2e1660]:
+                  - combobox "Cascader" [ref=f2e1661] [cursor=pointer]:
+                    - img [ref=f2e1664]
+                    - generic [ref=f2e1675]: DeepSeek / deepseek-v4-pro
+                    - img "chevron_down" [ref=f2e1677]:
+                      - img [ref=f2e1678]
+                  - generic [ref=f2e1681]:
+                    - img [ref=f2e1684]
+                    - img "chevron_down" [ref=f2e1689]:
+                      - img [ref=f2e1690]
+                - generic [ref=f2e1692]:
+                  - button "上传附件" [ref=f2e1693] [cursor=pointer]:
+                    - img "paperclip" [ref=f2e1695]:
+                      - img [ref=f2e1696]
+                  - button "发送消息" [disabled] [ref=f2e1698]:
+                    - img "send" [ref=f2e1700]:
+                      - img [ref=f2e1701]
+            - generic [ref=f2e1703]: AI生成的内容可能会有错误或与事实有偏差，仅供参考
+        - generic [ref=f2e1704]:
+          - img [ref=f2e1706] [cursor=pointer]
+          - img [ref=f2e1710] [cursor=pointer]

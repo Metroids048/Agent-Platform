@@ -1,0 +1,174 @@
+{
+  "projectName": "Agent Platform",
+  "files": {
+    "prototype": {
+      "fileKey": "gDc0xlVkOeJdgrQOZMy3wh",
+      "fileUrl": "https://www.figma.com/design/gDc0xlVkOeJdgrQOZMy3wh/%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0",
+      "pages": {
+        "opsPlatform": {
+          "pageNodeId": "241:250",
+          "label": "运营平台"
+        },
+        "agentOps": {
+          "pageNodeId": "0:1",
+          "label": "智能体运营"
+        },
+        "skillsConfig": {
+          "pageNodeId": "46:312",
+          "label": "Skills 配置"
+        },
+        "userEnd": {
+          "pageNodeId": "376:250",
+          "label": "用户端"
+        }
+      },
+      "screens": {
+        "skillsBoard": {
+          "nodeId": "79:2",
+          "htmlMirror": "prototype/figma-skills-board.html",
+          "label": "Skills 配置 · 原型页面集"
+        },
+        "userFeedbackList": {
+          "nodeId": "243:955",
+          "htmlMirror": "prototype/11-user-feedback.html",
+          "label": "运营管理-用户反馈"
+        },
+        "userFeedbackDetail": {
+          "nodeId": "243:6859",
+          "htmlMirror": "prototype/11-user-feedback-detail.html",
+          "label": "用户反馈-查看详情"
+        },
+        "expertWorkbench": {
+          "nodeId": "243:272",
+          "htmlMirror": "prototype/12-expert-workbench.html",
+          "label": "专家工作台-我的任务"
+        },
+        "expertTaskDetail": {
+          "nodeId": "243:2109",
+          "htmlMirror": "prototype/12-expert-task-detail.html",
+          "label": "专家做任务"
+        },
+        "expertContext": {
+          "nodeId": "243:2345",
+          "htmlMirror": "prototype/12-expert-context.html",
+          "label": "做任务-查看上下文"
+        },
+        "expertTaskView": {
+          "nodeId": "243:5747",
+          "htmlMirror": "prototype/12-expert-task-view.html",
+          "label": "运营视角查看任务详情"
+        },
+        "permissionMgmt": {
+          "nodeId": "243:3270",
+          "htmlMirror": "prototype/13-permission-mgmt.html",
+          "label": "权限与开发者管理"
+        },
+        "permissionEdit": {
+          "nodeId": "243:3857",
+          "htmlMirror": "prototype/13-permission-edit.html",
+          "label": "开发者管理-编辑"
+        },
+        "permissionView": {
+          "nodeId": "243:4645",
+          "htmlMirror": "prototype/13-permission-view.html",
+          "label": "开发者管理-查看"
+        },
+        "permissionAdd": {
+          "nodeId": "243:4990",
+          "htmlMirror": "prototype/13-permission-add.html",
+          "label": "新增开发者账号"
+        },
+        "orgStructure": {
+          "nodeId": "243:6186",
+          "htmlMirror": "prototype/13-org-structure.html",
+          "label": "组织架构"
+        },
+        "auditExpert": {
+          "nodeId": "243:7529",
+          "htmlMirror": "prototype/08-audit-expert.html",
+          "label": "审核专家任务"
+        },
+        "userChat": {
+          "nodeId": "376:250",
+          "htmlMirror": "prototype/web端/index.html",
+          "label": "用户端对话首页"
+        },
+        "userMessageCenterTodo": {
+          "nodeId": "376:984",
+          "htmlMirror": "drawer:user-message-center",
+          "label": "（任务创建者）消息中心-待办"
+        },
+        "userExpertWorkbench": {
+          "nodeId": "377:356",
+          "htmlMirror": "prototype/web端/专家工作台/workbench.html",
+          "label": "专家工作台-我的任务"
+        },
+        "userFeedbackBox": {
+          "nodeId": "377:1665",
+          "htmlMirror": "drawer:feedback-tab",
+          "label": "意见箱"
+        }
+      }
+    }
+  },
+  "defaults": {
+    "framework": "html",
+    "designSystem": "prototype/assets/style.css",
+    "stack": "静态 HTML + proto.js，无构建步骤"
+  },
+  "sync": {
+    "capturePort": 8766,
+    "captureQuery": "figma=1",
+    "boardCaptureScript": "scripts/capture-skills-board.ps1",
+    "layoutPlugin": "design/figma-plugin/manifest.json",
+    "deprecatedScripts": ["scripts/open-figma-captures.ps1"],
+    "workflow": "Starter：PAT REST 读设计 + Remote MCP 写 Figma；interaction-spec.json 驱动交互"
+  },
+  "mcp": {
+    "plan": "starter",
+    "canonicalTemplate": "scripts/global-workspace/templates/mcp/figma-mcp-canonical.json",
+    "syncScript": "scripts/sync-figma-mcp.ps1",
+    "cursorGlobalConfig": "~/.cursor/mcp.json",
+    "codexGlobalConfig": "~/.codex/config.toml",
+    "claudeGlobalConfig": "~/.claude.json",
+    "env": {
+      "FIGMA_API_KEY": "Windows 用户环境变量，不入仓"
+    },
+    "servers": {
+      "pat-rest-api": {
+        "role": "read",
+        "priority": 1,
+        "note": "FIGMA_API_KEY + Figma REST API；Starter 批量读主力，不限 MCP 6 次/月"
+      },
+      "figma-link": {
+        "role": "read",
+        "priority": 2,
+        "note": "粘贴 Frame 链接 + resolve-figma-screen.js 解析 nodeId"
+      },
+      "figma": {
+        "url": "https://mcp.figma.com/mcp",
+        "role": "read-write",
+        "priority": 3,
+        "note": "Remote OAuth；读约 6 次/月；写 use_figma / generate_figma_design 免限额"
+      },
+      "plugin-figma-figma": {
+        "role": "read-write",
+        "priority": 4,
+        "note": "Cursor Figma 插件；写 use_figma / generate_figma_design + Skills"
+      },
+      "figma-desktop": {
+        "url": "http://127.0.0.1:3845/mcp",
+        "role": "read",
+        "priority": 5,
+        "optional": true,
+        "note": "需付费 Dev Seat；Starter 仅 WARN"
+      }
+    },
+    "agentRouting": {
+      "figmaToCode": ["pat-rest-api", "figma-link", "figma", "figma-desktop"],
+      "codeToFigma": ["figma", "plugin-figma-figma", "figma-desktop"]
+    },
+    "verifyScript": "scripts/verify-figma-mcp.ps1",
+    "resolveScript": "scripts/resolve-figma-screen.js"
+  }
+}

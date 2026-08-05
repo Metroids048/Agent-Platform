@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 820" width="1100" height="820" font-family="PingFang SC, Microsoft YaHei, system-ui, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1677FF"/>
+    </marker>
+    <marker id="arr-back" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52C41A"/>
+    </marker>
+    <marker id="arr-self" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6B7280"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="820" fill="#FAFBFC"/>
+
+  <text x="40" y="40" font-size="22" font-weight="700" fill="#1F2937">创建智能体 — 用户操作流程</text>
+  <text x="40" y="62" font-size="13" fill="#6B7280">用户在运营平台创建智能体时，开发平台同步创建同一个智能体，两边建立关联后才能继续配置和调试。</text>
+
+  <!-- 三栏泳道 -->
+  <g font-size="14" font-weight="600">
+    <rect x="40" y="88" width="280" height="44" rx="8" fill="#FFFBE6" stroke="#FFD666"/>
+    <text x="180" y="116" text-anchor="middle" fill="#874D00">👤 创建者</text>
+
+    <rect x="340" y="88" width="360" height="44" rx="8" fill="#E6F4FF" stroke="#91CAFF"/>
+    <text x="520" y="116" text-anchor="middle" fill="#0958D9">🏢 运营平台</text>
+
+    <rect x="720" y="88" width="340" height="44" rx="8" fill="#F6FFED" stroke="#B7EB8F"/>
+    <text x="890" y="116" text-anchor="middle" fill="#389E0D">🔧 开发平台</text>
+  </g>
+
+  <g stroke="#D9D9D9" stroke-width="1.4" stroke-dasharray="4 4">
+    <line x1="180" y1="136" x2="180" y2="780"/>
+    <line x1="520" y1="136" x2="520" y2="780"/>
+    <line x1="890" y1="136" x2="890" y2="780"/>
+  </g>
+
+  <!-- 阶段一 -->
+  <rect x="40" y="144" width="1020" height="24" rx="4" fill="#E6F4FF"/>
+  <text x="52" y="161" font-size="12" font-weight="600" fill="#0958D9">阶段一：创建 — 用户填表，两平台同步建立同一个智能体</text>
+
+  <!-- 1 -->
+  <line x1="180" y1="196" x2="510" y2="196" stroke="#1677FF" stroke-width="2" marker-end="url(#arr)"/>
+  <circle cx="48" cy="196" r="12" fill="#1677FF"/>
+  <text x="48" y="200" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">1</text>
+  <rect x="228" y="180" width="200" height="22" rx="11" fill="#fff" stroke="#91CAFF"/>
+  <text x="328" y="195" text-anchor="middle" font-size="11" fill="#0958D9">点击「创建智能体」</text>
+
+  <!-- 2 -->
+  <path d="M520,224 C 580,224 580,264 520,264" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#arr-self)"/>
+  <rect x="400" y="228" width="240" height="40" rx="6" fill="#fff" stroke="#1677FF"/>
+  <text x="520" y="248" text-anchor="middle" font-size="12" fill="#0958D9" font-weight="600">弹出创建表单</text>
+  <text x="520" y="262" text-anchor="middle" font-size="10" fill="#6B7280">名称 / 描述 / 类型 / 可见范围</text>
+  <circle cx="48" cy="244" r="12" fill="#1677FF"/>
+  <text x="48" y="248" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">2</text>
+
+  <!-- 3 -->
+  <line x1="180" y1="296" x2="510" y2="296" stroke="#1677FF" stroke-width="2" marker-end="url(#arr)"/>
+  <circle cx="48" cy="296" r="12" fill="#1677FF"/>
+  <text x="48" y="300" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">3</text>
+  <rect x="228" y="280" width="200" height="22" rx="11" fill="#fff" stroke="#91CAFF"/>
+  <text x="328" y="295" text-anchor="middle" font-size="11" fill="#0958D9">填写表单，点击「确定」</text>
+
+  <!-- 4 -->
+  <path d="M520,324 C 580,324 580,364 520,364" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#arr-self)"/>
+  <rect x="388" y="328" width="264" height="36" rx="6" fill="#fff" stroke="#ADC6FF"/>
+  <text x="520" y="346" text-anchor="middle" font-size="11" fill="#1D39C4" font-weight="600">保存为草稿，状态「草稿」</text>
+  <text x="520" y="358" text-anchor="middle" font-size="10" fill="#6B7280">此时还不能运行，需要开发平台配合</text>
+  <circle cx="48" cy="344" r="12" fill="#1677FF"/>
+  <text x="48" y="348" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">4</text>
+
+  <!-- 5 -->
+  <line x1="520" y1="396" x2="880" y2="396" stroke="#1677FF" stroke-width="2.4" marker-end="url(#arr)"/>
+  <circle cx="48" cy="396" r="12" fill="#1677FF"/>
+  <text x="48" y="400" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">5</text>
+  <rect x="588" y="380" width="224" height="32" rx="11" fill="#E6F4FF" stroke="#1677FF"/>
+  <text x="700" y="394" text-anchor="middle" font-size="11" fill="#1677FF" font-weight="700">通知开发平台同步创建</text>
+  <text x="700" y="406" text-anchor="middle" font-size="10" fill="#6B7280">带上名称、描述等基本信息</text>
+
+  <!-- 6 -->
+  <path d="M890,436 C 960,436 960,476 890,476" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#arr-self)"/>
+  <rect x="748" y="440" width="284" height="36" rx="6" fill="#fff" stroke="#B7EB8F"/>
+  <text x="890" y="458" text-anchor="middle" font-size="11" fill="#389E0D" font-weight="600">开发平台创建同一个智能体</text>
+  <text x="890" y="470" text-anchor="middle" font-size="10" fill="#6B7280">后续配置和运行都在开发平台完成</text>
+  <circle cx="48" cy="456" r="12" fill="#1677FF"/>
+  <text x="48" y="460" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">6</text>
+
+  <!-- 7 -->
+  <line x1="890" y1="504" x2="530" y2="504" stroke="#52C41A" stroke-width="2.4" marker-end="url(#arr-back)"/>
+  <circle cx="48" cy="504" r="12" fill="#1677FF"/>
+  <text x="48" y="508" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">7</text>
+  <rect x="588" y="488" width="224" height="32" rx="11" fill="#F6FFED" stroke="#52C41A"/>
+  <text x="700" y="502" text-anchor="middle" font-size="11" fill="#389E0D" font-weight="700">告知创建完成</text>
+  <text x="700" y="514" text-anchor="middle" font-size="10" fill="#6B7280">开发平台已准备好接收配置</text>
+
+  <!-- 8 -->
+  <path d="M520,536 C 580,536 580,574 520,574" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#arr-self)"/>
+  <rect x="388" y="540" width="264" height="36" rx="6" fill="#FFF7E6" stroke="#FAAD14"/>
+  <text x="520" y="558" text-anchor="middle" font-size="11" fill="#874D00" font-weight="700">记录两边是同一个智能体</text>
+  <text x="520" y="570" text-anchor="middle" font-size="10" fill="#6B7280">之后保存、调试、监控都基于这个关联</text>
+  <circle cx="48" cy="556" r="12" fill="#1677FF"/>
+  <text x="48" y="560" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">8</text>
+
+  <!-- 9 -->
+  <line x1="520" y1="608" x2="190" y2="608" stroke="#52C41A" stroke-width="2" marker-end="url(#arr-back)"/>
+  <circle cx="48" cy="608" r="12" fill="#1677FF"/>
+  <text x="48" y="612" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">9</text>
+  <rect x="228" y="592" width="200" height="22" rx="11" fill="#F6FFED" stroke="#52C41A"/>
+  <text x="328" y="607" text-anchor="middle" font-size="11" fill="#389E0D" font-weight="700">✅ 创建成功，进入详情页</text>
+
+  <!-- 阶段二 -->
+  <rect x="40" y="636" width="1020" height="24" rx="4" fill="#F9F0FF"/>
+  <text x="52" y="653" font-size="12" font-weight="600" fill="#531DAB">阶段二：配置 — 进入编辑器后，以下步骤可多次进行，互不影响</text>
+
+  <!-- 10 -->
+  <line x1="520" y1="688" x2="880" y2="688" stroke="#722ED1" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <rect x="588" y="672" width="224" height="32" rx="10" fill="#fff" stroke="#D3ADF7"/>
+  <text x="700" y="686" text-anchor="middle" font-size="11" fill="#531DAB" font-weight="600">获取可用资源列表</text>
+  <text x="700" y="698" text-anchor="middle" font-size="10" fill="#6B7280">模型 / 工具 / 知识库</text>
+  <circle cx="48" cy="688" r="12" fill="#722ED1"/>
+  <text x="48" y="692" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">10</text>
+
+  <!-- 11 -->
+  <line x1="520" y1="736" x2="880" y2="736" stroke="#722ED1" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <rect x="588" y="720" width="224" height="32" rx="10" fill="#fff" stroke="#D3ADF7"/>
+  <text x="700" y="734" text-anchor="middle" font-size="11" fill="#531DAB" font-weight="600">保存配置，同步到开发平台</text>
+  <text x="700" y="746" text-anchor="middle" font-size="10" fill="#6B7280">每次点保存都会同步</text>
+  <circle cx="48" cy="736" r="12" fill="#722ED1"/>
+  <text x="48" y="740" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">11</text>
+
+  <!-- 12 -->
+  <line x1="520" y1="784" x2="880" y2="784" stroke="#722ED1" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <rect x="588" y="768" width="224" height="32" rx="10" fill="#fff" stroke="#D3ADF7"/>
+  <text x="700" y="782" text-anchor="middle" font-size="11" fill="#531DAB" font-weight="600">在沙箱试对话，验证效果</text>
+  <text x="700" y="794" text-anchor="middle" font-size="10" fill="#6B7280">确认配置生效后再申请发布</text>
+  <circle cx="48" cy="784" r="12" fill="#722ED1"/>
+  <text x="48" y="788" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">12</text>
+</svg>

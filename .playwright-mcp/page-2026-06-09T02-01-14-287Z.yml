@@ -1,0 +1,30 @@
+- generic [ref=e4]:
+  - generic [ref=e7]: AI应用开发平台
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e11]: 单位*
+      - combobox "单位*" [ref=e13] [cursor=pointer]:
+        - img "apartment" [ref=e15]:
+          - img [ref=e16]
+        - generic [ref=e19]: XX单位
+        - img "chevron_down" [ref=e21]:
+          - img [ref=e22]
+    - generic [ref=e24]:
+      - generic [ref=e26]: 用户名*
+      - generic [ref=e28]:
+        - img "user" [ref=e30]:
+          - img [ref=e31]
+        - textbox "用户名*" [ref=e34]:
+          - /placeholder: 请输入用户名
+    - generic [ref=e35]:
+      - generic [ref=e37]: 密码*
+      - generic [ref=e39]:
+        - img "lock" [ref=e41]:
+          - img [ref=e42]
+        - textbox "密码*" [ref=e44]:
+          - /placeholder: 请输入密码
+        - button "Show password" [ref=e45] [cursor=pointer]:
+          - img "eye_closed_solid" [ref=e46]:
+            - img [ref=e47]
+  - button "登 录" [ref=e50] [cursor=pointer]:
+    - generic [ref=e51]: 登 录

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Skills 管理 · 智能体开发</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/figma-capture.css">
+<script src="assets/figma-capture.js"></script>
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body class="dev-home-bg">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-brand">
+      <div class="topbar-logo" style="background:linear-gradient(135deg,#087f5b,#20c997);">D</div>
+      <div class="topbar-brand-text"><strong>智能体开发</strong><span>组件中心</span></div>
+    </div>
+    <div class="topbar-modules">
+      <a href="06-dev-platform.html" class="nav-dev active" data-nav-dev>智能体开发</a>
+      <a href="index.html" data-nav-ops>运营平台</a>
+    </div>
+    <div class="topbar-right">
+      <input class="topbar-search" placeholder="搜索 Skill 或智能体...">
+      <div class="avatar"></div>
+    </div>
+  </div>
+</header>
+
+<div class="dev-layout" data-screen="skills-dev-management">
+  <aside class="dev-side">
+    <div class="dev-side-group">测试</div>
+    <a href="09-user-chat.html">测试对话</a>
+    <div class="dev-side-group">智能体中心</div>
+    <a href="06-dev-platform.html">我的智能体</a>
+    <a href="#">能力网关</a>
+    <div class="dev-side-group">组件中心</div>
+    <a href="06-dev-resources.html?res=workflow">工作流</a>
+    <a href="06-dev-resources.html?res=tools">工具 / MCP</a>
+    <a href="10-skills-management.html" class="active">Skills</a>
+    <div class="dev-side-group">知识中心</div>
+    <a href="06-dev-resources.html?res=knowledge">知识库</a>
+    <div class="dev-side-note">
+      Skills 在开发平台维护；运营平台只选择、绑定和临时使用。
+    </div>
+  </aside>
+
+  <main class="dev-main">
+    <div class="page-header skill-page-head">
+      <div>
+        <div class="breadcrumb"><a href="06-dev-platform.html">智能体开发</a><span class="sep">/</span><span class="current">Skills</span></div>
+        <h1>Skills</h1>
+        <p>管理可被智能体引用的技能资源。运营平台只引用已启用且有权限的 Skills。</p>
+      </div>
+      <div class="skill-head-actions">
+        <button class="btn" id="btnImportSkill">⬆ 导入 Skill</button>
+        <button class="btn btn-primary" id="btnCreateSkill">＋ 新建 Skill</button>
+      </div>
+    </div>
+
+    <div class="skill-library resource-table-card">
+      <div class="skill-library-toolbar filter-bar-skin">
+        <input class="input filter-search skill-library-search" id="skillManageSearch" placeholder="搜索名称、描述、场景...">
+        <select class="select" id="skillManageCategory">
+          <option value="">全部分类</option>
+          <option>输出规范</option>
+          <option>审查方法</option>
+          <option>办公效率</option>
+          <option>知识辅助</option>
+          <option>专业模板</option>
+        </select>
+        <select class="select" id="skillManageStatus">
+          <option value="">全部状态</option>
+          <option value="enabled">已启用</option>
+          <option value="draft">草稿</option>
+          <option value="disabled">已停用</option>
+        </select>
+      </div>
+
+      <table class="data-table skill-manage-table">
+        <thead>
+          <tr>
+            <th>名称</th>
+            <th>描述</th>
+            <th>分类</th>
+            <th>状态</th>
+            <th>可见范围</th>
+            <th>更新时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="skillManageList"></tbody>
+      </table>
+      <div class="pagination skill-manage-pagination" id="skillPagination"></div>
+    </div>
+
+    <p class="skill-back-note">
+      <a href="05-agent-detail.html" id="backConfig">返回运营平台智能体配置</a>
+    </p>
+  </main>
+</div>
+
+<!-- 新建 / 编辑 Skill 模态 -->
+<div class="publish-modal-mask" id="skillFormModal">
+  <div class="publish-modal skill-form-modal">
+    <div class="pm-head">
+      <div><h3 id="skillFormTitle">新建 Skill</h3><p class="pm-sub" id="skillFormSub">新建资源只发生在智能体开发平台；启用后才可被运营平台选择。</p></div>
+      <button class="icon-btn" type="button" id="skillFormClose">✕</button>
+    </div>
+    <div class="pm-body">
+      <div class="skill-import-banner" id="skillFormImportBanner" style="display:none;">
+        以下内容由 SKILL.md 解析，请确认后保存。
+      </div>
+      <div class="skill-form-grid">
+        <label>名称<input class="input" id="skillFormName" placeholder="例如：报告结构化"></label>
+        <label>分类<select class="select" id="skillFormCategory"><option>输出规范</option><option>审查方法</option><option>办公效率</option><option>知识辅助</option><option>专业模板</option></select></label>
+        <label class="wide">描述<textarea class="textarea" id="skillFormDesc" placeholder="一句话面向用户的能力说明"></textarea></label>
+        <label>适用场景<input class="input" id="skillFormScenario" placeholder="如：总结、汇报、复盘"></label>
+        <label>可见范围<select class="select" id="skillFormScope"><option>全公司</option><option>指定组织</option><option>指定用户</option></select></label>
+        <label class="wide">技能内容<textarea class="textarea" id="skillFormContent" placeholder="具体的方法、步骤或推理框架"></textarea></label>
+      </div>
+    </div>
+    <div class="pm-foot">
+      <button class="btn" id="skillFormCancel">取消</button>
+      <button class="btn" id="skillFormSaveDraft">保存草稿</button>
+      <button class="btn btn-primary" id="skillFormSaveEnable" data-default-label="启用">启用</button>
+    </div>
+  </div>
+</div>
+
+<!-- 导入 SKILL.md / 文件夹 模态 -->
+<div class="publish-modal-mask" id="skillImportModal">
+  <div class="publish-modal skill-import-modal">
+    <div class="pm-head">
+      <div><h3>导入 Skill</h3><p class="pm-sub">选择 .md 文件或 Skill 文件夹，解析后在表单中确认并保存。</p></div>
+      <button class="icon-btn" type="button" id="skillImportClose">✕</button>
+    </div>
+    <div class="pm-body">
+      <div class="skill-dropzone" id="skillDropzone">
+        <div class="skill-dropzone-title">拖入 SKILL.md 或 Skill 文件夹</div>
+        <div class="skill-dropzone-sub">点击选择 .md 文件，或拖入 Skill 文件夹</div>
+        <div class="skill-dropzone-actions">
+          <button type="button" class="btn" id="skillPickFile">选择文件</button>
+        </div>
+        <input type="file" id="skillImportFile" accept=".md,.markdown" style="display:none;">
+      </div>
+      <div class="skill-import-preview" id="skillImportPreview" style="display:none;">
+        <div class="skill-import-preview-title">✓ 已识别</div>
+        <div class="skill-import-preview-meta" id="skillImportPreviewMeta"></div>
+      </div>
+    </div>
+    <div class="pm-foot">
+      <button class="btn" id="skillImportCancel">取消</button>
+      <button class="btn btn-primary" id="skillImportNext" disabled>下一步</button>
+    </div>
+  </div>
+</div>
+
+<!-- 删除确认 -->
+<div class="publish-modal-mask" id="skillDeleteModal">
+  <div class="publish-modal" style="max-width:420px;">
+    <div class="pm-head">
+      <div><h3>确认删除</h3><p class="pm-sub">删除后不可恢复；已绑定该 Skill 的智能体将显示引用失效。</p></div>
+      <button class="icon-btn" type="button" id="skillDeleteClose">✕</button>
+    </div>
+    <div class="pm-foot">
+      <button class="btn" id="skillDeleteCancel">取消</button>
+      <button class="btn btn-danger" id="skillDeleteConfirm">删除</button>
+    </div>
+  </div>
+</div>
+
+<!-- Skill 详情侧抽屉 -->
+<div class="skill-side-drawer-mask" id="skillDetailMask">
+  <div class="skill-side-drawer" id="skillDetailDrawer">
+    <div class="sd-head">
+      <div>
+        <div class="sd-title" id="sdTitle">Skill 名称</div>
+        <div class="sd-sub" id="sdSub">v0.1.0</div>
+      </div>
+      <button class="icon-btn" type="button" id="skillDetailClose">✕</button>
+    </div>
+    <div class="sd-body" id="sdBody"></div>
+    <div class="sd-foot" id="sdFoot"></div>
+  </div>
+</div>
+
+<script src="assets/proto.js"></script>
+<script>
+  Proto.initTopbar('dev');
+  document.getElementById('backConfig').href = Proto.href('05-agent-detail.html');
+
+  var editingId = null;
+  var importedDraft = null;
+  var openMenuTr = null;
+
+  var search = document.getElementById('skillManageSearch');
+  var category = document.getElementById('skillManageCategory');
+  var statusSel = document.getElementById('skillManageStatus');
+  var listBox = document.getElementById('skillManageList');
+  var formModal = document.getElementById('skillFormModal');
+  var importModal = document.getElementById('skillImportModal');
+  var detailMask = document.getElementById('skillDetailMask');
+  var deleteModal = document.getElementById('skillDeleteModal');
+  var pendingDeleteId = null;
+  var currentPage = 1;
+  var pageSize = 10;
+  var paginationBox = document.getElementById('skillPagination');
+
+  function catalog() { return Proto.getSkillCatalog(); }
+
+  function filterRows() {
+    var q = (search.value || '').trim();
+    var c = category.value;
+    var st = statusSel.value;
+    return catalog().filter(function (s) {
+      var hit = !q || (s.name + (s.prompt || '') + s.category + s.scenario).indexOf(q) >= 0;
+      return hit && (!c || s.category === c) && (!st || s.status === st);
+    });
+  }
+
+  function renderPagination(total) {
+    if (!total) {
+      paginationBox.innerHTML = '';
+      paginationBox.style.display = 'none';
+      return;
+    }
+    paginationBox.style.display = 'flex';
+    var totalPages = Math.max(1, Math.ceil(total / pageSize));
+    if (currentPage > totalPages) currentPage = totalPages;
+    var btns = '';
+    for (var p = 1; p <= totalPages; p++) {
+      btns += '<button type="button" class="' + (p === currentPage ? 'active' : '') + '" data-page="' + p + '">' + p + '</button>';
+    }
+    paginationBox.innerHTML =
+      '<span>共 ' + total + ' 条</span>' +
+      btns +
+      '<span style="margin-left:8px;">' +
+        '<select class="select skill-page-size" id="skillPageSize">' +
+          '<option value="10"' + (pageSize === 10 ? ' selected' : '') + '>10 条/页</option>' +
+          '<option value="20"' + (pageSize === 20 ? ' selected' : '') + '>20 条/页</option>' +
+          '<option value="50"' + (pageSize === 50 ? ' selected' : '') + '>50 条/页</option>' +
+        '</select>' +
+      '</span>';
+    paginationBox.querySelectorAll('[data-page]').forEach(function (btn) {
+      btn.onclick = function () {
+        currentPage = parseInt(btn.getAttribute('data-page'), 10) || 1;
+        renderList();
+      };
+    });
+    var sizeSel = document.getElementById('skillPageSize');
+    if (sizeSel) {
+      sizeSel.onchange = function () {
+        pageSize = parseInt(sizeSel.value, 10) || 10;
+        currentPage = 1;
+        renderList();
+      };
+    }
+  }
+
+  function statusTag(status) {
+    var st = Proto.skillStatusLabel(status);
+    return '<span class="tag ' + st[1] + '">' + st[0] + '</span>';
+  }
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function renderList(highlightId) {
+    closeMoreMenu();
+    var allRows = filterRows();
+    var total = allRows.length;
+    renderPagination(total);
+    if (!total) {
+      listBox.innerHTML = '<tr><td colspan="7"><div class="empty-state" style="padding:32px;">暂无匹配 Skill<br><button class="btn btn-primary" style="margin-top:12px;" id="emptyCreateSkill">＋ 新建 Skill</button></div></td></tr>';
+      var emptyBtn = document.getElementById('emptyCreateSkill');
+      if (emptyBtn) emptyBtn.onclick = function () { openForm(); };
+      return;
+    }
+    var start = (currentPage - 1) * pageSize;
+    var rows = allRows.slice(start, start + pageSize);
+    listBox.innerHTML = rows.map(function (s) {
+      var updated = s.updatedAt || '2026-05-28';
+      return '<tr data-row-id="' + s.id + '">' +
+        '<td><strong>' + escapeHtml(s.name) + '</strong><div class="skill-table-version">' + s.version + '</div></td>' +
+        '<td><div class="desc-cell">' + escapeHtml(s.prompt || '') + '</div></td>' +
+        '<td>' + escapeHtml(s.category) + '</td>' +
+        '<td>' + statusTag(s.status) + '</td>' +
+        '<td>' + escapeHtml(s.scope) + '</td>' +
+        '<td>' + updated + '</td>' +
+        '<td class="skill-table-actions" data-actions-cell>' +
+          '<button class="btn btn-sm" data-edit-skill="' + s.id + '">编辑</button>' +
+          '<button class="skill-more-btn" data-more-skill="' + s.id + '" title="更多操作">⋯</button>' +
+        '</td>' +
+      '</tr>';
+    }).join('');
+    if (highlightId) {
+      var tr = listBox.querySelector('tr[data-row-id="' + highlightId + '"]');
+      if (tr) tr.classList.add('row-flash');
+    }
+    listBox.querySelectorAll('tr[data-row-id]').forEach(function (tr) {
+      tr.onclick = function (e) {
+        if (e.target.closest('button')) return;
+        openDetailDrawer(tr.getAttribute('data-row-id'));
+      };
+    });
+    listBox.querySelectorAll('[data-edit-skill]').forEach(function (btn) {
+      btn.onclick = function (e) { e.stopPropagation(); openForm(btn.getAttribute('data-edit-skill')); };
+    });
+    listBox.querySelectorAll('[data-more-skill]').forEach(function (btn) {
+      btn.onclick = function (e) { e.stopPropagation(); toggleMoreMenu(btn); };
+    });
+  }
+
+  function closeMoreMenu() {
+    if (openMenuTr) {
+      var menu = openMenuTr.querySelector('.skill-more-menu');
+      if (menu) menu.remove();
+      openMenuTr = null;
+    }
+  }
+
+  function toggleMoreMenu(btn) {
+    var cell = btn.parentElement;
+    if (openMenuTr === cell) { closeMoreMenu(); return; }
+    closeMoreMenu();
+    var id = btn.getAttribute('data-more-skill');
+    var s = Proto.skillById(id);
+    if (!s) return;
+    var items = [];
+    if (s.status === 'draft') {
+      items.push({ act: 'enable', label: '启用', primary: true });
+      items.push({ act: 'delete', label: '删除', danger: true });
+    } else if (s.status === 'enabled') {
+      items.push({ act: 'disable', label: '停用' });
+      items.push({ act: 'delete', label: '删除', danger: true });
+    } else if (s.status === 'disabled') {
+      items.push({ act: 'enable', label: '重新启用', primary: true });
+      items.push({ act: 'delete', label: '删除', danger: true });
+    }
+    var menu = document.createElement('div');
+    menu.className = 'skill-more-menu';
+    menu.innerHTML = items.map(function (it) {
+      return '<button type="button" class="' + (it.danger ? 'danger' : '') + '" data-menu-act="' + it.act + '">' + it.label + '</button>';
+    }).join('');
+    cell.appendChild(menu);
+    openMenuTr = cell;
+    menu.querySelectorAll('[data-menu-act]').forEach(function (b) {
+      b.onclick = function (e) {
+        e.stopPropagation();
+        handleAction(id, b.getAttribute('data-menu-act'));
+        closeMoreMenu();
+      };
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    if (openMenuTr && !openMenuTr.contains(e.target)) closeMoreMenu();
+  });
+
+  function handleAction(id, act) {
+    if (act === 'enable')      { Proto.updateSkillStatus(id, 'enabled');    Proto.toast('Skill 已启用'); renderList(id); refreshDrawerIfOpen(id); }
+    else if (act === 'disable')    { Proto.updateSkillStatus(id, 'disabled');   Proto.toast('Skill 已停用'); renderList(id); refreshDrawerIfOpen(id); }
+    else if (act === 'delete')     { confirmDelete(id); }
+  }
+
+  function confirmDelete(id) {
+    pendingDeleteId = id;
+    deleteModal.classList.add('active');
+  }
+  function closeDeleteModal() {
+    deleteModal.classList.remove('active');
+    pendingDeleteId = null;
+  }
+  function executeDelete() {
+    if (!pendingDeleteId) return;
+    var id = pendingDeleteId;
+    Proto.deleteSkill(id);
+    closeDeleteModal();
+    var foot = document.getElementById('sdFoot');
+    if (detailMask.classList.contains('active') && foot && foot.dataset.skillId === id) {
+      closeDetailDrawer();
+    }
+    renderList();
+    Proto.toast('Skill 已删除');
+  }
+
+  function openForm(id, presetData) {
+    editingId = id || null;
+    var s = id ? Proto.skillById(id) : null;
+    var pre = presetData || null;
+    var enableBtn = document.getElementById('skillFormSaveEnable');
+    var defaultLabel = enableBtn.getAttribute('data-default-label') || '启用';
+    document.getElementById('skillFormTitle').textContent = id ? '编辑 Skill' : '新建 Skill';
+    var subEl = document.getElementById('skillFormSub');
+    if (pre) {
+      subEl.textContent = '以下内容由 SKILL.md 解析，请确认后保存。';
+      enableBtn.textContent = defaultLabel;
+    } else if (s && s.status === 'enabled') {
+      subEl.textContent = '保存变更；仅内容有改动时发布新版本（补丁位 +1）。';
+      enableBtn.textContent = '保存';
+    } else if (s && s.status === 'disabled') {
+      subEl.textContent = '可保存为草稿，或直接重新启用供运营平台选择。';
+      enableBtn.textContent = '重新启用';
+    } else {
+      subEl.textContent = '新建资源只发生在智能体开发平台；启用后才可被运营平台选择。';
+      enableBtn.textContent = defaultLabel;
+    }
+    document.getElementById('skillFormImportBanner').style.display = pre ? 'block' : 'none';
+    document.getElementById('skillFormName').value     = pre ? pre.name     : (s ? s.name     : '');
+    document.getElementById('skillFormCategory').value = pre ? pre.category : (s ? s.category : '输出规范');
+    document.getElementById('skillFormDesc').value     = pre ? pre.prompt   : (s ? (s.prompt || '') : '');
+    document.getElementById('skillFormScenario').value = pre ? pre.scenario : (s ? s.scenario : '');
+    document.getElementById('skillFormScope').value    = pre ? pre.scope    : (s ? s.scope    : '全公司');
+    document.getElementById('skillFormContent').value  = pre ? pre.content  : (s ? (s.content || '') : '');
+    var draftBtn = document.getElementById('skillFormSaveDraft');
+    if (s && s.status === 'enabled') {
+      draftBtn.style.display = 'none';
+      draftBtn.disabled = false;
+      draftBtn.title = '';
+    } else {
+      draftBtn.style.display = '';
+      draftBtn.disabled = false;
+      draftBtn.title = '';
+    }
+    formModal.classList.add('active');
+  }
+  function closeForm() {
+    formModal.classList.remove('active');
+    importedDraft = null;
+    editingId = null;
+  }
+
+  function readForm() {
+    var name = document.getElementById('skillFormName').value.trim();
+    if (!name) return null;
+    return {
+      id: editingId,
+      name: name,
+      category: document.getElementById('skillFormCategory').value,
+      prompt: document.getElementById('skillFormDesc').value.trim(),
+      scenario: document.getElementById('skillFormScenario').value.trim() || '未设置',
+      scope: document.getElementById('skillFormScope').value,
+      content: document.getElementById('skillFormContent').value.trim()
+    };
+  }
+
+  function saveAs(targetStatus) {
+    var data = readForm();
+    if (!data) { Proto.toast('请填写名称'); return; }
+    if (!data.content && targetStatus === 'enabled') {
+      Proto.toast('建议填写技能内容后再启用');
+    }
+    var saved = Proto.saveSkill(data, targetStatus);
+    closeForm();
+    renderList(saved.id);
+    if (saved._unchanged) {
+      Proto.toast('内容无变更，未创建新版本');
+    } else if (saved._versionBumped) {
+      Proto.toast('已保存新版本 ' + saved.version + '：' + saved.name);
+    } else {
+      Proto.toast(targetStatus === 'enabled' ? '已启用：' + saved.name : '已保存草稿：' + saved.name);
+    }
+  }
+
+  /* ----- 详情抽屉 ----- */
+  function openDetailDrawer(id) {
+    var s = Proto.skillById(id);
+    if (!s) return;
+    var st = Proto.skillStatusLabel(s.status);
+    document.getElementById('sdTitle').textContent = s.name;
+    document.getElementById('sdSub').textContent  = s.version + ' · 更新于 ' + (s.updatedAt || '—');
+
+    var risk = '';
+    if (s.status === 'disabled') {
+      risk = '<div class="sd-risk-banner">该 Skill 已停用，配置页和对话页将无法选择，仅历史绑定保留。</div>';
+    }
+
+    var body =
+      risk +
+      '<div class="sd-meta">' +
+        '<span class="tag ' + st[1] + '">' + st[0] + '</span>' +
+        '<span class="chip">' + escapeHtml(s.category) + '</span>' +
+        '<span class="chip">' + escapeHtml(s.scope) + '</span>' +
+        '<span class="chip">' + s.version + '</span>' +
+      '</div>' +
+      (s.status === 'enabled' ? (
+        '<div class="sd-stat-row">' +
+          '<div><div class="sd-stat-num">12</div><div class="sd-stat-lbl">绑定智能体（个）</div></div>' +
+          '<div><div class="sd-stat-num">86</div><div class="sd-stat-lbl">近 7 日会话使用（次）</div></div>' +
+        '</div>'
+      ) : '') +
+      sdSection('描述', s.prompt) +
+      sdSection('适用场景', s.scenario) +
+      sdSection('技能内容', s.content);
+    document.getElementById('sdBody').innerHTML = body;
+
+    var foot = '';
+    if (s.status === 'draft') {
+      foot = btn('编辑', 'edit') + btn('启用', 'enable', true) + btn('删除', 'delete', false, true);
+    } else if (s.status === 'enabled') {
+      foot = btn('编辑', 'edit') + btn('停用', 'disable') + btn('删除', 'delete', false, true);
+    } else if (s.status === 'disabled') {
+      foot = btn('编辑', 'edit') + btn('重新启用', 'enable', true) + btn('删除', 'delete', false, true);
+    }
+    var footEl = document.getElementById('sdFoot');
+    footEl.innerHTML = foot;
+    footEl.dataset.skillId = id;
+    footEl.querySelectorAll('[data-act]').forEach(function (b) {
+      b.onclick = function () {
+        var a = b.getAttribute('data-act');
+        if (a === 'edit') { closeDetailDrawer(); openForm(id); return; }
+        handleAction(id, a);
+      };
+    });
+
+    detailMask.classList.add('active');
+  }
+  function btn(label, act, primary, danger) {
+    var cls = 'btn ' + (primary ? 'btn-primary' : '') + (danger ? ' btn-danger' : '');
+    return '<button type="button" class="' + cls + '" data-act="' + act + '">' + label + '</button>';
+  }
+  function sdSection(label, val) {
+    return '<div class="sd-section">' +
+      '<div class="sd-section-label">' + label + '</div>' +
+      '<div class="sd-section-content">' + escapeHtml(val || '—') + '</div>' +
+    '</div>';
+  }
+  function closeDetailDrawer() { detailMask.classList.remove('active'); }
+  function refreshDrawerIfOpen(id) {
+    if (!detailMask.classList.contains('active')) return;
+    var foot = document.getElementById('sdFoot');
+    if (foot && foot.dataset.skillId === id) openDetailDrawer(id);
+  }
+  detailMask.addEventListener('click', function (e) {
+    if (e.target === detailMask) closeDetailDrawer();
+  });
+  document.getElementById('skillDetailClose').onclick = closeDetailDrawer;
+
+  /* ----- 导入 modal ----- */
+  function openImport() {
+    importModal.classList.add('active');
+    document.getElementById('skillImportPreview').style.display = 'none';
+    document.getElementById('skillImportNext').disabled = true;
+    importedDraft = null;
+  }
+  function closeImport() { importModal.classList.remove('active'); }
+
+  function previewFile(fileName, extra) {
+    document.getElementById('skillImportPreview').style.display = 'block';
+    document.getElementById('skillImportPreviewMeta').textContent =
+      fileName + (extra ? ' · ' + extra : '') + ' · 已解析';
+    document.getElementById('skillImportNext').disabled = false;
+    importedDraft = Proto.mockParseSkillFile(fileName);
+  }
+
+  function pickImportSource() {
+    var fileInput = document.getElementById('skillImportFile');
+    fileInput.value = '';
+    fileInput.onchange = function (e) {
+      var files = e.target.files;
+      if (!files || !files.length) return;
+      if (files.length === 1) {
+        previewFile(files[0].name);
+        return;
+      }
+      var folderName = (files[0].webkitRelativePath || files[0].name).split('/')[0];
+      previewFile(folderName + '/SKILL.md', files.length + ' 个文件');
+    };
+    fileInput.removeAttribute('webkitdirectory');
+    fileInput.removeAttribute('directory');
+    fileInput.multiple = false;
+    fileInput.setAttribute('accept', '.md,.markdown');
+    fileInput.click();
+  }
+
+  document.getElementById('btnImportSkill').onclick = openImport;
+  document.getElementById('skillImportClose').onclick = closeImport;
+  document.getElementById('skillImportCancel').onclick = closeImport;
+  document.getElementById('skillPickFile').onclick = pickImportSource;
+  document.getElementById('skillImportNext').onclick = function () {
+    if (!importedDraft) return;
+    closeImport();
+    openForm(null, importedDraft);
+  };
+  var dz = document.getElementById('skillDropzone');
+  ['dragenter', 'dragover'].forEach(function (ev) {
+    dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.add('dragover'); });
+  });
+  ['dragleave', 'drop'].forEach(function (ev) {
+    dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.remove('dragover'); });
+  });
+  dz.addEventListener('drop', function (e) {
+    var dt = e.dataTransfer;
+    var files = dt && dt.files;
+    if (!files || !files.length) return;
+    previewFile(files[0].name, files.length > 1 ? files.length + ' 个文件' : '');
+  });
+
+  /* ----- 事件绑定 ----- */
+  [search, category, statusSel].forEach(function (el) {
+    el.oninput = function () { currentPage = 1; renderList(); };
+    el.onchange = function () { currentPage = 1; renderList(); };
+  });
+  document.getElementById('btnCreateSkill').onclick = function () { openForm(); };
+  document.getElementById('skillFormClose').onclick = closeForm;
+  document.getElementById('skillFormCancel').onclick = closeForm;
+  document.getElementById('skillFormSaveDraft').onclick = function () { saveAs('draft'); };
+  document.getElementById('skillFormSaveEnable').onclick = function () { saveAs('enabled'); };
+
+  document.getElementById('skillDeleteClose').onclick = closeDeleteModal;
+  document.getElementById('skillDeleteCancel').onclick = closeDeleteModal;
+  document.getElementById('skillDeleteConfirm').onclick = executeDelete;
+  deleteModal.addEventListener('click', function (e) {
+    if (e.target === deleteModal) closeDeleteModal();
+  });
+
+  formModal.addEventListener('click', function (e) {
+    if (e.target === formModal) closeForm();
+  });
+  importModal.addEventListener('click', function (e) {
+    if (e.target === importModal) closeImport();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (deleteModal.classList.contains('active')) closeDeleteModal();
+    else if (formModal.classList.contains('active')) closeForm();
+    else if (importModal.classList.contains('active')) closeImport();
+    else if (detailMask.classList.contains('active')) closeDetailDrawer();
+  });
+
+  renderList();
+</script>
+</body>
+</html>

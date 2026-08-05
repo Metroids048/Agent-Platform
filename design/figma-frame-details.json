@@ -1,0 +1,815 @@
+[
+  {
+    "id": "243:272",
+    "name": "专家工作台-我的任务",
+    "size": "1440×1139",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 130,
+      "INSTANCE": 1,
+      "VECTOR": 22,
+      "TEXT": 29,
+      "RECTANGLE": 4,
+      "undefined": 56
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:552",
+    "name": "专家工作台-我的任务-进行中的任务",
+    "size": "1440×962",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 108,
+      "INSTANCE": 2,
+      "VECTOR": 24,
+      "TEXT": 33,
+      "RECTANGLE": 4,
+      "LINE": 1,
+      "undefined": 90
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:955",
+    "name": "运营管理-用户反馈",
+    "size": "1440×1300",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 184,
+      "INSTANCE": 2,
+      "VECTOR": 24,
+      "TEXT": 60,
+      "RECTANGLE": 4,
+      "undefined": 400
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:1770",
+    "name": "运营/管理分派任务-指定团队",
+    "size": "944×384",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 62,
+      "TEXT": 9,
+      "VECTOR": 2,
+      "ELLIPSE": 5,
+      "undefined": 28
+    },
+    "textSamples": [
+      "指定团队处理",
+      "当前反馈问题已自动归因，由模型团队处理",
+      "处理状态：",
+      "待处理",
+      "指定团队"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:1892",
+    "name": "运营/管理分派任务-指定专家",
+    "size": "992×808",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 120,
+      "TEXT": 11,
+      "VECTOR": 2,
+      "undefined": 61,
+      "LINE": 1
+    },
+    "textSamples": [
+      "指定专家处理",
+      "当前反馈问题已自动归因，由模型团队处理",
+      "处理状态：",
+      "待处理",
+      "指定团队"
+    ],
+    "childCount": 4
+  },
+  {
+    "id": "243:2109",
+    "name": "专家工作台-我的任务-进行中的任务-做任务",
+    "size": "1440×1126",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 120,
+      "INSTANCE": 1,
+      "VECTOR": 25,
+      "TEXT": 31,
+      "RECTANGLE": 4,
+      "LINE": 1,
+      "undefined": 24
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:2345",
+    "name": "运营管理-专家工作台-我的任务-进行中的任务-做任务-查看上下文",
+    "size": "1440×1126",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 113,
+      "INSTANCE": 1,
+      "VECTOR": 25,
+      "TEXT": 31,
+      "RECTANGLE": 4,
+      "LINE": 1,
+      "undefined": 19
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:2555",
+    "name": "专家工作台-专家社区-任务池（公共、紧急）",
+    "size": "1440×938",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 108,
+      "INSTANCE": 2,
+      "VECTOR": 24,
+      "TEXT": 33,
+      "RECTANGLE": 4,
+      "LINE": 1,
+      "undefined": 90
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:2964",
+    "name": "专家操作",
+    "size": "136×88",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 4,
+      "TEXT": 3
+    },
+    "textSamples": [
+      "分派任务",
+      "查看",
+      "领取任务"
+    ],
+    "childCount": 3
+  },
+  {
+    "id": "243:2971",
+    "name": "运营操作",
+    "size": "136×132",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 5,
+      "TEXT": 4
+    },
+    "textSamples": [
+      "分派任务",
+      "查看",
+      "指定专家",
+      "审核"
+    ],
+    "childCount": 4
+  },
+  {
+    "id": "243:2980",
+    "name": "Frame 25",
+    "size": "112×104",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 3,
+      "TEXT": 2
+    },
+    "textSamples": [
+      "指定团队",
+      "指定专家"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:2986",
+    "name": "申请延时",
+    "size": "848×378",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 20,
+      "TEXT": 10,
+      "LINE": 1,
+      "VECTOR": 4
+    },
+    "textSamples": [
+      "权限与开发者管理",
+      "申请延时",
+      "截止时间*",
+      "2026-05-31",
+      "操作对象类型"
+    ],
+    "childCount": 5
+  },
+  {
+    "id": "243:3021",
+    "name": "专家操作",
+    "size": "122×88",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 4,
+      "TEXT": 3
+    },
+    "textSamples": [
+      "分派任务",
+      "查看",
+      "做任务"
+    ],
+    "childCount": 3
+  },
+  {
+    "id": "243:3028",
+    "name": "消息中心-公告",
+    "size": "640×836",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 54,
+      "VECTOR": 8,
+      "TEXT": 26,
+      "RECTANGLE": 5
+    },
+    "textSamples": [
+      "消息中心",
+      "公告",
+      "待办",
+      "紧急",
+      "Aoqin AI 核心引擎 3.0 版本迁移预告"
+    ],
+    "childCount": 6
+  },
+  {
+    "id": "243:3121",
+    "name": "（运营）消息中心-待办",
+    "size": "640×836",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 69,
+      "VECTOR": 2,
+      "TEXT": 9,
+      "RECTANGLE": 6,
+      "undefined": 34
+    },
+    "textSamples": [
+      "消息中心",
+      "公告",
+      "待办",
+      "申请",
+      "专家任务"
+    ],
+    "childCount": 5
+  },
+  {
+    "id": "243:3270",
+    "name": "运营管理-权限与开发者管理-开发者管理",
+    "size": "1440×946",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 221,
+      "INSTANCE": 2,
+      "VECTOR": 22,
+      "TEXT": 45,
+      "RECTANGLE": 4,
+      "undefined": 145
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:3857",
+    "name": "运营管理-权限与开发者管理-开发者管理-编辑",
+    "size": "1440×1662",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 116,
+      "INSTANCE": 1,
+      "VECTOR": 22,
+      "TEXT": 41,
+      "RECTANGLE": 4,
+      "LINE": 2,
+      "undefined": 18
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:4645",
+    "name": "运营管理-权限与开发者管理-开发者管理-查看",
+    "size": "1440×1178",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 118,
+      "INSTANCE": 1,
+      "VECTOR": 22,
+      "TEXT": 41,
+      "RECTANGLE": 4,
+      "LINE": 3,
+      "undefined": 19
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:4990",
+    "name": "运营管理-权限与开发者管理-开发者管理-新增开发者账号",
+    "size": "1440×1530",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 115,
+      "INSTANCE": 1,
+      "VECTOR": 22,
+      "TEXT": 41,
+      "RECTANGLE": 4,
+      "LINE": 2,
+      "undefined": 14
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:5689",
+    "name": "普通管理只能查看",
+    "size": "77×484",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 13,
+      "TEXT": 21
+    },
+    "textSamples": [
+      "状态",
+      "查看",
+      "删除",
+      "查看",
+      "删除"
+    ],
+    "childCount": 11
+  },
+  {
+    "id": "243:5723",
+    "name": "删除确认",
+    "size": "294×193",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 11,
+      "TEXT": 5,
+      "LINE": 1,
+      "VECTOR": 2
+    },
+    "textSamples": [
+      "权限与开发者管理",
+      "删除确认",
+      "开发者账号删除后无法恢复，请确认是否删除？",
+      "取消",
+      "确定"
+    ],
+    "childCount": 3
+  },
+  {
+    "id": "243:5742",
+    "name": "Peak Indicator (HTML positioned relative to SVG point 650,30)",
+    "size": "220×32",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 2,
+      "RECTANGLE": 2,
+      "TEXT": 1
+    },
+    "textSamples": [
+      "如果已配置权限，应用角色配置会覆盖旧数据"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:5747",
+    "name": "（运营视角）专家工作台-专家社区-查看任务详情",
+    "size": "1440×1067",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 112,
+      "INSTANCE": 1,
+      "VECTOR": 25,
+      "TEXT": 32,
+      "RECTANGLE": 7,
+      "LINE": 1,
+      "undefined": 39
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:6026",
+    "name": "多个专家处理",
+    "size": "1136×500",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 80,
+      "RECTANGLE": 10,
+      "TEXT": 32,
+      "VECTOR": 14
+    },
+    "textSamples": [
+      "任务流转图",
+      "用户反馈",
+      "陈志远",
+      "05-20 14:30",
+      "创建任务"
+    ],
+    "childCount": 3
+  },
+  {
+    "id": "243:6162",
+    "name": "修改截止时间",
+    "size": "492×104",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 14,
+      "VECTOR": 5,
+      "TEXT": 5
+    },
+    "textSamples": [
+      "截止时间",
+      "截止时间*",
+      "P0（高）",
+      "操作对象类型",
+      "MacBook Pro 14‘’"
+    ],
+    "childCount": 3
+  },
+  {
+    "id": "243:6186",
+    "name": "运营管理-权限与开发者管理-组织架构",
+    "size": "1440×942",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 129,
+      "INSTANCE": 2,
+      "VECTOR": 22,
+      "TEXT": 37,
+      "RECTANGLE": 4,
+      "undefined": 127
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:6859",
+    "name": "用户反馈-查看详情",
+    "size": "1440×1245",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 133,
+      "INSTANCE": 1,
+      "VECTOR": 22,
+      "TEXT": 30,
+      "RECTANGLE": 7,
+      "undefined": 40
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:7114",
+    "name": "（个人）处理反馈弹窗",
+    "size": "519×296",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 16,
+      "TEXT": 8,
+      "VECTOR": 3,
+      "ELLIPSE": 2
+    },
+    "textSamples": [
+      "处理反馈",
+      "处理状态",
+      "已完成",
+      "无需处理",
+      "专家处理"
+    ],
+    "childCount": 4
+  },
+  {
+    "id": "243:7143",
+    "name": "（团队负责人）处理反馈弹窗",
+    "size": "647×296",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 17,
+      "TEXT": 9,
+      "VECTOR": 3,
+      "ELLIPSE": 3
+    },
+    "textSamples": [
+      "处理反馈",
+      "处理状态",
+      "已完成",
+      "无需处理",
+      "成员处理"
+    ],
+    "childCount": 4
+  },
+  {
+    "id": "243:7175",
+    "name": "（运营）处理反馈弹窗",
+    "size": "647×296",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 17,
+      "TEXT": 9,
+      "VECTOR": 3,
+      "ELLIPSE": 3
+    },
+    "textSamples": [
+      "处理反馈",
+      "处理状态",
+      "已完成",
+      "无需处理",
+      "团队处理"
+    ],
+    "childCount": 4
+  },
+  {
+    "id": "243:7207",
+    "name": "（团队负责人）处理反馈弹窗",
+    "size": "647×264",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 23,
+      "TEXT": 12,
+      "VECTOR": 5,
+      "ELLIPSE": 6
+    },
+    "textSamples": [
+      "处理反馈",
+      "处理状态",
+      "已完成",
+      "无需处理",
+      "成员处理"
+    ],
+    "childCount": 4
+  },
+  {
+    "id": "243:7253",
+    "name": "（运营）处理反馈弹窗",
+    "size": "647×264",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 23,
+      "TEXT": 12,
+      "VECTOR": 5,
+      "ELLIPSE": 6
+    },
+    "textSamples": [
+      "处理反馈",
+      "处理状态",
+      "已完成",
+      "无需处理",
+      "团队处理"
+    ],
+    "childCount": 4
+  },
+  {
+    "id": "243:7299",
+    "name": "（运营）处理反馈弹窗",
+    "size": "928×740",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 147,
+      "TEXT": 40,
+      "VECTOR": 8,
+      "ELLIPSE": 3,
+      "undefined": 22
+    },
+    "textSamples": [
+      "处理反馈",
+      "处理状态",
+      "已完成",
+      "无需处理",
+      "团队处理"
+    ],
+    "childCount": 5
+  },
+  {
+    "id": "243:7519",
+    "name": "运营审核",
+    "size": "211×146",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 7,
+      "VECTOR": 1,
+      "TEXT": 2
+    },
+    "textSamples": [
+      "运营审核",
+      "审核"
+    ],
+    "childCount": 3
+  },
+  {
+    "id": "243:7529",
+    "name": "审核专家任务",
+    "size": "1440×1186",
+    "isModal": false,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 125,
+      "INSTANCE": 1,
+      "VECTOR": 25,
+      "TEXT": 33,
+      "RECTANGLE": 4,
+      "LINE": 1,
+      "undefined": 24
+    },
+    "textSamples": [
+      "敖钦 AI",
+      "企业级中台",
+      "智能编码伙伴",
+      "资源服务中心",
+      "模型服务"
+    ],
+    "childCount": 2
+  },
+  {
+    "id": "243:7772",
+    "name": "退回理由：点击【退回】弹窗",
+    "size": "848×378",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 20,
+      "TEXT": 10,
+      "LINE": 1,
+      "VECTOR": 4
+    },
+    "textSamples": [
+      "权限与开发者管理",
+      "退回专家建议",
+      "截止时间*",
+      "2026-05-31",
+      "操作对象类型"
+    ],
+    "childCount": 5
+  },
+  {
+    "id": "243:7807",
+    "name": "（专家）消息中心-待办",
+    "size": "640×836",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 60,
+      "VECTOR": 2,
+      "TEXT": 5,
+      "RECTANGLE": 4,
+      "undefined": 35
+    },
+    "textSamples": [
+      "消息中心",
+      "公告",
+      "待办",
+      "申请",
+      "专家任务"
+    ],
+    "childCount": 5
+  },
+  {
+    "id": "243:7948",
+    "name": "（团队负责人/团队个人）消息中心-待办",
+    "size": "640×836",
+    "isModal": true,
+    "layoutMode": "VERTICAL",
+    "nodeTypes": {
+      "FRAME": 60,
+      "VECTOR": 2,
+      "TEXT": 5,
+      "RECTANGLE": 4,
+      "undefined": 35
+    },
+    "textSamples": [
+      "消息中心",
+      "公告",
+      "待办",
+      "申请",
+      "专家任务"
+    ],
+    "childCount": 5
+  }
+]

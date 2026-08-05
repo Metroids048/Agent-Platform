@@ -1,0 +1,18 @@
+# Skills 页面 Figma 捕获清单
+# 前置：在 prototype 目录运行 python -m http.server 8766
+# 然后在浏览器依次打开下列 URL（或运行 scripts/open-figma-captures.ps1）
+
+$base = "http://127.0.0.1:8766"
+$delay = "figmadelay=3000"
+$ep = "https://mcp.figma.com/mcp/capture"
+
+@(
+  @{ page = "10-skills-management.html?figma=1"; id = "fe610c27-c057-41a3-842f-5829bb45e12f"; frame = "62:312" },
+  @{ page = "05-agent-detail.html?figma=1"; id = "0e2ba0ab-3af6-4ca9-a7bb-3b0613ac0131"; frame = "62:318" },
+  @{ page = "09-user-chat.html?figma=1"; id = "1a400784-1ec0-40c4-87d5-e1b7f3aae698"; frame = "62:324" },
+  @{ page = "08-agent-monitor.html?figma=1"; id = "0938e380-eb2f-4594-b5cf-86c76d2aaf43"; frame = "62:330" },
+  @{ page = "07-pick-resource.html?pick=skills&figma=1"; id = "3e8e2451-a900-4f7a-9d67-6018a93c99c3"; frame = "62:336" }
+) | ForEach-Object {
+  $endpoint = [uri]::EscapeDataString("$ep/$($_.id)/submit")
+  "$base/$($_.page)#figmacapture=$($_.id)&figmaendpoint=$endpoint&$delay -> Frame $($_.frame)"
+}

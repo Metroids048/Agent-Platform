@@ -1,0 +1,22 @@
+flowchart TB
+  User["业务用户 / 专家 / 运营 / 开发"] --> Portal["海能门户与平台入口"]
+  Portal --> Ops["运营管理平台"]
+  Portal --> Dev["智能体开发平台"]
+  Ops --> AgentGov["智能体运营与发布审核"]
+  Ops --> Feedback["用户反馈与专家工作台"]
+  Ops --> Dash["业务 / 模型 / 资源 / 画像看板"]
+  Ops --> Permission["权限与开发者管理"]
+  Dev --> AgentBuild["智能体配置"]
+  Dev --> Chain["任务链 / 工具 / MCP / Skills"]
+  Dev --> KnowledgeUse["知识库挂载与调试"]
+  AgentBuild --> HN["海能AI能力底座"]
+  Chain --> HN
+  KnowledgeUse --> HN
+  HN --> Model["模型接口与推理服务"]
+  HN --> Compute["智算训练与部署服务"]
+  HN --> KB["企业知识库与知识检索"]
+  HN --> IAM["统一认证与计量"]
+  Model --> Dash
+  Compute --> Dash
+  KB --> Feedback
+  IAM --> Permission

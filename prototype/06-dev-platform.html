@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>智能体开发 · 敖钦 AI</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-brand">
+      <div class="topbar-logo" style="background:linear-gradient(135deg,#087f5b,#20c997);">D</div>
+      <div class="topbar-brand-text">
+        <strong>智能体开发</strong>
+        <span>低代码编排与调试</span>
+      </div>
+    </div>
+    <div class="topbar-modules">
+      <span>智能编码伙伴</span>
+      <span>资源服务中心</span>
+      <span>模型服务</span>
+      <a href="06-dev-platform.html" class="nav-dev active" data-nav-dev>智能体开发</a>
+      <span>知识中心</span>
+      <a href="index.html" data-nav-ops>运营平台</a>
+    </div>
+    <div class="topbar-right">
+      <input class="topbar-search" placeholder="搜索智能体、工具、知识库...">
+      <button class="icon-btn">🔔</button>
+      <div class="avatar"></div>
+    </div>
+  </div>
+</header>
+
+<div class="dev-layout">
+  <aside class="dev-side">
+    <a href="06-dev-platform.html" class="active">🤖 我的智能体</a>
+    <a href="06-dev-resources.html?res=tools">🔧 工具 / MCP</a>
+    <a href="10-skills-management.html">🧩 Skills 管理</a>
+    <a href="06-dev-resources.html?res=knowledge">📚 知识库</a>
+    <a href="06-dev-resources.html?res=workflow">🔄 工作流</a>
+    <a href="06-dev-resources.html?res=models">🧠 模型</a>
+    <div style="margin-top:24px;padding:12px;border-top:1px solid var(--border);font-size:12px;color:var(--text-muted);">
+      与运营平台账号一致 · SSO 已登录
+    </div>
+  </aside>
+
+  <main class="dev-main">
+    <div class="page-header" style="margin-bottom:20px;">
+      <div>
+        <h1>我的智能体</h1>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">在此编排模型、知识库、工具；运营平台负责上架、可见范围与审核。</p>
+      </div>
+      <a href="04-create-modal.html" class="btn btn-primary">＋ 新建智能体</a>
+    </div>
+
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px;">
+      <div class="filter-bar" style="padding:12px 16px;margin:0;border-bottom:1px solid var(--border);">
+        <input class="filter-search" placeholder="搜索名称..." style="max-width:240px;">
+        <div class="filter-pills" style="margin-left:12px;">
+          <button class="active">全部</button>
+          <button>开发中</button>
+          <button>已发布</button>
+        </div>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>智能体</th>
+            <th>类型</th>
+            <th>关联资源</th>
+            <th>运营状态</th>
+            <th>更新时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div class="ic ic-blue" style="width:32px;height:32px;border-radius:8px;">🤖</div>
+                <div>
+                  <div style="font-weight:500;" data-agent-name>客服助手</div>
+                  <div style="font-size:11px;color:var(--text-muted);">问答型 · 开发中</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="tag tag-info">问答型</span></td>
+            <td style="font-size:12px;color:var(--text-muted);">模型 1 · 知识库 2 · 工具 2 · Skills 2</td>
+            <td><span class="tag tag-dev">开发中</span></td>
+            <td style="color:var(--text-muted);">2026-05-27 14:34</td>
+            <td>
+              <a href="06-dev-editor.html" class="btn btn-sm dev-edit-link" style="color:#087f5b;border-color:#087f5b;">编排</a>
+              <a href="05-agent-detail.html" class="btn btn-sm ops-config-link" style="margin-left:4px;">运营配置</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div class="ic ic-purple" style="width:32px;height:32px;border-radius:8px;">📄</div>
+                <div>
+                  <div style="font-weight:500;">合同审查师</div>
+                  <div style="font-size:11px;color:var(--text-muted);">agt_002</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="tag tag-warn">任务型</span></td>
+            <td style="font-size:12px;color:var(--text-muted);">模型 1 · 知识库 1 · 工具 3 · Skills 1</td>
+            <td><span class="tag tag-published">已上架</span></td>
+            <td style="color:var(--text-muted);">2026-05-25 09:15</td>
+            <td>
+              <a href="06-dev-editor.html?id=agt_002&name=%E5%90%88%E5%90%8C%E5%AE%A1%E6%9F%A5%E5%B8%88" class="btn btn-sm dev-edit-link" data-fixed-link="1" style="color:#087f5b;border-color:#087f5b;">编排</a>
+              <a href="05-agent-detail.html?id=agt_002&name=%E5%90%88%E5%90%8C%E5%AE%A1%E6%9F%A5%E5%B8%88&type=task" class="btn btn-sm ops-config-link" data-fixed-link="1" style="margin-left:4px;">运营配置</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:13px;color:var(--text-muted);">编排、MCP、工作流与 Skills 在智能体开发平台维护；智能体可引用已授权的启用版本，运营平台负责审核与治理引用。</p>
+  </main>
+</div>
+
+<script src="assets/proto.js"></script>
+<script>
+  Proto.initTopbar('dev');
+  Proto.applyAgentHeader();
+  Proto.wireDevPlatformRows();
+</script>
+</body>
+</html>

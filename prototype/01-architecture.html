@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>双平台镜像架构图 · 敖钦 AI 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-brand">
+        <div class="topbar-logo">A</div>
+        <div class="topbar-brand-text">
+          <strong>敖钦 AI</strong>
+          <span>企业级中台</span>
+        </div>
+      </div>
+      <div class="topbar-modules">
+        <span>智能编码伙伴</span>
+        <span>资源服务中心</span>
+        <span>模型服务</span>
+      <a href="06-dev-platform.html" data-nav-dev>智能体开发</a>
+      <span>知识中心</span>
+      <a href="index.html" data-nav-ops>运营平台</a>
+      </div>
+      <div class="topbar-right">
+        <input class="topbar-search" placeholder="搜索模型或任务...">
+        <button class="icon-btn" title="通知">🔔</button>
+        <div class="avatar"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-frame">
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-title">数据</div>
+          <a href="#"><span class="icon">💬</span> 用户反馈</a>
+          <a href="#"><span class="icon">👥</span> 专家工作台</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">分析</div>
+          <a href="#"><span class="icon">📊</span> 业务看板</a>
+          <a href="#"><span class="icon">🧠</span> 模型看板</a>
+          <a href="#"><span class="icon">📈</span> 资源看板</a>
+          <a href="#"><span class="icon">👤</span> 用户与智能体画像</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">管理</div>
+          <a href="#"><span class="icon">⚙️</span> 模型运营</a>
+          <a href="index.html"><span class="icon">📦</span> 智能体运营</a>
+          <a href="#"><span class="icon">💰</span> 资源与成本管理</a>
+          <a href="#"><span class="icon">🛡️</span> 权限与开发者管理</a>
+        </div>
+        <div class="sidebar-footer" style="margin-top:auto;padding-top:16px;border-top:1px solid var(--border);">
+          <div class="sidebar-title">设计参考</div>
+          <a href="01-architecture.html" class="active"><span class="icon">🧭</span> 双平台架构图</a>
+          <a href="02-sequence-create.html"><span class="icon">🔁</span> 创建时序图</a>
+        </div>
+      </aside>
+
+    <main class="main">
+      <div class="breadcrumb">
+        <a href="index.html">原型总览</a>
+        <span class="sep">›</span>
+        <span class="current">1. 双平台镜像架构图</span>
+      </div>
+      <div class="page-header">
+        <div>
+          <h1>双平台协作架构 — 运营平台 ⇄ 开发平台</h1>
+          <div style="margin-top:6px;color:var(--text-secondary);font-size:13px;">
+            运营平台管状态与治理，开发平台管实际运行；5 个协作环节把两边串起来。
+          </div>
+        </div>
+        <div>
+          <a href="assets/architecture.svg" download class="btn">⬇ 下载 SVG（拖入 Figma）</a>
+        </div>
+      </div>
+
+      <div class="svg-container">
+        <object data="assets/architecture.svg" type="image/svg+xml" style="width:1240px; max-width:100%;"></object>
+      </div>
+
+      <div class="card" style="margin-top:20px;">
+        <h3 style="font-size:15px; margin-bottom:12px;">📌 设计要点</h3>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; font-size:13px;">
+          <div>
+            <div style="font-weight:600; color:var(--primary); margin-bottom:6px;">运营平台（本系统）</div>
+            <ul style="padding-left:18px; color:var(--text-secondary); line-height:1.8;">
+              <li>管状态、审批、版本、两平台关联</li>
+              <li>智能体是一等公民，资源只做引用</li>
+              <li>智能体档案 = 业务侧全部记录</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-weight:600; color:#52C41A; margin-bottom:6px;">智能体开发平台</div>
+            <ul style="padding-left:18px; color:var(--text-secondary); line-height:1.8;">
+              <li>模型 / 工具 / 知识库 / 工作流</li>
+              <li>实际运行引擎 + 超时与轮次保护</li>
+              <li>运行日志 = 实际运行数据</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-weight:600; color:#722ED1; margin-bottom:6px;">敖钦平台基座</div>
+            <ul style="padding-left:18px; color:var(--text-secondary); line-height:1.8;">
+              <li>算力 / 模型推理路由 / 企业知识 API</li>
+              <li>Token 计量与 GPU 监控</li>
+              <li>应用层经 <code>platform-api.js</code> 调用，不直接调度节点</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <h3 style="font-size:15px; margin-bottom:12px;">敖钦基座 + 应用平台分层</h3>
+        <table style="width:100%;font-size:13px;border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;font-weight:600;">用户门户</td><td style="padding:8px;"><a href="09-user-chat.html">敖钦对话入口</a> — 档位模型、会话 Skills</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;font-weight:600;">应用运行时</td><td style="padding:8px;">组装 prompt + Skills → 敖钦推理</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;font-weight:600;">运营看板</td><td style="padding:8px;"><a href="14-business-dashboard.html">业务</a> · <a href="14-model-dashboard.html">模型</a> · <a href="14-resource-dashboard.html">资源</a> · <a href="14-user-agent-profile.html">画像</a></td></tr>
+          <tr><td style="padding:8px;font-weight:600;">架构文档</td><td style="padding:8px;">docs/architecture/2026-06-08-ops-panorama.md</td></tr>
+        </table>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <h3 style="font-size:15px; margin-bottom:12px;">🧪 原型页面映射</h3>
+        <table style="width:100%;font-size:13px;border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">智能体中心 / 编辑器 / 沙箱</td><td style="padding:8px;"><a href="index.html">列表</a> · <a href="05-agent-detail.html">配置</a></td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">审批上架 / 下架治理</td><td style="padding:8px;"><a href="audit-workbench.html">审核</a> · 配置页下架</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">运行监控 / 对话入口</td><td style="padding:8px;"><a href="05-agent-detail.html?tab=monitor">运行数据</a> · <a href="09-user-chat.html">对话</a></td></tr>
+          <tr><td style="padding:8px;">开发平台资源与引擎</td><td style="padding:8px;"><a href="06-dev-platform.html">DEV 首页</a></td></tr>
+        </table>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <h3 style="font-size:15px; margin-bottom:12px;">🔗 5 个协作环节</h3>
+        <table style="width:100%; font-size:13px; border-collapse:collapse;">
+          <thead>
+            <tr style="background:var(--bg-page); color:var(--text-secondary);">
+              <th style="padding:8px 12px; text-align:left;">#</th>
+              <th style="padding:8px 12px; text-align:left;">做什么</th>
+              <th style="padding:8px 12px; text-align:left;">什么时候发生</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 12px;">①</td>
+              <td style="padding:10px 12px;">同步创建智能体</td>
+              <td style="padding:10px 12px;">用户点「确定」创建时</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 12px;">②</td>
+              <td style="padding:10px 12px;">获取可用资源</td>
+              <td style="padding:10px 12px;">进入编辑器，选模型/工具/知识库时</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 12px;">③</td>
+              <td style="padding:10px 12px;">同步配置</td>
+              <td style="padding:10px 12px;">用户每次保存草稿时</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 12px;">④</td>
+              <td style="padding:10px 12px;">发起对话</td>
+              <td style="padding:10px 12px;">沙箱试对话，或用户正式使用时</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;">⑤</td>
+              <td style="padding:10px 12px;">回传运行数据</td>
+              <td style="padding:10px 12px;">监控看板需要展示调用量、用量时</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    </div>
+  </div>
+<script src="assets/proto.js"></script>
+<script>Proto.initTopbar('ops');</script>
+</body>
+</html>

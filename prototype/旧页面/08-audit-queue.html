@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>审核工作台（v1.0 归档）· 运营平台</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-ops-module="audit" data-ops-page="旧页面/08-audit-queue.html">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+  <aside class="sidebar"></aside>
+  <main class="main">
+    <div class="page-header">
+      <div>
+        <h1>审核工作台</h1>
+        <p>v1.0 审核队列（归档）。当前默认：<a href="../audit-workbench.html">v1.1 审核工作台</a></p>
+      </div>
+    </div>
+    <div class="audit-queue-summary" id="auditQueueSummary">
+      <span>待审核 <strong id="auditPendingCount">0</strong> 项</span>
+      <span>今日已通过 <strong id="auditApprovedToday">0</strong> 项</span>
+      <a href="../08-audit-expert.html" class="btn btn-sm">专家任务审核 →</a>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>智能体</th><th>类型</th><th>来源</th><th>申请人</th><th>提交时间</th><th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="auditQueueBody"></tbody>
+      </table>
+      <div class="empty" id="auditEmpty" style="display:none;padding:32px;text-align:center;color:var(--text-muted);">
+        暂无待审核项 · 在详情页发布候选版本后会出现在此
+      </div>
+    </div>
+  </main>
+</div></div>
+<script src="../assets/proto.js"></script>
+<script src="../assets/ops-platform-shell.js"></script>
+<script src="../assets/ops-message-center.js"></script>
+<script>
+  if (window.OpsShell && OpsShell.initShell) {
+    OpsShell.initShell({ module: 'audit', activePage: '旧页面/08-audit-queue.html' });
+  }
+  Proto.initTopbar('audit');
+  Proto.ensureDemoAuditQueue();
+
+  function typeLabel(t) {
+    var m = { qa: '问答型', task: '任务型', flow: '流程型', multi: '多智能体' };
+    return m[t] || t || '—';
+  }
+
+  function renderQueue() {
+    var list = Proto.getAuditQueue();
+    document.getElementById('auditPendingCount').textContent = String(list.length);
+    document.getElementById('auditApprovedToday').textContent = String(Proto.getAuditApprovedToday());
+    var tbody = document.getElementById('auditQueueBody');
+    var empty = document.getElementById('auditEmpty');
+    if (!list.length) {
+      tbody.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    tbody.innerHTML = list.map(function (item) {
+      var src = item.source === 'third_party' ? '第三方' : '平台创建';
+      return '<tr><td><strong>' + (item.name || item.id) + '</strong></td>' +
+        '<td>' + typeLabel(item.type) + '</td><td>' + src + '</td>' +
+        '<td>' + (item.applicant || '张三') + '</td><td>' + (item.at || '—') + '</td>' +
+        '<td><a class="btn btn-sm btn-primary" href="' + Proto.hrefAuditReview(item) + '">去审核</a></td></tr>';
+    }).join('');
+  }
+  renderQueue();
+</script>
+</body>
+</html>

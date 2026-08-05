@@ -1,0 +1,12 @@
+#!/bin/sh
+# Git pre-commit: run verify-all when prototype shared JS or HTML changes.
+# Install: git config core.hooksPath .githooks
+
+ROOT="$(git rev-parse --show-toplevel)"
+STAGED="$(git diff --cached --name-only)"
+
+echo "$STAGED" | grep -qE '^prototype/assets/.*\.js$|^prototype/.*\.html$' || exit 0
+
+echo "prototype changed — running verify-all..."
+node "$ROOT/prototype/scripts/verify-all.js" || exit 1
+exit 0

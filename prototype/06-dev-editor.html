@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>编排 · 智能体开发</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="dev-editor-body">
+
+<div class="editor-top-bar dev-editor-bar">
+  <div class="left">
+    <span class="title" data-agent-name>客服助手</span>
+    <span class="draft-badge">草稿</span>
+  </div>
+  <div class="right">
+    <span class="dev-last-modified" id="devLastModified">最后修改时间: —</span>
+    <a href="05-agent-detail.html" class="dev-back-ops" id="devBackOps">返回运营平台</a>
+    <button type="button" class="dev-icon-btn" id="btnHistory" title="版本记录">🕐</button>
+    <button type="button" class="dev-icon-btn" id="btnSave" title="保存">💾</button>
+    <button type="button" class="btn btn-primary btn-sm" id="btnPublish" onclick="openPublishModal()">发布</button>
+  </div>
+</div>
+
+<div class="dev-editor dev-editor-page dev-editor-p2" id="devEditorRoot">
+  <div class="dev-col">
+    <div class="dev-col-header dev-col-header-p2"><span class="dev-col-title">💡 智能体画像</span></div>
+    <div class="dev-col-body dev-col-persona">
+      <textarea class="textarea persona-textarea" id="promptText" placeholder="在此处填入固定 Prompt 以引导模型对话方向，支持使用 {{变量}} 引用输入输出配置中的变量…">企业产品咨询客服助手，专注于解答产品使用问题、处理售后咨询、创建工单。语气友好专业，无法回答时引导转人工。</textarea>
+    </div>
+  </div>
+  <div class="dev-col dev-col-core">
+    <div class="dev-col-header dev-col-header-p2"><span class="dev-col-title">智能体核心配置</span></div>
+    <div class="dev-col-body core-config-scroll" id="coreConfigRoot">
+      <div class="core-config">
+        <div class="core-section">
+          <div class="core-section-head" onclick="EditorShell.toggleCore(this)"><span class="core-chevron">▼</span><span class="core-title">模型配置</span></div>
+          <div class="core-section-body">
+            <div class="core-field"><label>模型</label>
+              <div class="core-select-wrap"><select class="select core-select"><option selected>GPT-4o</option><option>GPT-4o mini</option><option>Claude 3.5</option></select>
+              <a href="06-dev-resources.html?res=models" class="core-jump" title="添加或管理" data-dev-res="models"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></div>
+            </div>
+            <div class="core-field"><label>生成多样性</label>
+              <div class="segmented core-seg"><button class="active" type="button">精确模式</button><button type="button">平衡模式</button><button type="button">创意模式</button><button type="button">自定义</button></div>
+            </div>
+            <div class="core-field core-slider"><label>随机性</label><input type="range" value="30"><input class="num-input" value="0.3"></div>
+            <div class="core-subhead">输入/输出</div>
+            <div class="core-field core-slider"><label>携带上下文轮数</label><input type="range" value="50"><input class="num-input" value="5"></div>
+            <div class="core-field core-slider"><label>最大回复长度</label><input type="range" value="60"><input class="num-input" value="1024"></div>
+            <div class="core-subhead">默认指令</div>
+            <div class="toggle-row"><span class="lbl">当前时间</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+          </div>
+        </div>
+        <div class="core-section">
+          <div class="core-section-head" onclick="EditorShell.toggleCore(this)"><span class="core-chevron">▼</span><span class="core-title">输入/输出配置</span></div>
+          <div class="core-section-body">
+            <div class="core-row-link"><span>变量配置</span><span class="core-row-actions"><button type="button" class="core-icon-btn" title="添加变量" onclick="Proto.toast('请在开发平台添加变量')">+</button><a href="06-dev-resources.html?res=tools" class="core-jump" title="添加或管理" data-dev-res="tools"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></span></div>
+            <div class="core-row-link"><span>结构化输出</span><span class="core-row-actions"><label class="switch switch-sm"><input type="checkbox"><span class="slider"></span></label><a href="06-dev-resources.html?res=tools" class="core-jump" title="添加或管理" data-dev-res="tools"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></span></div>
+          </div>
+        </div>
+        <div class="core-section">
+          <div class="core-section-head" onclick="EditorShell.toggleCore(this)"><span class="core-chevron">▼</span><span class="core-title">能力配置</span></div>
+          <div class="core-section-body">
+            <div class="core-row-link"><span>工具调用</span><span class="core-row-actions"><a href="06-dev-resources.html?res=tools" class="core-jump" title="添加或管理" data-dev-res="tools"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></span></div>
+            <div class="core-row-link"><span>工作流调用</span><span class="core-row-actions"><button type="button" class="core-icon-btn" title="添加工作流" onclick="Proto.toast('请在开发平台添加工作流')">+</button><a href="06-dev-resources.html?res=workflow" class="core-jump" title="添加或管理" data-dev-res="workflow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></span></div>
+            <div class="core-row-link"><span>MCP 服务</span><span class="core-row-actions"><a href="06-dev-resources.html?res=tools" class="core-jump" title="添加或管理" data-dev-res="tools"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></span></div>
+            <div class="core-row-link"><span>Skills</span><span class="core-row-actions"><button type="button" class="core-icon-btn" title="选择 Skills" data-action="open-skill-bind" onclick="window.Proto&&Proto.openSkillBindModal()">+</button><a href="10-skills-management.html" class="core-jump" title="新增/管理 Skill" data-dev-res="skills"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></span></div>
+            <div class="core-tags" data-skill-bindings></div>
+          </div>
+        </div>
+        <div class="core-section">
+          <div class="core-section-head" onclick="EditorShell.toggleCore(this)"><span class="core-chevron">▼</span><span class="core-title">知识库配置</span></div>
+          <div class="core-section-body">
+            <div class="core-row-link"><span>引用知识库</span><span class="core-row-actions"><a href="06-dev-resources.html?res=knowledge" class="core-jump" title="添加或管理" data-dev-res="knowledge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></span></div>
+            <div class="core-tags"><span class="core-tag">产品使用手册</span><span class="core-tag">常见问题 FAQ</span></div>
+          </div>
+        </div>
+        <div class="core-section collapsed">
+          <div class="core-section-head" onclick="EditorShell.toggleCore(this)"><span class="core-chevron">▼</span><span class="core-title">多智能体协作</span></div>
+          <div class="core-section-body">
+            <div class="core-row-link"><span>智能体调用</span><span class="core-row-actions"><a href="06-dev-resources.html?res=workflow" class="core-jump" title="添加或管理" data-dev-res="workflow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dev-col dev-col-preview">
+    <div class="dev-col-header dev-col-header-p2 dev-col-header-split">
+      <span class="dev-col-title">预览与调试</span>
+      <button type="button" class="dev-col-refresh" id="debugRefresh" title="清空对话">↻</button>
+    </div>
+    <div class="dev-col-body debug-panel debug-panel-p2">
+      <div id="debugMsgs" class="debug-msgs">
+        <div class="debug-empty debug-empty-p2">
+          <div class="debug-empty-illus" aria-hidden="true"></div>
+          <div>暂无内容</div>
+        </div>
+      </div>
+      <div class="debug-composer-p2">
+        <button type="button" class="debug-attach" title="附件" onclick="Proto.toast('附件上传（原型）')">📎</button>
+        <input type="text" id="debugInput" class="debug-input-p2" placeholder="开始对话吧">
+        <button type="button" class="debug-send-p2" id="debugSend" title="发送">➤</button>
+      </div>
+      <p class="debug-disclaimer">AI 生成的内容可能会有错误或与事实有偏差，仅供参考</p>
+    </div>
+  </div>
+</div>
+
+<!-- 发布：P3 版本信息 + P4 可见范围 -->
+<div class="publish-modal-mask" id="publishModal">
+  <div class="publish-modal publish-modal-wide">
+    <div class="pm-head">
+      <h3>智能体发布</h3><button class="icon-btn" onclick="closePublishModal()">✕</button>
+    </div>
+    <div class="pm-body">
+      <div class="publish-form-row" id="pmVersionRow">
+        <label>版本号 <span id="pmVersionRequired" style="color:var(--danger);display:none;">*</span></label>
+        <input class="input" id="pmVersion" placeholder="v3">
+      </div>
+      <p id="pmVersionHint" class="help-text" style="display:none;margin:-8px 0 12px 84px;">首次发布将自动使用 v1，无需填写版本号。</p>
+      <div class="publish-form-row">
+        <label class="required">发版描述</label>
+        <textarea class="textarea" id="pmReleaseNote" placeholder="请输入发版描述"></textarea>
+      </div>
+      <div class="pm-divider"></div>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">选择谁可以看到和使用这个智能体。</p>
+      <div style="font-size:13px;font-weight:500;margin-bottom:10px;">可见范围</div>
+      <div class="scope-options">
+        <label class="scope-option active" data-scope="private" onclick="selectPublishScope(this)">
+          <input type="radio" name="pubscope" value="private" checked>
+          <span class="so-icon">🔒</span>
+          <div>
+            <div class="so-title">仅本人</div>
+            <div class="so-desc">仅自己可用，无需审核</div>
+          </div>
+        </label>
+        <label class="scope-option" data-scope="specific" onclick="selectPublishScope(this)">
+          <input type="radio" name="pubscope" value="specific">
+          <span class="so-icon">👥</span>
+          <div>
+            <div class="so-title">部门共享</div>
+            <div class="so-desc">选择部门或同事</div>
+          </div>
+          <span class="so-action" onclick="event.stopPropagation();event.preventDefault();Proto.toast('选择可见人员');">选择</span>
+        </label>
+        <label class="scope-option" data-scope="public" onclick="selectPublishScope(this)">
+          <input type="radio" name="pubscope" value="public">
+          <span class="so-icon">🏢</span>
+          <div>
+            <div class="so-title">全公司</div>
+            <div class="so-desc">需管理员审核</div>
+          </div>
+        </label>
+      </div>
+      <div class="pm-warning" id="pmWarning" style="display:none;">全公司可见需审核，一般 1–3 个工作日。</div>
+    </div>
+    <div class="pm-foot">
+      <button class="btn" onclick="closePublishModal()">取消</button>
+      <button class="btn btn-primary" id="pmConfirmBtn" onclick="confirmPublish()">确定</button>
+    </div>
+  </div>
+</div>
+
+<!-- 版本记录 -->
+<div class="publish-modal-mask" id="historyModal">
+  <div class="publish-modal" style="max-width:480px;">
+    <div class="pm-head">
+      <h3>版本记录</h3><button class="icon-btn" onclick="Proto.hideModal('historyModal')">✕</button>
+    </div>
+    <div class="pm-body" id="historyModalBody">
+      <p style="font-size:13px;color:var(--text-muted);">暂无发布记录</p>
+    </div>
+    <div class="pm-foot">
+      <button class="btn" onclick="Proto.hideModal('historyModal')">关闭</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/proto.js"></script>
+<script src="assets/platform-api.js"></script>
+<script src="assets/agent-core-config.js"></script>
+<script src="assets/editor-shell.js"></script>
+<script>
+  Proto.applyAgentHeader();
+  Proto.wirePlaceholderLinks();
+  var opsUrl = Proto.href('05-agent-detail.html');
+  Proto.initCrossLinks({
+    '#devBackOps': function () { return opsUrl; }
+  });
+  EditorShell.mount('#devEditorRoot');
+
+  if (window.PlatformApi) {
+    var devAgentId = Proto.params().get('id') || 'agt_demo_001';
+    PlatformApi.getAvailableResources(devAgentId);
+  }
+
+  function updateLastModified() {
+    var el = document.getElementById('devLastModified');
+    if (el) el.textContent = Proto.getLastModifiedText();
+  }
+  updateLastModified();
+
+  function saveDraft(silent) {
+    var st = Proto.getState();
+    if (st.source === 'third_party') return;
+    var el = document.getElementById('promptText');
+    Proto.setState({
+      draftPrompt: el ? el.value : '',
+      lastSavedAt: Date.now(),
+      lastSaveMode: 'manual',
+      firstConfigDone: true
+    });
+    if (window.PlatformApi) {
+      var agentId = Proto.params().get('id') || 'agt_demo_001';
+      PlatformApi.syncConfig(agentId, {
+        prompt_version: (st.promptVersion || 0) + 1,
+        draft_prompt_len: el ? el.value.length : 0,
+        bound_skill_ids: Proto.getAgentSkillIds ? Proto.getAgentSkillIds() : [],
+        model_tier: st.modelTier || '增强模型'
+      });
+    }
+    updateLastModified();
+    if (!silent) Proto.toast('已保存');
+  }
+
+  document.getElementById('btnSave').onclick = function () { saveDraft(false); };
+
+  document.getElementById('devBackOps').onclick = function (e) {
+    e.preventDefault();
+    saveDraft(true);
+    if (Proto.params().get('new') === '1') {
+      Proto.finishFirstConfig();
+      if (history.replaceState) {
+        var u = new URL(window.location.href);
+        u.searchParams.delete('new');
+        history.replaceState(null, '', u);
+      }
+    }
+    window.location.href = opsUrl;
+  };
+
+  document.getElementById('btnHistory').onclick = function () {
+    var st = Proto.getState();
+    var body = document.getElementById('historyModalBody');
+    var rows = [];
+    if (st.releaseVersion) {
+      rows.push('<div class="ops-kv" style="margin-bottom:10px;"><span class="k">' + st.releaseVersion + '</span><span>' +
+        (st.releaseNote || '—') + '</span></div>');
+    }
+    body.innerHTML = rows.length
+      ? rows.join('')
+      : '<p style="font-size:13px;color:var(--text-muted);">暂无发布记录 · 发布后在此查看</p>';
+    Proto.showModal('historyModal');
+  };
+
+  (function blockThirdParty() {
+    var st = Proto.getState();
+    if (st.source !== 'third_party') return;
+    var root = document.getElementById('devEditorRoot');
+    if (root) { root.style.pointerEvents = 'none'; root.style.opacity = '0.5'; }
+    ['btnSave', 'btnPublish'].forEach(function (id) {
+      var btn = document.getElementById(id);
+      if (btn) btn.disabled = true;
+    });
+    var blockBanner = document.createElement('div');
+    blockBanner.style.cssText = 'background:#fff3e0;border:1px solid #e65100;color:#e65100;padding:10px 16px;text-align:center;font-size:13px;font-weight:500;';
+    blockBanner.innerHTML = '🔗 第三方智能体 · 配置由外部服务管理，无法在此编辑。请返回运营平台查看状态。';
+    document.querySelector('.dev-editor-bar').insertAdjacentElement('afterend', blockBanner);
+  })();
+
+  (function initFirstConfig() {
+    var isFirst = Proto.params().get('new') === '1';
+    if (!isFirst) {
+      var st = Proto.getState();
+      var el = document.getElementById('promptText');
+      if (el && st.draftPrompt) el.value = st.draftPrompt;
+      else if (el && st.desc) el.value = st.desc;
+      return;
+    }
+    var banner = document.createElement('div');
+    banner.id = 'firstConfigDevBanner';
+    banner.style.cssText = 'background:var(--primary-light);border:1px solid var(--primary);color:var(--primary-dark);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;font-size:13px;';
+    banner.innerHTML = '<span><strong>首次配置</strong> · 完善智能体画像与核心配置后，点击「保存」或「返回运营平台」即可在运营平台发布上线</span><button type="button" class="btn btn-sm" id="dismissFirstConfigDev">知道了</button>';
+    document.querySelector('.dev-editor-bar').insertAdjacentElement('afterend', banner);
+    document.getElementById('dismissFirstConfigDev').onclick = function () { banner.style.display = 'none'; };
+    var st = Proto.getState();
+    var el = document.getElementById('promptText');
+    if (el && st.desc) el.value = st.desc;
+  })();
+
+  function openPublishModal() {
+    var st = Proto.getState();
+    if (st.source === 'third_party') { Proto.toast('第三方智能体无法在此发布'); return; }
+    saveDraft(true);
+    var first = Proto.isFirstPublish(st);
+    var versionRow = document.getElementById('pmVersionRow');
+    var versionHint = document.getElementById('pmVersionHint');
+    var versionRequired = document.getElementById('pmVersionRequired');
+    if (first) {
+      versionRow.style.display = 'none';
+      versionHint.style.display = 'block';
+      document.getElementById('pmVersion').value = 'v1';
+    } else {
+      versionRow.style.display = '';
+      versionHint.style.display = 'none';
+      versionRequired.style.display = 'inline';
+      document.getElementById('pmVersion').value = Proto.suggestPublishVersion(st);
+    }
+    document.getElementById('pmReleaseNote').value = '';
+    document.querySelector('#publishModal .scope-option[data-scope="private"]').click();
+    Proto.showModal('publishModal');
+  }
+  function closePublishModal() { Proto.hideModal('publishModal'); }
+
+  function selectPublishScope(el) {
+    document.querySelectorAll('#publishModal .scope-option').forEach(function (c) { c.classList.remove('active'); });
+    el.classList.add('active');
+    el.querySelector('input').checked = true;
+    var scope = el.dataset.scope;
+    document.getElementById('pmWarning').style.display = scope === 'public' ? 'block' : 'none';
+    document.getElementById('pmConfirmBtn').textContent = scope === 'public' ? '提交审核' : '确定';
+  }
+
+  function confirmPublish() {
+    var note = document.getElementById('pmReleaseNote').value.trim();
+    if (!note) { Proto.toast('请输入发版描述'); return; }
+    var st = Proto.getState();
+    var first = Proto.isFirstPublish(st);
+    var version = first ? 'v1' : document.getElementById('pmVersion').value.trim();
+    if (!first && !version) { Proto.toast('请填写版本号'); return; }
+    var scope = document.querySelector('#publishModal input[name="pubscope"]:checked').value;
+    closePublishModal();
+    var result = Proto.runAgentPublish({ scope: scope, version: version, releaseNote: note });
+    Proto.toast(result.toast);
+    if (result.redirect) {
+      setTimeout(function () { window.location.href = result.redirect; }, 900);
+      return;
+    }
+    setTimeout(function () { window.location.href = opsUrl + (opsUrl.indexOf('?') >= 0 ? '&' : '?') + 'tab=release'; }, 600);
+  }
+</script>
+</body>
+</html>

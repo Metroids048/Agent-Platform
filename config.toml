@@ -1,0 +1,19 @@
+model_provider = "custom"
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+disable_response_storage = true
+
+[model_providers.custom]
+name = "HCAI"
+base_url = "https://ai-us.hctopup.com/v1"
+wire_api = "responses"
+requires_openai_auth = true
+
+[windows]
+sandbox = "elevated"
+
+[projects.'c:\users\win\desktop\agent platform']
+trust_level = "trusted"
+
+[projects.'c:\users\win\desktop\demo']
+trust_level = "trusted"

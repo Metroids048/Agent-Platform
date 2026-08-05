@@ -1,0 +1,142 @@
+- generic [ref=f2e78]:
+  - generic [ref=f2e80]:
+    - generic [ref=f2e82]: AI应用开发平台
+    - generic [ref=f2e83]:
+      - list [ref=f2e85]:
+        - listitem [ref=f2e86] [cursor=pointer]:
+          - generic [ref=f2e87]: 运营管理
+        - listitem [ref=f2e88] [cursor=pointer]:
+          - generic [ref=f2e89]: 智能体开发
+        - listitem [ref=f2e90] [cursor=pointer]:
+          - generic [ref=f2e91]: 模型协同
+        - listitem [ref=f2e92] [cursor=pointer]:
+          - generic [ref=f2e93]: 知识库
+        - listitem [ref=f2e94] [cursor=pointer]:
+          - generic [ref=f2e95]: 智能编码助手
+      - generic [ref=f2e97] [cursor=pointer]:
+        - generic [ref=f2e99]: 
+        - generic [ref=f2e100]: 欢迎您，单位管理员
+  - generic [ref=f2e101]:
+    - complementary [ref=f2e102]:
+      - generic [ref=f2e103]:
+        - menu [ref=f2e110]:
+          - menuitem " 概览" [ref=f2e1712] [cursor=pointer]:
+            - generic [ref=f2e1714]: 
+            - generic "概览" [ref=f2e1716]
+          - listitem [ref=f2e1717] [cursor=pointer]:
+            - menuitem "模型服务" [expanded] [ref=f2e1718]:
+              - generic [ref=f2e1719]:
+                - generic "模型服务" [ref=f2e1721]
+                - img [ref=f2e1723]:
+                  - img [ref=f2e1724]
+            - list [ref=f2e1728]:
+              - menuitem " 基础模型管理" [ref=f2e1729]:
+                - generic [ref=f2e1731]: 
+                - generic "基础模型管理" [ref=f2e1733]
+              - menuitem " 数据集管理" [ref=f2e1734]:
+                - generic [ref=f2e1736]: 
+                - generic "数据集管理" [ref=f2e1738]
+              - menuitem " 权重切分方案管理" [ref=f2e1739]:
+                - generic [ref=f2e1741]: 
+                - generic "权重切分方案管理" [ref=f2e1743]
+              - menuitem " 微调任务管理" [ref=f2e1744]:
+                - generic [ref=f2e1746]: 
+                - generic "微调任务管理" [ref=f2e1748]
+              - menuitem " 模型管理" [ref=f2e1749]:
+                - generic [ref=f2e1751]: 
+                - generic "模型管理" [ref=f2e1753]
+          - menuitem "试验场" [ref=f2e1754] [cursor=pointer]:
+            - generic "试验场" [ref=f2e1756]
+          - listitem [ref=f2e1757] [cursor=pointer]:
+            - menuitem "模型" [expanded] [ref=f2e1758]:
+              - generic [ref=f2e1759]:
+                - generic "模型" [ref=f2e1761]
+                - img [ref=f2e1763]:
+                  - img [ref=f2e1764]
+            - list [ref=f2e1768]:
+              - menuitem " 部署" [ref=f2e1769]:
+                - generic [ref=f2e1771]: 
+                - generic "部署" [ref=f2e1773]
+              - menuitem " 路由" [ref=f2e1774]:
+                - generic [ref=f2e1776]: 
+                - generic "路由" [ref=f2e1778]
+              - menuitem " 提供商" [ref=f2e1779]:
+                - generic [ref=f2e1781]: 
+                - generic "提供商" [ref=f2e1783]
+              - menuitem " 基准测试" [ref=f2e1784]:
+                - generic [ref=f2e1786]: 
+                - generic "基准测试" [ref=f2e1788]
+              - menuitem " 微调平台模型库" [ref=f2e1789]:
+                - generic [ref=f2e1791]: 
+                - generic "微调平台模型库" [ref=f2e1793]
+          - listitem [ref=f2e1794] [cursor=pointer]:
+            - menuitem "资源" [expanded] [ref=f2e1795]:
+              - generic [ref=f2e1796]:
+                - generic "资源" [ref=f2e1798]
+                - img [ref=f2e1800]:
+                  - img [ref=f2e1801]
+            - list [ref=f2e1805]:
+              - menuitem " 节点" [ref=f2e1806]:
+                - generic [ref=f2e1808]: 
+                - generic "节点" [ref=f2e1810]
+              - menuitem " GPUs" [ref=f2e1811]:
+                - generic [ref=f2e1813]: 
+                - generic "GPUs" [ref=f2e1815]
+              - menuitem " 推理后端" [ref=f2e1816]:
+                - generic [ref=f2e1818]: 
+                - generic "推理后端" [ref=f2e1820]
+              - menuitem " 模型文件" [ref=f2e1821]:
+                - generic [ref=f2e1823]: 
+                - generic "模型文件" [ref=f2e1825]
+          - listitem [ref=f2e1826] [cursor=pointer]:
+            - menuitem "集群管理" [expanded] [ref=f2e1827]:
+              - generic [ref=f2e1828]:
+                - generic "集群管理" [ref=f2e1830]
+                - img [ref=f2e1832]:
+                  - img [ref=f2e1833]
+            - list [ref=f2e1837]:
+              - menuitem " 集群" [ref=f2e1838]:
+                - generic [ref=f2e1840]: 
+                - generic "集群" [ref=f2e1842]
+          - listitem [ref=f2e1843] [cursor=pointer]:
+            - menuitem "访问控制" [expanded] [ref=f2e1844]:
+              - generic [ref=f2e1845]:
+                - generic "访问控制" [ref=f2e1847]
+                - img [ref=f2e1849]:
+                  - img [ref=f2e1850]
+            - list [ref=f2e1854]:
+              - menuitem " API 密钥" [ref=f2e1855]:
+                - generic [ref=f2e1857]: 
+                - generic "API 密钥" [ref=f2e1859]
+        - generic [ref=f2e280] [cursor=pointer]:
+          - img "sidebar" [ref=f2e281]:
+            - img [ref=f2e282]
+          - text: 关闭
+    - main [ref=f2e284]:
+      - generic [ref=f2e1873]:
+        - generic [ref=f2e1875]:
+          - generic [ref=f2e1877]:
+            - generic [ref=f2e1879]:
+              - img "search" [ref=f2e1881]:
+                - img [ref=f2e1882]
+              - textbox "名称查询" [ref=f2e1884]
+            - generic [ref=f2e1887] [cursor=pointer]:
+              - generic [ref=f2e1888]:
+                - generic: 按集群过滤
+                - combobox [ref=f2e1889]
+              - img [ref=f2e1891]:
+                - img [ref=f2e1892]
+            - button "sync" [ref=f2e1895] [cursor=pointer]:
+              - img "sync" [ref=f2e1897]:
+                - img [ref=f2e1898]
+          - generic [ref=f2e1901]:
+            - button "plus 添加节点" [ref=f2e1903] [cursor=pointer]:
+              - img "plus" [ref=f2e1905]:
+                - img [ref=f2e1906]
+              - generic [ref=f2e1909]: 添加节点
+            - button "delete 删除" [disabled] [ref=f2e1911]:
+              - generic:
+                - img "delete":
+                  - img
+              - generic: 删除
+        - generic [ref=f2e1913]: 节点

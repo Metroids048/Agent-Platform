@@ -1,0 +1,97 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: 敖
+      - generic [ref=e6]:
+        - strong [ref=e7]: 敖钦 AI 工作台
+        - generic [ref=e8]: 面向业务用户的智能入口
+    - button "新对话" [ref=e9] [cursor=pointer]:
+      - img [ref=e11]
+      - generic [ref=e13]: 新对话
+    - link "智能体广场" [ref=e14] [cursor=pointer]:
+      - /url: agent-square.html
+      - img [ref=e16]
+      - generic [ref=e21]: 智能体广场
+    - link "我的空间" [ref=e22] [cursor=pointer]:
+      - /url: my-space.html
+      - img [ref=e24]
+      - generic [ref=e26]: 我的空间
+    - textbox "搜索可用智能体" [ref=e28]
+    - generic [ref=e30]:
+      - button "客服助手" [ref=e31] [cursor=pointer]
+      - button "合同审查师" [ref=e32] [cursor=pointer]
+      - button "医疗分诊助手" [ref=e33] [cursor=pointer]
+      - button "多系统集成助手" [ref=e34] [cursor=pointer]
+      - button "数据分析助手" [ref=e35] [cursor=pointer]
+      - button "采购申请助手" [ref=e36] [cursor=pointer]
+      - button "日报生成器" [ref=e37] [cursor=pointer]
+      - button "请假审批流程" [ref=e38] [cursor=pointer]
+      - button "敖钦智能助手" [ref=e39] [cursor=pointer]
+      - button "差旅报销助手" [ref=e40] [cursor=pointer]
+      - button "JSA 文档生成" [ref=e41] [cursor=pointer]
+      - button "党建智能助手" [ref=e42] [cursor=pointer]
+      - button "值班安排助手" [ref=e43] [cursor=pointer]
+      - button "钻完井安全助手" [ref=e44] [cursor=pointer]
+      - button "钻完井报告助手" [ref=e45] [cursor=pointer]
+      - button "废旧物资清单助手" [ref=e46] [cursor=pointer]
+      - button "智慧楼宇助手" [ref=e47] [cursor=pointer]
+      - button "勘探井资料助手" [ref=e48] [cursor=pointer]
+    - generic [ref=e49]:
+      - button "历史记录 ›" [ref=e50] [cursor=pointer]:
+        - generic [ref=e51]: 历史记录
+        - generic [ref=e52]: ›
+      - button "消息中心" [ref=e53] [cursor=pointer]
+      - link "专家工作台" [ref=e54] [cursor=pointer]:
+        - /url: 专家工作台/workbench.html
+      - button "帮助" [ref=e55] [cursor=pointer]
+  - main [ref=e56]:
+    - generic [ref=e57]:
+      - button "收起侧栏" [ref=e58] [cursor=pointer]:
+        - img [ref=e59]
+      - generic [ref=e61]:
+        - generic [ref=e62]: 工作台
+        - strong [ref=e63]: 对话、引用、沉淀和反馈都从这里开始
+      - button "DeepSeek-R1-671B 模型" [ref=e65] [cursor=pointer]:
+        - generic [ref=e66]: DeepSeek-R1-671B 模型
+        - generic [ref=e67]: ⌄
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - text: AI 工作入口
+            - heading "选一个智能体，把业务问题直接交给它处理。" [level=1] [ref=e72]
+          - link "浏览智能体广场" [ref=e74] [cursor=pointer]:
+            - /url: agent-square.html
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - img [ref=e78]
+            - heading "敖钦智能助手" [level=2] [ref=e82]
+          - paragraph [ref=e83]: 企业智能问答入口，可结合制度、知识库和历史问答记录处理通用业务问题。
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - button "深度思考" [ref=e87] [cursor=pointer]
+          - generic [ref=e88] [cursor=pointer]:
+            - img [ref=e90]
+            - generic [ref=e92]: 企业知识库
+            - combobox "指定知识库" [ref=e93]:
+              - option "企业知识库" [selected]
+              - option "QHSE 知识库"
+              - option "制度文档库"
+              - option "个人笔记"
+        - generic [ref=e94]:
+          - textbox "输入你的问题，按 Enter 发送" [ref=e95]
+          - generic [ref=e96]:
+            - button "上传图片或附件" [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+            - button "会话 Skills 增强" [ref=e100] [cursor=pointer]:
+              - img [ref=e101]
+            - button "语音输入" [ref=e104] [cursor=pointer]:
+              - img [ref=e105]
+            - button "发送" [ref=e108] [cursor=pointer]:
+              - img [ref=e109]
+        - generic [ref=e111]:
+          - paragraph [ref=e112]: 你可以试着问：
+          - generic [ref=e113]:
+            - button "平台有哪些知识库来源？" [ref=e114] [cursor=pointer]
+            - button "帮我总结这份材料的重点" [ref=e115] [cursor=pointer]
+            - button "这件事应该找哪个智能体处理？" [ref=e116] [cursor=pointer]

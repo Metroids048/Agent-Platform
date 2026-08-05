@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能体运营（v1.0 归档）· 运营平台</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-ops-module="ops" data-ops-page="旧页面/index-v1.0.html">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+  <aside class="sidebar"></aside>
+  <main class="main">
+    <div class="page-header">
+      <div>
+        <h1>智能体运营</h1>
+        <p>v1.0 表格列表 + 内嵌看板（归档页）。当前默认入口为 <a href="../index.html">v1.1 卡片列表</a>。</p>
+      </div>
+      <div class="page-header-actions">
+        <a href="third-party-register.html" class="btn" id="btnOpenThirdParty" style="border:1px solid var(--primary);color:var(--primary);background:var(--primary-light);">🔗 第三方接入</a>
+        <button type="button" class="btn btn-primary btn-large" id="btnOpenCreate">＋ 新建智能体</button>
+      </div>
+    </div>
+
+    <section class="ops-dash-section card" style="padding:16px;margin-bottom:16px;">
+      <div class="ops-dash-kpis" id="opsDashKpis"></div>
+      <div class="ops-dash-panels" style="margin-top:16px;">
+        <div class="ops-dash-panel card" style="padding:16px;">
+          <div class="ops-dash-panel-head"><h3>合规检测</h3><div id="opsDashQuickLinks"></div></div>
+          <div id="opsDashCompliance"></div>
+        </div>
+        <div class="ops-dash-panel card" style="padding:16px;">
+          <div class="ops-dash-panel-head"><h3>任务调度趋势</h3></div>
+          <div id="opsDashSchedule"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="agentListSection" style="padding:0;overflow:hidden;">
+      <div class="filter-bar" style="padding:12px 16px;border-bottom:1px solid var(--border);">
+        <div class="filter-group" data-status-filter-group>
+          <span class="filter-label">状态</span>
+          <div class="filter-pills">
+            <button type="button" class="active" data-status-filter="">全部</button>
+            <button type="button" data-status-filter="published">已上架</button>
+            <button type="button" data-status-filter="review">审核中</button>
+            <button type="button" data-status-filter="dev">开发中</button>
+            <button type="button" data-status-filter="offline">已下架</button>
+          </div>
+        </div>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>智能体名称</th>
+            <th>类型</th>
+            <th>状态</th>
+            <th>来源</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>客服助手</td><td>问答型</td><td>—</td><td class="source-cell">—</td><td>—</td></tr>
+          <tr><td>合同审查师</td><td>任务型</td><td>—</td><td class="source-cell">—</td><td>—</td></tr>
+          <tr><td>医疗分诊助手</td><td>问答型</td><td>—</td><td class="source-cell">—</td><td>—</td></tr>
+          <tr><td>多系统集成助手</td><td>多智能体</td><td>—</td><td class="source-cell">—</td><td>—</td></tr>
+          <tr><td>数据分析助手</td><td>问答型</td><td>—</td><td class="source-cell">—</td><td>—</td></tr>
+          <tr><td>采购申请助手</td><td>流程型</td><td>—</td><td class="source-cell">—</td><td>—</td></tr>
+          <tr><td>日报生成器</td><td>问答型</td><td>—</td><td class="source-cell">—</td><td>—</td></tr>
+          <tr><td>请假审批流程</td><td>流程型</td><td>—</td><td class="source-cell">—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div></div>
+
+<div class="ops-overlay-mask" id="opsModalOverlay" aria-hidden="true">
+  <div class="ops-modal-shell" id="createModalShell"></div>
+  <div class="ops-modal-shell" id="thirdPartyModalShell"></div>
+</div>
+
+<div class="publish-modal-mask" id="opsOfflineModal" aria-hidden="true">
+  <div class="publish-modal" style="max-width:420px;">
+    <div class="pm-head"><h3>确认下架</h3></div>
+    <div class="pm-body"><p style="font-size:14px;margin:0;">下架后用户将无法访问该智能体，历史记录保留。确定下架？</p></div>
+    <div class="pm-foot">
+      <button type="button" class="btn" data-offline-cancel>取消</button>
+      <button type="button" class="btn btn-danger" data-offline-confirm>确认下架</button>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/proto.js"></script>
+<script src="../assets/org-access-picker.js"></script>
+<script src="../assets/ops-platform-shell.js"></script>
+<script src="../assets/ops-message-center.js"></script>
+<script src="../assets/ops-list-dashboard.js"></script>
+<script src="../assets/ops-list-modals.js"></script>
+<script src="../assets/ops-modal-create.js"></script>
+<script src="../assets/ops-modal-thirdparty.js"></script>
+<script>
+  if (window.OpsShell && OpsShell.initShell) {
+    OpsShell.initShell({ module: 'ops', activePage: '旧页面/index-v1.0.html' });
+  }
+  Proto.initOpsListPage();
+</script>
+</body>
+</html>

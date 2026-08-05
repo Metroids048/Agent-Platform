@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>模型看板 · 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="dashboard" data-ops-page="14-model-dashboard.html" data-ops-subtitle="模型看板">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main">
+  <div class="page-header">
+    <div><h1>模型看板</h1><p>模型档位调用分布、失败率与效果 — 数据来自敖钦计量</p></div>
+  </div>
+  <div class="ops-dash-kpis" id="dashKpis"></div>
+  <div class="card" style="padding:16px;margin-top:16px;">
+    <h3 style="font-size:15px;margin-bottom:12px;">档位调用分布</h3>
+    <div id="dashTiers"></div>
+  </div>
+</main>
+</div></div>
+<script src="assets/proto.js"></script>
+<script src="assets/platform-api.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-dashboards.js"></script>
+<script>OpsDashboards.initModelPage(); OpsMessageCenter.mount();</script>
+</body>
+</html>

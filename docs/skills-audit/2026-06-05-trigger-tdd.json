@@ -1,0 +1,105 @@
+{
+    "evaluatedAt":  "2026-06-05T09:55:57Z",
+    "pass":  16,
+    "fail":  0,
+    "hitRatePct":  100,
+    "targetPct":  90,
+    "results":  [
+                    {
+                        "skill":  "figma-workflow",
+                        "prompt":  "implement ops platform page from Figma mockup",
+                        "hit":  true,
+                        "top8":  "figma-workflow, figma2code, imagegen-frontend-web, image-to-code, figma-product-report"
+                    },
+                    {
+                        "skill":  "figma2code",
+                        "prompt":  "Figma URL to HTML frame extraction interactions",
+                        "hit":  true,
+                        "top8":  "figma-workflow, figma2code, figma-product-report, image-to-code, ai-act-readiness, summarize-meeting, summarize-interview, ui-ux-pro-max"
+                    },
+                    {
+                        "skill":  "writing-skills",
+                        "prompt":  "how to write high quality skill trigger design",
+                        "hit":  true,
+                        "top8":  "writing-skills, skill-stocktake, agent-sort, write-a-skill, academic-paper, high-end-visual-design, frontend-design, brainstorm-okrs"
+                    },
+                    {
+                        "skill":  "skill-stocktake",
+                        "prompt":  "audit all skills inventory stocktake compliance",
+                        "hit":  true,
+                        "top8":  "skill-stocktake, writing-skills, agent-sort, skill-creator, write-a-skill, building-skills-from-patterns, setup-matt-pocock-skills, soc2-audit-prep"
+                    },
+                    {
+                        "skill":  "agent-sort",
+                        "prompt":  "agent sort DAILY LIBRARY trim ECC for this repo",
+                        "hit":  true,
+                        "top8":  "agent-sort, brainstorming, zero-to-one-gate, idea-refine, forget, diagnose, commit-context"
+                    },
+                    {
+                        "skill":  "zero-to-one-gate",
+                        "prompt":  "greenfield new module build from scratch architecture",
+                        "hit":  true,
+                        "top8":  "zero-to-one-gate, global-delivery-gate, verification-before-completion, ai-delivery-gate, brainstorming, agent-verifier, planning-with-files-zh, writing-plans"
+                    },
+                    {
+                        "skill":  "systematic-debugging",
+                        "prompt":  "bug keeps failing root cause before fix",
+                        "hit":  true,
+                        "top8":  "systematic-debugging, diagnose, tdd-workflow, ai-regression-testing, test-driven-development, tdd, verification-before-completion, verification-loop"
+                    },
+                    {
+                        "skill":  "ai-delivery-gate",
+                        "prompt":  "prototype verify-all delivery sign-off after js edit",
+                        "hit":  true,
+                        "top8":  "ai-delivery-gate, global-delivery-gate, verification-before-completion, agent-verifier, minimalist-ui, prototype, verification-loop, verify-language"
+                    },
+                    {
+                        "skill":  "deep-research",
+                        "prompt":  "deep research multi-source citations fact-check",
+                        "hit":  true,
+                        "top8":  "deep-research, market-research, deep-dive, apple-notes, apple-mail, grammar-check, academic-pipeline, ckm-banner-design"
+                    },
+                    {
+                        "skill":  "ouro-loop",
+                        "prompt":  "ouro loop MAP PLAN BUILD VERIFY autonomous task",
+                        "hit":  true,
+                        "top8":  "ouro-loop, ai-delivery-gate, planning-with-files-zh, global-delivery-gate, verification-before-completion, writing-plans, design-taste-frontend, agent-verifier"
+                    },
+                    {
+                        "skill":  "brainstorming",
+                        "prompt":  "brainstorm approaches before implementing new feature",
+                        "hit":  true,
+                        "top8":  "brainstorming, zero-to-one-gate, writing-plans, planning-with-files-zh, brainstorm-ideas-existing, test-driven-development"
+                    },
+                    {
+                        "skill":  "design-taste-frontend",
+                        "prompt":  "landing page anti-slop portfolio redesign taste",
+                        "hit":  true,
+                        "top8":  "redesign-existing-projects, design-taste-frontend, frontend-design, stitch-design-taste, design-taste-frontend-v1, SPACE-review-board, api-design-patterns, gpt-taste"
+                    },
+                    {
+                        "skill":  "figma-workflow",
+                        "prompt":  "sync HTML prototype to Figma figma.config",
+                        "hit":  true,
+                        "top8":  "figma-workflow, figma2code, image-to-code, figma-product-report, prototype, space-image2proto, web-prototype, ui-ux-pro-max"
+                    },
+                    {
+                        "skill":  "figma2code",
+                        "prompt":  "design mockup to code file key node id",
+                        "hit":  true,
+                        "top8":  "figma2code, figma-workflow, image-to-code, gpt-taste, imagegen-frontend-web"
+                    },
+                    {
+                        "skill":  "writing-skills",
+                        "prompt":  "skills not invoked fix description CSO",
+                        "hit":  true,
+                        "top8":  "writing-skills, skill-stocktake, diagnose, agent-sort, systematic-debugging, minimalist-ui, tdd-workflow, ai-regression-testing"
+                    },
+                    {
+                        "skill":  "skill-stocktake",
+                        "prompt":  "skill quality audit why good skills not called",
+                        "hit":  true,
+                        "top8":  "writing-skills, skill-stocktake, agent-sort, minimalist-ui, idea-refine, skill-creator, building-skills-from-patterns, write-a-skill"
+                    }
+                ]
+}

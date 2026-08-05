@@ -1,0 +1,22 @@
+# AI-KNOWLEDGE-MANAGED-START
+AI原始记录/
+项目知识库/会话记录/
+**/.env
+**/*.pem
+**/*.key
+# AI-KNOWLEDGE-MANAGED-END
+
+# Local / regenerable (not uploaded)
+.venv/
+venv/
+__pycache__/
+*.pyc
+.node_modules/
+**/node_modules/
+.codegraph/
+.figma-cache/
+.codex-temp/
+*.log
+.DS_Store
+Thumbs.db
+_tmp_*.ps1

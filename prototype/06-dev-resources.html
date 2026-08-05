@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>资源管理 · 智能体开发</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-brand">
+      <div class="topbar-logo" style="background:linear-gradient(135deg,#087f5b,#20c997);">D</div>
+      <div class="topbar-brand-text"><strong>智能体开发</strong><span>资源库</span></div>
+    </div>
+    <div class="topbar-modules">
+      <a href="06-dev-platform.html" class="nav-dev active" data-nav-dev>智能体开发</a>
+      <a href="index.html" data-nav-ops>运营平台</a>
+    </div>
+    <div class="topbar-right"><div class="avatar"></div></div>
+  </div>
+</header>
+
+<div class="dev-layout">
+  <aside class="dev-side">
+    <a href="06-dev-platform.html">🤖 我的智能体</a>
+    <a href="06-dev-resources.html?res=tools" data-res="tools">🔧 工具 / MCP</a>
+    <a href="10-skills-management.html">🧩 Skills 管理</a>
+    <a href="06-dev-resources.html?res=knowledge" data-res="knowledge">📚 知识库</a>
+    <a href="06-dev-resources.html?res=workflow" data-res="workflow">🔄 工作流</a>
+    <a href="06-dev-resources.html?res=models" data-res="models">🧠 模型</a>
+  </aside>
+  <main class="dev-main">
+    <div class="page-header" style="margin-bottom:16px;">
+      <div>
+        <h1 id="resTitle">资源列表</h1>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">创建与管理可被智能体引用的资源；运营平台配置页通过 API 拉取此列表。</p>
+      </div>
+      <button class="btn btn-primary" onclick="Proto.toast('原型：打开新建资源向导')">＋ 新建</button>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div class="filter-bar" style="padding:12px 16px;margin:0;border-bottom:1px solid var(--border);">
+        <input class="filter-search" placeholder="搜索..." id="resSearch">
+      </div>
+      <table class="data-table" id="resTable">
+        <thead><tr id="resHead"></tr></thead>
+        <tbody id="resBody"></tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px;font-size:12px;color:var(--text-muted);">
+      <a href="05-agent-detail.html" id="backConfig" style="color:var(--primary);">← 返回智能体配置（运营平台镜像页）</a>
+    </p>
+  </main>
+</div>
+
+<script src="assets/proto.js"></script>
+<script>
+  var DATA = {
+    tools: {
+      title: '工具 / MCP',
+      cols: ['名称', '标识', '类型', '更新时间', '操作'],
+      rows: [
+        ['产品搜索', 'product_search', 'HTTP', '2026-05-20', '编辑'],
+        ['工单创建', 'create_ticket', 'HTTP', '2026-05-18', '编辑'],
+        ['邮件发送', 'send_email', 'MCP', '2026-05-10', '编辑']
+      ]
+    },
+    skills: {
+      title: 'Skills',
+      cols: ['名称', '分类', '状态', '引用 / 会话', '操作'],
+      rows: [
+        ['报告结构化', '输出规范', '已启用', '12 / 86', '详情'],
+        ['风险审查', '审查方法', '已启用', '8 / 41', '详情'],
+        ['会议纪要整理', '办公效率', '草稿', '0 / 0', '编辑']
+      ]
+    },
+    knowledge: {
+      title: '知识库',
+      cols: ['名称', '文档数', '向量化', '更新时间', '操作'],
+      rows: [
+        ['产品使用手册', '120', '已完成', '2026-05-22', '管理文档'],
+        ['常见问题 FAQ', '56', '已完成', '2026-05-21', '管理文档'],
+        ['售后服务政策', '8', '进行中', '2026-05-15', '管理文档']
+      ]
+    },
+    workflow: {
+      title: '工作流',
+      cols: ['名称', '节点数', '状态', '更新时间', '操作'],
+      rows: [
+        ['售后转人工', '5', '已发布', '2026-05-19', '编排'],
+        ['工单升级', '8', '草稿', '2026-05-12', '编排']
+      ]
+    },
+    models: {
+      title: '可用模型',
+      cols: ['模型', '提供商', '上下文', '状态', '操作'],
+      rows: [
+        ['GPT-4o', 'OpenAI', '128K', '可用', '详情'],
+        ['Claude 4.7 Sonnet', 'Anthropic', '200K', '可用', '详情'],
+        ['DeepSeek-V3', 'DeepSeek', '64K', '可用', '详情']
+      ]
+    }
+  };
+  var res = Proto.params().get('res') || 'tools';
+  if (res === 'skills') {
+    window.location.replace('10-skills-management.html' + Proto.qs());
+  }
+  var d = DATA[res] || DATA.tools;
+  document.getElementById('resTitle').textContent = d.title;
+  document.getElementById('resHead').innerHTML = d.cols.map(function(c) { return '<th>' + c + '</th>'; }).join('');
+  document.getElementById('resBody').innerHTML = d.rows.map(function(r) {
+    return '<tr>' + r.map(function(cell, i) {
+      if (i === r.length - 1) {
+        return '<td><a href="#" class="res-link" onclick="Proto.toast(\'原型：' + cell + '\');return false;">' + cell + '</a></td>';
+      }
+      return '<td>' + cell + '</td>';
+    }).join('') + '</tr>';
+  }).join('');
+  document.querySelectorAll('.dev-side a[data-res]').forEach(function(a) {
+    a.classList.toggle('active', a.getAttribute('data-res') === res);
+  });
+  document.getElementById('backConfig').href = Proto.href('05-agent-detail.html');
+  Proto.initTopbar('dev');
+</script>
+</body>
+</html>

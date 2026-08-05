@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>第三方接入 · 敖钦 AI 运营平台</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .modal-page {
+    min-height: 100vh; background: var(--bg-page);
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px 20px;
+  }
+  .modal-container {
+    background: var(--bg-white); border-radius: var(--radius-lg);
+    width: 720px; box-shadow: var(--shadow-lg); overflow: hidden;
+  }
+  .modal-container .steps-bar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 24px; background: var(--bg-page);
+    border-bottom: 1px solid var(--border);
+    font-size: 12px; color: var(--text-muted);
+  }
+  .modal-container .steps-bar .st {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--border); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600; flex-shrink: 0;
+  }
+  .modal-container .steps-bar .st.active { background: var(--primary); }
+  .modal-container .steps-bar .st.done { background: var(--success); }
+  .modal-container .steps-bar .line { flex: 1; height: 2px; background: var(--border); }
+  .modal-container .steps-bar .line.done { background: var(--success); }
+  .modal-container .header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; border-bottom: 1px solid var(--border);
+  }
+  .modal-container .header h2 { font-size: 16px; font-weight: 600; margin: 0; }
+  .modal-close-btn {
+    width: 32px; height: 32px; border-radius: 4px; border: none;
+    background: transparent; color: var(--text-muted); font-size: 18px; cursor: pointer;
+  }
+  .modal-close-btn:hover { background: var(--bg-hover); color: var(--text); }
+  .modal-container .body { padding: 20px 24px; max-height: 60vh; overflow-y: auto; }
+  .modal-container .footer {
+    display: flex; justify-content: flex-end; gap: 10px;
+    padding: 12px 24px; border-top: 1px solid var(--border);
+  }
+  .state-view { display: none; }
+  .state-view.active { display: block; }
+  .success-box { text-align: center; padding: 40px 0; }
+  .credential-box {
+    background: #f8f9fa; border: 2px dashed var(--border);
+    border-radius: 8px; padding: 20px 24px; text-align: center;
+  }
+  .credential-box .cred-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+  .credential-box .cred-value {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 14px; font-weight: 600; color: var(--text);
+    word-break: break-all; margin-bottom: 8px;
+    background: #fff; padding: 8px 12px; border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .cred-warning {
+    font-size: 12px; color: var(--danger); margin-top: 8px;
+    display: flex; align-items: center; gap: 4px; justify-content: center;
+  }
+  .form-section { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .form-row { display: flex; align-items: flex-start; margin-bottom: 12px; }
+  .form-label { width: 100px; flex-shrink: 0; font-size: 13px; color: var(--text); padding-top: 8px; }
+  .form-label.required::before { content: '* '; color: var(--danger); }
+  .form-control { flex: 1; }
+  .help-text { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .type-card {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px; border: 1px solid var(--border);
+    border-radius: var(--radius-md); cursor: pointer;
+    transition: all .15s; background: var(--bg-white);
+  }
+  .type-card:hover { border-color: var(--primary); }
+  .type-card.active { border-color: var(--primary); background: var(--primary-light); }
+  .type-card .ti { font-size: 20px; flex-shrink: 0; }
+  .type-card .tn { font-size: 13px; font-weight: 600; }
+  .type-card .td { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .summary-kv { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .summary-kv .k { color: var(--text-muted); }
+  .btn-copy {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 12px; border: 1px solid var(--border);
+    border-radius: 4px; background: #fff; cursor: pointer;
+    font-size: 12px; color: var(--primary);
+  }
+  .btn-copy:hover { background: var(--primary-light); }
+</style>
+</head>
+<body class="modal-page" id="modalBody">
+
+<div class="modal-container">
+
+  <!-- 步骤条 -->
+  <div class="steps-bar" id="stepsBar">
+    <span class="st active" id="st1">1</span><span style="font-size:11px;">填写接入信息</span>
+    <span class="line" id="ln1"></span>
+    <span class="st" id="st2">2</span><span style="font-size:11px;">生成凭证</span>
+    <span class="line" id="ln2"></span>
+    <span class="st" id="st3">3</span><span style="font-size:11px;">完成</span>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h2 id="stateTitle">第三方智能体接入</h2>
+    <button type="button" class="modal-close-btn" id="btnCloseThirdParty" title="关闭">✕</button>
+  </div>
+
+  <div class="body">
+
+    <!-- 态1：填写接入信息 -->
+    <div id="state-form" class="state-view active">
+      <p class="help-text" style="margin-bottom:16px;">第三方智能体接入后，运营平台将统一管理其审核、上架、监控和下架流程。平台将自动生成 agent_id 和 API Key 作为第三方接入凭证，请在线下安全分发给第三方。</p>
+
+      <div class="form-section">基础信息</div>
+
+      <div class="form-row">
+        <div class="form-label required">智能体名称</div>
+        <div class="form-control">
+          <input class="input" id="agentName" placeholder="请输入智能体名称" maxlength="50" style="width:100%;box-sizing:border-box;">
+          <div class="help-text"><span id="nameCount">0</span>/50 字符</div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label required">智能体描述</div>
+        <div class="form-control">
+          <textarea class="textarea" id="agentDesc" placeholder="请描述第三方智能体的功能和用途" maxlength="500" style="width:100%;box-sizing:border-box;min-height:60px;"></textarea>
+          <div class="help-text"><span id="descCount">0</span>/500 字符</div>
+        </div>
+      </div>
+
+      <div class="form-section" style="margin-top:16px;">智能体类型</div>
+      <div class="type-grid" id="typeGrid">
+        <div class="type-card" data-type="qa" onclick="selectType(this)">
+          <div class="ti">💬</div>
+          <div><div class="tn">问答型</div><div class="td">一问一答，基于知识库检索和模型推理回答用户问题</div></div>
+        </div>
+        <div class="type-card" data-type="task" onclick="selectType(this)">
+          <div class="ti">📋</div>
+          <div><div class="tn">任务型</div><div class="td">执行具体任务如合同审查、文件分析，输出结构化结果</div></div>
+        </div>
+        <div class="type-card" data-type="flow" onclick="selectType(this)">
+          <div class="ti">🔄</div>
+          <div><div class="tn">流程型</div><div class="td">多步骤审批和业务流程自动化，含表单和状态流转</div></div>
+        </div>
+        <div class="type-card" data-type="multi" onclick="selectType(this)">
+          <div class="ti">🔗</div>
+          <div><div class="tn">多智能体协作型</div><div class="td">多个智能体协同工作，分工完成复杂任务并汇总结果</div></div>
+        </div>
+      </div>
+
+      <div class="form-section" style="margin-top:16px;">接入配置</div>
+
+      <div class="form-row">
+        <div class="form-label required">服务地址</div>
+        <div class="form-control">
+          <input class="input" id="endpoint" placeholder="https://api.example.com/v1/chat" style="width:100%;box-sizing:border-box;">
+          <div class="help-text">第三方智能体的 API 访问地址（需支持 HTTPS）</div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label required">鉴权方式</div>
+        <div class="form-control">
+          <select class="select" id="authType" style="width:100%;box-sizing:border-box;" onchange="toggleUpstreamKeyField()">
+            <option value="api_key">API Key</option>
+            <option value="bearer_token">Bearer Token</option>
+            <option value="none">无鉴权（仅内网）</option>
+          </select>
+          <div class="help-text">平台将在调用第三方智能体时携带鉴权信息</div>
+        </div>
+      </div>
+
+      <div class="form-row" id="upstreamKeyRow">
+        <div class="form-label required" id="upstreamKeyLabel">API Key</div>
+        <div class="form-control">
+          <input class="input" id="upstreamApiKey" type="password" placeholder="请输入第三方提供的 API Key" autocomplete="off" style="width:100%;box-sizing:border-box;">
+          <div class="help-text" id="upstreamKeyHelp">平台调用第三方服务地址时将携带此密钥，仅 URL 无法完成鉴权</div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">示例提示</div>
+        <div class="form-control">
+          <textarea class="textarea" id="examplePrompts" placeholder="列出用户可以对该智能体说的示例问题，用换行分隔" style="width:100%;box-sizing:border-box;min-height:50px;"></textarea>
+          <div class="help-text">帮助用户在智能体广场了解适用场景，每行一个示例</div>
+        </div>
+      </div>
+
+      <div class="form-section" style="margin-top:16px;">可见范围</div>
+      <div class="scope-options">
+        <label class="scope-option active" data-scope="private" onclick="selectScope(this)">
+          <input type="radio" name="scope" value="private" checked>
+          <span class="so-icon">🔒</span>
+          <div><div class="so-title">仅本人</div><div class="so-desc">仅创建者可见和使用，无需审核</div></div>
+        </label>
+        <label class="scope-option" data-scope="specific" onclick="selectScope(this)">
+          <input type="radio" name="scope" value="specific">
+          <span class="so-icon">👥</span>
+          <div><div class="so-title">指定人员</div><div class="so-desc">选择部门或用户，需审核后上架</div></div>
+          <span class="so-action" onclick="event.stopPropagation();event.preventDefault();Proto.toast('选择部门/用户（占位）');">选择部门/用户 →</span>
+        </label>
+        <label class="scope-option" data-scope="public" onclick="selectScope(this)">
+          <input type="radio" name="scope" value="public">
+          <span class="so-icon">🏢</span>
+          <div><div class="so-title">全公司</div><div class="so-desc">全公司可见可用，需经平台审核</div></div>
+        </label>
+      </div>
+      <div class="help-text" style="margin-top:8px;">个人范围免审核直接上架；组织/全公司须运营审核通过后上架。</div>
+    </div>
+
+    <!-- 态2：生成凭证 -->
+    <div id="state-generating" class="state-view">
+      <div style="text-align:center;padding:32px 0;">
+        <div class="spinner" style="margin:0 auto 16px;width:40px;height:40px;border-width:3px;"></div>
+        <div style="font-size:16px;font-weight:500;color:var(--text);">正在生成接入凭证…</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:8px;">请稍候，不要关闭页面</div>
+      </div>
+    </div>
+
+    <!-- 态3：凭证展示（仅平台生成的 api_key） -->
+    <div id="state-credential" class="state-view">
+      <div style="padding:8px 0;">
+        <div style="font-size:15px;font-weight:500;margin-bottom:4px;">接入凭证已生成</div>
+        <div class="help-text" style="margin-bottom:16px;">请立即保存以下 API Key，关闭页面后将无法再次查看。</div>
+
+        <div class="credential-box" style="margin-bottom:12px;">
+          <div class="cred-label">api_key</div>
+          <div class="cred-value" id="credApiKey" style="letter-spacing:1px;">—</div>
+          <button class="btn-copy" onclick="copyToClipboard('credApiKey')">📋 复制</button>
+        </div>
+
+        <div class="cred-warning">⚠️ API Key 仅展示一次，请立即复制并安全保存</div>
+
+        <div class="help-text" style="margin-top:16px;line-height:1.6;">
+          第三方需要：
+          1. 保存 API Key 并在接入侧配置校验（Header: <code>Authorization: Bearer {api_key}</code>）<br>
+          2. 确保服务端实现 <code>/health</code> 端点供平台健康检查<br>
+          3. 提供 Chat Completions 兼容的服务接口
+        </div>
+      </div>
+    </div>
+
+    <!-- 态4：完成 -->
+    <div id="state-complete" class="state-view">
+      <div class="success-box">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--success);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:32px;">✓</div>
+        <div style="font-size:18px;font-weight:500;color:var(--text);">第三方智能体接入成功</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:12px;" id="completeSub">接入信息已保存，可在运营列表中查看和管理。</div>
+
+        <div style="text-align:left;margin-top:20px;padding:16px;background:#f8f9fa;border-radius:8px;">
+          <div class="summary-kv"><span class="k">名称</span><span id="summaryName">—</span></div>
+          <div class="summary-kv"><span class="k">智能体 ID</span><span id="summaryId">—</span></div>
+          <div class="summary-kv"><span class="k">可见范围</span><span id="summaryScope">—</span></div>
+          <div class="summary-kv"><span class="k">下一步</span><span id="summaryNext">—</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer（按状态切换） -->
+  <div class="footer" id="footerForm">
+    <button type="button" class="btn" id="btnCancelThirdParty">取消</button>
+    <button class="btn btn-primary btn-large" id="btnSubmit" onclick="submitForm()">生成凭证</button>
+  </div>
+  <div class="footer" id="footerGenerating" style="display:none;">
+    <span style="font-size:13px;color:var(--text-muted);">请稍候...</span>
+  </div>
+  <div class="footer" id="footerCredential" style="display:none;">
+    <button class="btn" onclick="showState('complete')" id="btnSaved">已保存，继续 →</button>
+  </div>
+  <div class="footer" id="footerComplete" style="display:none;">
+    <button type="button" class="btn" id="btnCompleteBackList">返回列表</button>
+    <a href="#" class="btn btn-primary" id="goDetail">查看智能体详情 →</a>
+  </div>
+
+</div>
+
+<script src="../assets/proto.js"></script>
+<script>
+  var urlParams = new URLSearchParams(window.location.search);
+  var isEmbed = urlParams.get('embed') === '1';
+
+  if (!isEmbed) {
+    var qs = window.location.search;
+    if (qs.charAt(0) === '?') qs = qs.slice(1);
+    window.location.replace('index-v1.0.html?open=third-party' + (qs ? '&' + qs : ''));
+  } else {
+    document.getElementById('modalBody').classList.add('embed-mode');
+  }
+
+  function closeThirdPartyModal(refresh) {
+    if (typeof closeOpsEmbedModal === 'function' && closeOpsEmbedModal(refresh)) return;
+    window.location.href = 'index-v1.0.html';
+  }
+
+  document.getElementById('btnCloseThirdParty').onclick = function () { closeThirdPartyModal(false); };
+  document.getElementById('btnCancelThirdParty').onclick = function () { closeThirdPartyModal(false); };
+  document.getElementById('btnCompleteBackList').onclick = function () { closeThirdPartyModal(true); };
+
+  var selectedType = null;
+  var selectedScope = 'private';
+  var pendingAgentId = null;
+  var pendingApiKey = null;
+
+  function ensurePendingId() {
+    if (!pendingAgentId) {
+      pendingAgentId = 'agt_third_' + Date.now().toString(36).slice(-6);
+    }
+    return pendingAgentId;
+  }
+
+  function selectType(el) {
+    document.querySelectorAll('.type-card').forEach(function (c) { c.classList.remove('active'); });
+    el.classList.add('active');
+    selectedType = el.dataset.type;
+  }
+
+  function selectScope(el) {
+    document.querySelectorAll('.scope-option').forEach(function (c) { c.classList.remove('active'); });
+    el.classList.add('active');
+    el.querySelector('input[type="radio"]').checked = true;
+    selectedScope = el.dataset.scope;
+  }
+
+  function toggleUpstreamKeyField() {
+    var authType = document.getElementById('authType').value;
+    var row = document.getElementById('upstreamKeyRow');
+    var label = document.getElementById('upstreamKeyLabel');
+    var help = document.getElementById('upstreamKeyHelp');
+    var input = document.getElementById('upstreamApiKey');
+    if (authType === 'none') {
+      row.style.display = 'none';
+      input.value = '';
+      return;
+    }
+    row.style.display = 'flex';
+    if (authType === 'bearer_token') {
+      label.textContent = 'Bearer Token';
+      input.placeholder = '请输入第三方提供的 Bearer Token';
+      help.textContent = '平台调用第三方服务时将携带此 Token';
+    } else {
+      label.textContent = 'API Key';
+      input.placeholder = '请输入第三方提供的 API Key';
+      help.textContent = '平台调用第三方服务地址时将携带此密钥，仅 URL 无法完成鉴权';
+    }
+  }
+  toggleUpstreamKeyField();
+
+  document.getElementById('agentName').addEventListener('input', function () {
+    document.getElementById('nameCount').textContent = this.value.length;
+  });
+  document.getElementById('agentDesc').addEventListener('input', function () {
+    document.getElementById('descCount').textContent = this.value.length;
+  });
+
+  function submitForm() {
+    var name = document.getElementById('agentName').value.trim();
+    var desc = document.getElementById('agentDesc').value.trim();
+    var endpoint = document.getElementById('endpoint').value.trim();
+
+    if (!name) { alert('请输入智能体名称'); return; }
+    if (!desc) { alert('请输入智能体描述'); return; }
+    if (!selectedType) { alert('请选择智能体类型'); return; }
+    if (!endpoint) { alert('请输入服务地址'); return; }
+
+    var authType = document.getElementById('authType').value;
+    var upstreamApiKey = document.getElementById('upstreamApiKey').value.trim();
+    if (authType !== 'none' && !upstreamApiKey) {
+      alert(authType === 'bearer_token' ? '请输入 Bearer Token' : '请输入 API Key');
+      return;
+    }
+
+    showState('generating');
+
+    setTimeout(function () {
+      var id = ensurePendingId();
+
+      var result = {};
+      if (typeof Proto !== 'undefined') {
+        result = Proto.onThirdPartyRegistered(id, name, selectedType, selectedScope, desc, endpoint, authType, upstreamApiKey);
+      }
+      pendingApiKey = result.apiKey || ('ak_' + Date.now().toString(36).toUpperCase());
+
+      document.getElementById('credApiKey').textContent = pendingApiKey;
+
+      var scopeLabels = { private: '仅本人（免审核，直接上架）', specific: '指定人员（需审核）', public: '全公司（需审核）' };
+      var scopeSteps = { private: '可直接使用，无需审核', specific: '等待运营审核通过后上架', public: '等待运营审核通过后上架' };
+
+      document.getElementById('summaryName').textContent = name;
+      document.getElementById('summaryId').textContent = id;
+      document.getElementById('summaryScope').textContent = scopeLabels[selectedScope] || selectedScope;
+      document.getElementById('summaryNext').textContent = scopeSteps[selectedScope] || '—';
+      document.getElementById('completeSub').textContent = selectedScope === 'private'
+        ? '私有智能体免审核，已直接上架，可在运营列表中查看。'
+        : '已提交审核，审核通过后将自动上架。';
+
+      document.getElementById('goDetail').href = Proto.href('05-agent-detail.html', {
+        id: id, name: name, type: selectedType
+      });
+
+      showState('credential');
+    }, 1200);
+  }
+
+  function showState(state) {
+    ['form', 'generating', 'credential', 'complete'].forEach(function (s) {
+      document.getElementById('state-' + s).classList.remove('active');
+    });
+    document.getElementById('state-' + state).classList.add('active');
+
+    document.getElementById('footerForm').style.display = state === 'form' ? 'flex' : 'none';
+    document.getElementById('footerGenerating').style.display = state === 'generating' ? 'flex' : 'none';
+    document.getElementById('footerCredential').style.display = state === 'credential' ? 'flex' : 'none';
+    document.getElementById('footerComplete').style.display = state === 'complete' ? 'flex' : 'none';
+
+    var titles = { form: '第三方智能体接入', generating: '正在生成凭证', credential: '接入凭证', complete: '接入完成' };
+    document.getElementById('stateTitle').textContent = titles[state];
+
+    var st1 = document.getElementById('st1'), st2 = document.getElementById('st2'), st3 = document.getElementById('st3');
+    var ln1 = document.getElementById('ln1'), ln2 = document.getElementById('ln2');
+    st1.className = 'st'; st2.className = 'st'; st3.className = 'st';
+    ln1.className = 'line'; ln2.className = 'line';
+
+    if (state === 'form') { st1.classList.add('active'); }
+    else if (state === 'generating') { st1.classList.add('done'); st2.classList.add('active'); ln1.classList.add('done'); }
+    else if (state === 'credential') { st1.classList.add('done'); st2.classList.add('done'); ln1.classList.add('done'); ln2.classList.add('done'); }
+    else if (state === 'complete') { st1.classList.add('done'); st2.classList.add('done'); st3.classList.add('done'); ln1.classList.add('done'); ln2.classList.add('done'); }
+  }
+
+  function copyToClipboard(elId) {
+    var el = document.getElementById(elId);
+    if (!el) return;
+    var text = el.textContent;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function () {
+        Proto.toast('已复制到剪贴板');
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      Proto.toast('已复制到剪贴板');
+    }
+  }
+</script>
+</body>
+</html>

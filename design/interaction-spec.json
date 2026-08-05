@@ -1,0 +1,398 @@
+{
+  "$version": "1.0",
+  "$description": "运营平台 Page 手工交互规格（Figma reactions 为空）",
+  "modules": {
+    "user-feedback": {
+      "description": "用户反馈：列表→详情→处理/分派弹窗",
+      "htmlEntry": "11-user-feedback.html",
+      "flows": [
+        {
+          "id": "UF-01",
+          "from": {
+            "file": "11-user-feedback.html",
+            "element": "表格行「查看」"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "11-user-feedback-detail.html",
+            "params": [
+              "id"
+            ]
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "243:6859",
+          "verified": true
+        },
+        {
+          "id": "UF-02",
+          "from": {
+            "file": "11-user-feedback-detail.html",
+            "element": "处理反馈"
+          },
+          "trigger": "click",
+          "to": {
+            "modalId": "feedbackProcessModal"
+          },
+          "navType": "overlay",
+          "figmaFrameRef": "243:7175",
+          "variants": [
+            "243:7114",
+            "243:7143",
+            "243:7299"
+          ],
+          "verified": true
+        },
+        {
+          "id": "UF-03",
+          "from": {
+            "file": "11-user-feedback-detail.html",
+            "element": "分派任务"
+          },
+          "trigger": "click",
+          "to": {
+            "modalId": "dispatchTeamModal"
+          },
+          "navType": "overlay",
+          "figmaFrameRef": "243:1770",
+          "verified": true
+        },
+        {
+          "id": "UF-04",
+          "from": {
+            "file": "11-user-feedback-detail.html",
+            "element": "指定专家"
+          },
+          "trigger": "click",
+          "to": {
+            "modalId": "dispatchExpertModal"
+          },
+          "navType": "overlay",
+          "figmaFrameRef": "243:1892",
+          "verified": true
+        }
+      ]
+    },
+    "expert-workbench": {
+      "description": "专家工作台：我的任务/专家社区 Tab，做任务与上下文",
+      "htmlEntry": "12-expert-workbench.html",
+      "flows": [
+        {
+          "id": "EW-01",
+          "from": {
+            "file": "12-expert-workbench.html",
+            "element": "Tab 我的任务/专家社区"
+          },
+          "trigger": "click",
+          "to": {
+            "sameFile": true,
+            "action": "tab-switch"
+          },
+          "navType": "tab-switch",
+          "figmaFrameRef": "243:272",
+          "verified": true
+        },
+        {
+          "id": "EW-02",
+          "from": {
+            "file": "12-expert-workbench.html",
+            "element": "做任务"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "12-expert-task-detail.html",
+            "params": [
+              "taskId"
+            ]
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "243:2109",
+          "verified": true
+        },
+        {
+          "id": "EW-03",
+          "from": {
+            "file": "12-expert-task-detail.html",
+            "element": "查看上下文"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "12-expert-context.html",
+            "params": [
+              "taskId"
+            ]
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "243:2345",
+          "verified": true
+        },
+        {
+          "id": "EW-04",
+          "from": {
+            "file": "12-expert-workbench.html",
+            "element": "运营视角查看任务"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "12-expert-task-view.html",
+            "params": [
+              "taskId"
+            ]
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "243:5747",
+          "verified": false
+        },
+        {
+          "id": "EW-05",
+          "from": {
+            "file": "12-expert-task-detail.html",
+            "element": "申请延时"
+          },
+          "trigger": "click",
+          "to": {
+            "modalId": "delayRequestModal"
+          },
+          "navType": "overlay",
+          "figmaFrameRef": "243:2986",
+          "verified": true
+        }
+      ]
+    },
+    "task-dispatch": {
+      "description": "任务分派共享弹窗",
+      "htmlEntry": "ops-dispatch.js",
+      "flows": [
+        {
+          "id": "TD-01",
+          "from": {
+            "element": "多个专家处理"
+          },
+          "trigger": "click",
+          "to": {
+            "modalId": "multiExpertModal"
+          },
+          "navType": "overlay",
+          "figmaFrameRef": "243:6026",
+          "verified": false
+        },
+        {
+          "id": "TD-02",
+          "from": {
+            "element": "修改截止时间"
+          },
+          "trigger": "click",
+          "to": {
+            "modalId": "deadlineModal"
+          },
+          "navType": "overlay",
+          "figmaFrameRef": "243:6162",
+          "verified": false
+        }
+      ]
+    },
+    "message-center": {
+      "description": "topbar 铃铛 → 消息抽屉（运营/专家/团队视角）",
+      "htmlEntry": "ops-message-center.js",
+      "flows": [
+        {
+          "id": "MC-01",
+          "from": {
+            "element": "topbar 铃铛"
+          },
+          "trigger": "click",
+          "to": {
+            "drawerId": "opsMessageDrawer"
+          },
+          "navType": "drawer",
+          "figmaFrameRef": "243:3121",
+          "verified": true
+        },
+        {
+          "id": "MC-02",
+          "from": {
+            "element": "Tab 公告/待办"
+          },
+          "trigger": "click",
+          "to": {
+            "sameDrawer": true,
+            "action": "tab-switch"
+          },
+          "navType": "tab-switch",
+          "figmaFrameRef": "243:3028",
+          "verified": true
+        }
+      ]
+    },
+    "permission-mgmt": {
+      "description": "权限与开发者管理",
+      "htmlEntry": "13-permission-mgmt.html",
+      "flows": [
+        {
+          "id": "PM-01",
+          "from": {
+            "file": "13-permission-mgmt.html",
+            "element": "编辑"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "13-permission-edit.html",
+            "params": [
+              "id"
+            ]
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "243:3857",
+          "verified": false
+        },
+        {
+          "id": "PM-02",
+          "from": {
+            "file": "13-permission-mgmt.html",
+            "element": "查看"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "13-permission-view.html",
+            "params": [
+              "id"
+            ]
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "243:4645",
+          "verified": false
+        },
+        {
+          "id": "PM-03",
+          "from": {
+            "file": "13-permission-mgmt.html",
+            "element": "新增开发者"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "13-permission-add.html"
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "243:4990",
+          "verified": false
+        },
+        {
+          "id": "PM-04",
+          "from": {
+            "file": "13-permission-mgmt.html",
+            "element": "组织架构 Tab"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "13-org-structure.html"
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "243:6186",
+          "verified": true
+        },
+        {
+          "id": "PM-05",
+          "from": {
+            "file": "13-permission-mgmt.html",
+            "element": "删除"
+          },
+          "trigger": "click",
+          "to": {
+            "modalId": "deleteConfirmModal"
+          },
+          "navType": "overlay",
+          "figmaFrameRef": "243:5723",
+          "verified": true
+        }
+      ]
+    },
+    "ops-review-expert": {
+      "description": "运营审核专家任务",
+      "htmlEntry": "08-audit-expert.html",
+      "flows": [
+        {
+          "id": "AR-01",
+          "from": {
+            "file": "08-audit-queue.html",
+            "element": "专家任务审核"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "08-audit-expert.html",
+            "params": [
+              "taskId"
+            ]
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "243:7529",
+          "verified": true
+        },
+        {
+          "id": "AR-02",
+          "from": {
+            "file": "08-audit-expert.html",
+            "element": "退回"
+          },
+          "trigger": "click",
+          "to": {
+            "modalId": "rejectReasonModal"
+          },
+          "navType": "overlay",
+          "figmaFrameRef": "243:7772",
+          "verified": true
+        }
+      ]
+    },
+    "user-portal": {
+      "description": "Web 用户端：侧栏导航、消息中心、专家工作台（Figma page 376:250）",
+      "htmlEntry": "web端/index.html",
+      "flows": [
+        {
+          "id": "UP-01",
+          "from": {
+            "file": "web端/index.html",
+            "element": "侧栏专家工作台"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "web端/专家工作台/workbench.html"
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "377:356",
+          "verified": true
+        },
+        {
+          "id": "UP-02",
+          "from": {
+            "file": "web端/index.html",
+            "element": "侧栏消息中心"
+          },
+          "trigger": "click",
+          "to": {
+            "drawerId": "userMessageDrawer",
+            "tabs": [
+              "announce",
+              "todo",
+              "feedback"
+            ]
+          },
+          "navType": "drawer",
+          "figmaFrameRef": "376:984",
+          "verified": true
+        },
+        {
+          "id": "UP-03",
+          "from": {
+            "element": "消息中心待办立即处理"
+          },
+          "trigger": "click",
+          "to": {
+            "file": "web端/专家工作台/workbench.html"
+          },
+          "navType": "navigate",
+          "figmaFrameRef": "376:984",
+          "verified": true
+        }
+      ]
+    }
+  }
+}

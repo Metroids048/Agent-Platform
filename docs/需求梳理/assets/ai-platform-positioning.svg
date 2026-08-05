@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc"><title>AI platform positioning</title>
+  <title id="title">AI(Ñsð;SMþ</title>
+  <desc id="desc">åÐ%¡sð:-¢zýS:8Ã2T(7ïsðwý§Å(ú¾Ð%»ý2T	{L#</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 32px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}.sub{font:400 16px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#475569}
+      .h{font:700 18px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}.p{font:400 13px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#334155}.small{font:400 12px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#64748b}
+      .hub{fill:#eff6ff;stroke:#2563eb;stroke-width:2.2}.core{fill:#dbeafe;stroke:#1d4ed8;stroke-width:2}.front{fill:#fff7ed;stroke:#f59e0b;stroke-width:1.6}.plat{fill:#f0fdf4;stroke:#22c55e;stroke-width:1.5}.base{fill:#eef2ff;stroke:#6366f1;stroke-width:1.8}
+      .duty{fill:#fff;stroke:#cbd5e1;stroke-width:1.2}.d1{fill:#eff6ff;stroke:#60a5fa}.d2{fill:#f0fdf4;stroke:#86efac}.d3{fill:#faf5ff;stroke:#c084fc}
+      .arrow{stroke:#2563eb;stroke-width:2.2;fill:none;marker-end:url(#a)}.arrowGreen{stroke:#16a34a;stroke-width:2;fill:none;marker-end:url(#g)}.arrowBase{stroke:#6366f1;stroke-width:2;fill:none;marker-end:url(#b)}
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#16a34a"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#6366f1"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="720"/>
+  <text class="title" x="32" y="48">AI(Ñsð;SMþ</text>
+  <text class="sub" x="32" y="76">Ð%sð:-¢ · zýS:8Ãùa · M¥(7ï · Osð · wý§ß/</text>
+
+  <rect class="front" x="60" y="130" width="220" height="380" rx="14"/>
+  <text class="h" x="118" y="168">M¥</text>
+  <text class="small" x="88" y="192">ìË(7ï</text>
+  <rect class="duty" x="88" y="218" width="164" height="72" rx="10"/>
+  <text class="h" x="112" y="248">"Ñ°</text><text class="p" x="112" y="272">{6ÏÑ(</text>
+  <rect class="duty" x="88" y="310" width="164" height="72" rx="10"/>
+  <text class="h" x="112" y="340">ùÝ(</text><text class="p" x="112" y="364">(åöÓ</text>
+  <rect class="duty" x="88" y="402" width="164" height="72" rx="10"/>
+  <text class="h" x="112" y="432">ÍÐ¤</text><text class="p" x="112" y="456">á¦î¿"</text>
+
+  <rect class="hub" x="360" y="130" width="360" height="380" rx="16"/>
+  <text class="h" x="468" y="172" fill="#1d4ed8">Ð%¡sð-¢	</text>
+  <ellipse class="core" cx="540" cy="290" rx="110" ry="58"/>
+  <text class="h" x="490" y="286" fill="#1d4ed8">zýS</text>
+  <text class="p" x="478" y="310">8Ã(ùa</text>
+  <rect class="duty" x="390" y="380" width="140" height="56" rx="8"/>
+  <text class="p" x="408" y="412">¶ · ¡y · U:</text>
+  <rect class="duty" x="550" y="380" width="140" height="56" rx="8"/>
+  <text class="p" x="568" y="412">Í ·  · ÞA</text>
+
+  <rect class="plat" x="800" y="130" width="740" height="220" rx="14"/>
+  <text class="h" x="1060" y="168">O · sð</text>
+  <rect class="duty" x="830" y="198" width="150" height="64" rx="8"/><text class="h" x="858" y="226">zýSÑ</text><text class="p" x="858" y="248">Mn·Õ·å×</text>
+  <rect class="duty" x="1000" y="198" width="130" height="64" rx="8"/><text class="h" x="1028" y="226">åÆ-Ã</text><text class="p" x="1028" y="248">Ç·À"</text>
+  <rect class="duty" x="1150" y="198" width="130" height="64" rx="8"/><text class="h" x="1178" y="226">!¡</text><text class="p" x="1178" y="248">­Ã·¨</text>
+  <rect class="duty" x="1300" y="198" width="130" height="64" rx="8"/><text class="h" x="1328" y="226">D¡</text><text class="p" x="1328" y="248">·èr</text>
+  <rect class="duty" x="1450" y="198" width="70" height="64" rx="8"/><text class="h" x="1462" y="226">ûß</text><text class="p" x="1462" y="248">¡</text>
+
+  <rect class="base" x="800" y="380" width="740" height="130" rx="14"/>
+  <text class="h" x="1060" y="420" fill="#4338ca">wýý§</text>
+  <text class="p" x="830" y="460">ß¤Á · !¥ã · åÆ¡ · z­Ã · ¨èr · D¡Ï</text>
+  <text class="small" x="830" y="488">§Ðú@ý\:,ûß(7eã</text>
+
+  <rect class="d1" x="60" y="550" width="460" height="130" rx="12"/>
+  <text class="h" x="88" y="590">L#(ú¾</text>
+  <text class="p" x="88" y="620">zýSû¡þå\AåwMCPýÐ:ÍåÆ!cM</text>
+  <rect class="d2" x="560" y="550" width="460" height="130" rx="12"/>
+  <text class="h" x="588" y="590">L#Ð%»</text>
+  <text class="p" x="588" y="620">
+¶¡8ïÁôÍ¶û¡ÐLÑ§Ð%í</text>
+  <rect class="d3" x="1060" y="550" width="480" height="130" rx="12"/>
+  <text class="h" x="1088" y="590">L#	ý2T</text>
+  <text class="p" x="1088" y="620">Þ¥(7ïÑsðåÆ/!/D/ûß¡wý§bú¾Ñ(Ñ§Íí¯</text>
+
+  <path class="arrow" d="M280 320 H360"/>
+  <path class="arrowGreen" d="M720 250 H800"/>
+  <path class="arrowBase" d="M1170 350 V380"/>
+</svg>

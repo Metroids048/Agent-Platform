@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc"><title>AI platform Haineng integration</title>
+  <title id="title">wýsðSÌsðåï</title>
+  <desc id="desc">wý§ýAI(Ñsð
+BiUåùÔåÊ­Ã¨$aï</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 32px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}.sub{font:400 16px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#475569}
+      .h{font:700 17px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}.p{font:400 13px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#334155}.small{font:400 12px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#64748b}
+      .haineng{fill:#eef2ff;stroke:#6366f1;stroke-width:1.8}.aiapp{fill:#eff6ff;stroke:#3b82f6;stroke-width:1.8}
+      .row{fill:#fff;stroke:#cbd5e1;stroke-width:1.1}.train{fill:#f0fdf4;stroke:#22c55e;stroke-width:1.5}.infer{fill:#fff7ed;stroke:#f59e0b;stroke-width:1.5}
+      .step{fill:#2563eb}.arrow{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#a)}.flow{stroke:#2563eb;stroke-width:2.2;fill:none;marker-end:url(#b)}
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="980"/>
+  <text class="title" x="32" y="48">wýsðSÌsðåï</text>
+  <text class="sub" x="32" y="76">wýÐ§ý · ,sðZ¡iUÐ%» · ô¥¡iGPU</text>
+
+  <rect class="haineng" x="40" y="110" width="700" height="360" rx="14"/>
+  <text class="h" x="300" y="148" fill="#4338ca">wýsð · B/</text>
+  <rect class="row" x="70" y="175" width="640" height="48" rx="8"/><text class="p" x="90" y="205">ß¤Á  «ýß7ÄÇÒrú@¤Á</text>
+  <rect class="row" x="70" y="235" width="640" height="48" rx="8"/><text class="p" x="90" y="265">!¥ã  '!!!¨</text>
+  <rect class="row" x="70" y="295" width="640" height="48" rx="8"/><text class="p" x="90" y="325">åÆ¡  cÇGÀ"(¯</text>
+  <rect class="row" x="70" y="355" width="640" height="48" rx="8"/><text class="p" x="90" y="385">z­Ã  pnÆè®</text>
+  <rect class="row" x="70" y="415" width="310" height="40" rx="8"/><text class="p" x="90" y="440">¨èr  ! }(¿¡</text>
+  <rect class="row" x="400" y="415" width="310" height="40" rx="8"/><text class="p" x="420" y="440">D¡Ï  Tokenöö(Ï</text>
+
+  <rect class="aiapp" x="860" y="110" width="700" height="360" rx="14"/>
+  <text class="h" x="1120" y="148" fill="#1d4ed8">AI(Ñsð · 
+BiU</text>
+  <rect class="row" x="890" y="175" width="640" height="48" rx="8"/><text class="p" x="910" y="205">ìË(7ï + ¾Æ¡ÒrôC</text>
+  <rect class="row" x="890" y="235" width="640" height="48" rx="8"/><text class="p" x="910" y="265">zýSÅ + !cM	é + îC</text>
+  <rect class="row" x="890" y="295" width="640" height="48" rx="8"/><text class="p" x="910" y="325">åÆ}¡ + Oî6Æ + :1ô°ÞA</text>
+  <rect class="row" x="890" y="355" width="640" height="48" rx="8"/><text class="p" x="910" y="385">	ÍåU¨¨¡:o!®</text>
+  <rect class="row" x="890" y="415" width="310" height="40" rx="8"/><text class="p" x="910" y="440">e·¦Ñ§ + öö</text>
+  <rect class="row" x="1220" y="415" width="310" height="40" rx="8"/><text class="p" x="1240" y="440">ô¦,»ß¡</text>
+
+  <text class="h" x="40" y="520">¦m¯</text>
+  <rect fill="#fff" stroke="#cbd5e1" x="40" y="540" width="1520" height="80" rx="12"/>
+  <circle class="step" cx="100" cy="580" r="22"/><text fill="#fff" font-weight="700" x="94" y="586">1</text><text class="p" x="130" y="575">«ýn¤</text><text class="small" x="130" y="598">SSOÁwý«ý</text>
+  <path class="flow" d="M122 580 H200"/>
+  <circle class="step" cx="220" cy="580" r="22"/><text fill="#fff" font-weight="700" x="214" y="586">2</text><text class="p" x="250" y="575">(Mn</text>
+  <path class="flow" d="M242 580 H340"/>
+  <circle class="step" cx="360" cy="580" r="22"/><text fill="#fff" font-weight="700" x="354" y="586">3</text><text class="p" x="390" y="575">ý(</text>
+  <path class="flow" d="M382 580 H480"/>
+  <circle class="step" cx="500" cy="580" r="22"/><text fill="#fff" font-weight="700" x="494" y="586">4</text><text class="p" x="530" y="575">(</text>
+  <path class="flow" d="M522 580 H620"/>
+  <circle class="step" cx="640" cy="580" r="22"/><text fill="#fff" font-weight="700" x="634" y="586">5</text><text class="p" x="670" y="575">ÐL¡Ï</text>
+  <path class="flow" d="M662 580 H760"/>
+  <circle class="step" cx="780" cy="580" r="22"/><text fill="#fff" font-weight="700" x="774" y="586">6</text><text class="p" x="810" y="575">ÍÞA</text>
+
+  <rect class="train" x="40" y="660" width="740" height="280" rx="14"/>
+  <text class="h" x="300" y="698" fill="#15803d">!­Ãï</text>
+  <text class="p" x="70" y="740">pnÆÆ  è  \Ï/Õ	é  	é¡</text>
+  <text class="p" x="70" y="770"> gL®  !Ä0  H,¡</text>
+  <text class="small" x="70" y="810">((ý³®ÐGyßH</text>
+  <rect fill="#fff" stroke="#86efac" x="70" y="830" width="660" height="80" rx="8"/>
+  <text class="p" x="90" y="860">1wýzsð¥D`X¨\ÏÕ­Ãû¡</text>
+  <text class="p" x="90" y="888">,sð	ÍåUÑw­ÃBô¥¡GPU¹</text>
+
+  <rect class="infer" x="820" y="660" width="740" height="280" rx="14"/>
+  <text class="h" x="1080" y="698" fill="#92400e">!¨ï</text>
+  <text class="p" x="850" y="740">æÑùÝ  ÎÄÅPrompt  (¨¡</text>
+  <text class="p" x="850" y="770"> D`¡ÔÞ  G;¡ÏÐLå×</text>
+  <text class="small" x="850" y="810">(ò
+¶zýSå8ÝåÆîT(¿¡</text>
+  <rect fill="#fff" stroke="#fbbf24" x="850" y="830" width="660" height="80" rx="8"/>
+  <text class="p" x="870" y="860">Ð%sðsè3'Íöö,'Dö</text>
+  <text class="p" x="870" y="888">8ÞAD¡!¡</text>
+</svg>

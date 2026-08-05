@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc"><title>AI platform feedback routing</title>
+  <title id="title">îÞAïþ</title>
+  <desc id="desc">(7ÍÏ¶Rà	î{ÞAóÑåÆ!DCP'sð</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 32px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}.sub{font:400 16px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#475569}
+      .h{font:700 17px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}.p{font:400 13px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#334155}
+      .center{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.user{fill:#fff7ed;stroke:#f59e0b;stroke-width:1.5}
+      .r1{fill:#f0fdf4;stroke:#22c55e}.r2{fill:#ecfdf5;stroke:#10b981}.r3{fill:#eef2ff;stroke:#6366f1}.r4{fill:#fef3c7;stroke:#f59e0b}.r5{fill:#faf5ff;stroke:#a855f7}
+      .arrow{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#a)}.back{stroke:#2563eb;stroke-width:2.2;fill:none;marker-end:url(#b)}
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="720"/>
+  <text class="title" x="32" y="48">îÞAïþ</text>
+  <text class="sub" x="32" y="76">Ð%sðê/Á6Æ/(7îl:ï¨\</text>
+
+  <rect class="user" x="60" y="280" width="200" height="120" rx="14"/>
+  <text class="h" x="108" y="320">(7ï</text>
+  <text class="p" x="88" y="350">ùÝ(-</text>
+  <text class="p" x="88" y="374">Ð¤Í</text>
+
+  <rect class="center" x="360" y="240" width="280" height="200" rx="16"/>
+  <text class="h" x="430" y="290" fill="#1d4ed8">Ð%¡sð</text>
+  <text class="p" x="390" y="320">Í[ · ¶Rà</text>
+  <text class="p" x="390" y="348">ÞAåU</text>
+  <text class="p" x="390" y="376">ß*Û¦</text>
+  <text class="p" x="390" y="404">HåRc</text>
+
+  <rect class="r1" x="780" y="80" width="280" height="100" rx="12"/>
+  <text class="h" x="810" y="118">` Mn:w</text>
+  <text class="p" x="810" y="148"> zýSÑsð</text>
+  <text class="p" x="810" y="168">Ð:Íå\AåwMCP</text>
+
+  <rect class="r2" x="1080" y="80" width="280" height="100" rx="12"/>
+  <text class="h" x="1110" y="118">a åÆ:1</text>
+  <text class="p" x="1110" y="148"> åÆ-Ã</text>
+  <text class="p" x="1110" y="168">ô°ceEåÆ</text>
+
+  <rect class="r3" x="780" y="220" width="280" height="100" rx="12"/>
+  <text class="h" x="810" y="258">b H³</text>
+  <text class="p" x="810" y="288"> !¡sð</text>
+  <text class="p" x="810" y="308">pneE®ÐGcM</text>
+
+  <rect class="r4" x="1080" y="220" width="280" height="100" rx="12"/>
+  <text class="h" x="1110" y="258">c 'ýöß</text>
+  <text class="p" x="1110" y="288"> D¡-Ã</text>
+  <text class="p" x="1110" y="308">åèr}ö</text>
+
+  <rect class="r5" x="930" y="360" width="280" height="100" rx="12"/>
+  <text class="h" x="960" y="398">d CP8</text>
+  <text class="p" x="960" y="428"> ûß¡</text>
+  <text class="p" x="960" y="448">tÒrýpnC</text>
+
+  <rect fill="#ecfdf5" stroke="#34d399" x="780" y="520" width="580" height="140" rx="14"/>
+  <text class="h" x="810" y="560">í¯B</text>
+  <text class="p" x="810" y="590">Ï*ÍÅ{	Rà{ · #ûº · ÞAîsð · ¨\ · åÓ</text>
+  <text class="p" x="810" y="620">Mn/åÆ/!/DØôeÞÐ%sðÛe°nÑ§</text>
+
+  <path class="arrow" d="M260 340 H360"/>
+  <path class="back" d="M640 280 H780"/>
+  <path class="back" d="M640 260 H1080 V130"/>
+  <path class="back" d="M640 320 H780 V270"/>
+  <path class="back" d="M640 340 H1080 V270"/>
+  <path class="back" d="M640 380 H930 V410"/>
+  <path class="back" d="M1070 520 V440 H640 V400" stroke="#16a34a" stroke-dasharray="6 5" marker-end="url(#b)"/>
+</svg>

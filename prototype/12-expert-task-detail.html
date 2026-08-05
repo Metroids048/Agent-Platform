@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>做任务 · 专家工作台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="expert" data-ops-page="12-expert-task-detail.html" data-ops-subtitle="做任务">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main">
+  <div class="breadcrumb">
+    <a href="12-expert-workbench.html" id="breadcrumbWorkbenchLink">专家工作台</a><span class="sep">›</span><span class="current">做任务</span>
+  </div>
+  <div class="page-header">
+    <div><h1 id="taskTitle">任务</h1></div>
+    <div class="ops-inline-actions">
+      <a href="#" class="btn btn-primary" id="btnViewContext">查看上下文</a>
+      <button type="button" class="btn" id="btnApplyDelay">申请延时</button>
+      <button type="button" class="btn" id="btnChangeDeadline">修改截止时间</button>
+      <button type="button" class="btn btn-primary" id="btnCompleteTask">完成任务</button>
+    </div>
+  </div>
+  <div class="ops-task-layout">
+    <div class="ops-task-main">
+      <div class="card">
+        <h4 style="font-size:14px;margin-bottom:12px;">任务说明</h4>
+        <p id="taskDesc" style="font-size:13px;color:var(--text-secondary);line-height:1.7;">—</p>
+        <div class="ops-kv-grid" style="margin-top:16px;">
+          <div class="ops-kv"><span class="k">责任团队</span><span id="taskTeam">—</span></div>
+          <div class="ops-kv"><span class="k">负责专家</span><span id="taskExpert">—</span></div>
+          <div class="ops-kv"><span class="k">截止时间</span><span id="taskDeadline">—</span></div>
+          <div class="ops-kv"><span class="k">状态</span><span id="taskStatus">—</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ops-task-side">
+      <div class="card"><h4 style="font-size:14px;margin-bottom:8px;">处理记录</h4><p style="font-size:12px;color:var(--text-muted);">2026-06-04 已领取任务</p></div>
+    </div>
+  </div>
+</main>
+</div></div>
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-dispatch.js"></script>
+<script src="assets/ops-feedback-loop.js"></script>
+<script src="assets/ops-expert-workbench.js"></script>
+<script>OpsExpertWorkbench.initTaskDetailPage();</script>
+</body>
+</html>

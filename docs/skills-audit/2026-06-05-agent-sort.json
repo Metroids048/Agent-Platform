@@ -1,0 +1,111 @@
+{
+    "evaluatedAt":  "2026-06-05T09:52:33Z",
+    "projectRoot":  "C:\\Users\\win\\Desktop\\Agent Platform",
+    "repoEvidence":  {
+                         "hasMemory":  true,
+                         "hasPrototype":  true,
+                         "hasAgentsMd":  true,
+                         "hasFigmaWorkflow":  true,
+                         "hasFigmaConfig":  true
+                     },
+    "dailyCount":  24,
+    "daily":  [
+                  {
+                      "name":  "global-session-core",
+                      "evidence":  "alwaysOnSkills; session routing in all tools"
+                  },
+                  {
+                      "name":  "requirement-clarifier",
+                      "evidence":  "alwaysOnSkills; .cursor/rules/requirement-clarifier.mdc"
+                  },
+                  {
+                      "name":  "karpathy-guidelines",
+                      "evidence":  "alwaysOnSkills; coding discipline always on"
+                  },
+                  {
+                      "name":  "ai-coding-ok",
+                      "evidence":  "AGENTS.md + .github/agent/memory/ PDCA loop"
+                  },
+                  {
+                      "name":  "zero-to-one-gate",
+                      "evidence":  "AGENTS.md zero-to-one; new modules/pages"
+                  },
+                  {
+                      "name":  "brainstorming",
+                      "evidence":  "0-to-1 chain; design before implement"
+                  },
+                  {
+                      "name":  "writing-plans",
+                      "evidence":  "post-ADR implementation plans"
+                  },
+                  {
+                      "name":  "ai-delivery-gate",
+                      "evidence":  "prototype/scripts/verify-all.js 5-step gate"
+                  },
+                  {
+                      "name":  "global-delivery-gate",
+                      "evidence":  "verification-before-completion cross-repo"
+                  },
+                  {
+                      "name":  "systematic-debugging",
+                      "evidence":  "bug fix workflow; intent profile bug_fix_debug"
+                  },
+                  {
+                      "name":  "diagnose",
+                      "evidence":  "intent profile bug_fix_debug boost 40"
+                  },
+                  {
+                      "name":  "figma-workflow",
+                      "evidence":  "design/figma.config.json; project .cursor/skills"
+                  },
+                  {
+                      "name":  "figma2code",
+                      "evidence":  "figma杞墠绔? Figma URL to HTML workflow"
+                  },
+                  {
+                      "name":  "design-taste-frontend",
+                      "evidence":  "prototype UI quality; keywordBoost landing/portfolio"
+                  },
+                  {
+                      "name":  "ouro-loop",
+                      "evidence":  "multi-step autonomous MAP-PLAN-BUILD-VERIFY"
+                  },
+                  {
+                      "name":  "planning-with-files-zh",
+                      "evidence":  "intent profile plan_multistep; Chinese planning"
+                  },
+                  {
+                      "name":  "verification-before-completion",
+                      "evidence":  "intent profile verify_delivery"
+                  },
+                  {
+                      "name":  "agent-verifier",
+                      "evidence":  "project .cursor/skills; pre-PR audit"
+                  },
+                  {
+                      "name":  "writing-skills",
+                      "evidence":  "skill engineering; skill_engineering profile"
+                  },
+                  {
+                      "name":  "skill-stocktake",
+                      "evidence":  "skill_engineering profile; quality audits"
+                  },
+                  {
+                      "name":  "agent-sort",
+                      "evidence":  "skill_engineering profile; DAILY/LIBRARY curation"
+                  },
+                  {
+                      "name":  "cursor-awesome-parallel-exploring",
+                      "evidence":  "intent explore_codebase; large repo"
+                  },
+                  {
+                      "name":  "memory-handoff",
+                      "evidence":  "intent memory_session; session resume"
+                  },
+                  {
+                      "name":  "pm-prd-writer",
+                      "evidence":  "intent prd_document; Codex pm-* mirrored"
+                  }
+              ],
+    "libraryNote":  "All other skills in global-skills-index (~280) remain LIBRARY 鈥?reachable via scan-global-skills Top 8 + search, not loaded every session."
+}

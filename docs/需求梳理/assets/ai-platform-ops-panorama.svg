@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">AI应用开发平台运营全景架构图</title>
+  <desc id="desc">运营管理平台串联用户端、智能体开发平台、模型服务平台、资源服务中心、系统管理和知识中心，海能平台作为底层能力底座提供支撑。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}
+      .title{font:700 32px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 16px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#475569}
+      .h{font:700 20px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#0f172a}
+      .hBlue{font:700 22px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#1d4ed8}
+      .hGreen{font:700 22px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#15803d}
+      .hPurple{font:700 20px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#6d28d9}
+      .hAmber{font:700 20px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#92400e}
+      .p{font:400 14px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#334155}
+      .small{font:400 12px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#64748b}
+      .label{font:700 12px "Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:#1d4ed8}
+      .laneUser{fill:#fff7ed;stroke:#f59e0b;stroke-width:1.6}
+      .laneOps{fill:#eff6ff;stroke:#3b82f6;stroke-width:1.8}
+      .lanePlat{fill:#f0fdf4;stroke:#22c55e;stroke-width:1.7}
+      .laneGov{fill:#faf5ff;stroke:#a855f7;stroke-width:1.5}
+      .laneBase{fill:#eef2ff;stroke:#6366f1;stroke-width:1.8}
+      .baseDeep{fill:#e0e7ff;stroke:#4f46e5;stroke-width:1.5}
+      .card{fill:#fff;stroke:#cbd5e1;stroke-width:1.2}
+      .cardBlue{fill:#fff;stroke:#60a5fa;stroke-width:1.3}
+      .cardGreen{fill:#fff;stroke:#86efac;stroke-width:1.3}
+      .cardAmber{fill:#fffdf5;stroke:#fbbf24;stroke-width:1.3}
+      .cardPurple{fill:#fff;stroke:#c084fc;stroke-width:1.2}
+      .pill{fill:#fff;stroke:#2563eb;stroke-width:1.2}
+      .arrow{stroke:#2563eb;stroke-width:2.4;fill:none;marker-end:url(#arrowBlue)}
+      .arrowBoth{stroke:#2563eb;stroke-width:2.2;fill:none;marker-start:url(#arrowBlueStart);marker-end:url(#arrowBlue)}
+      .arrowGreen{stroke:#16a34a;stroke-width:2.4;fill:none;marker-end:url(#arrowGreen)}
+      .arrowPurple{stroke:#7c3aed;stroke-width:2;fill:none;stroke-dasharray:7 6;marker-end:url(#arrowPurple)}
+      .line{stroke:#cbd5e1;stroke-width:1}
+    </style>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+    <marker id="arrowBlueStart" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M10 0 L0 5 L10 10 Z" fill="#2563eb"/></marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#16a34a"/></marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#7c3aed"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="980"/>
+  <text class="title" x="32" y="48">AI应用开发平台运营全景架构图</text>
+  <text class="sub" x="32" y="76">保持多平台串联关系：用户端独立进入，运营平台居中治理，开发、模型、资源、系统管理、知识中心双向协同，海能平台作为底座支撑。</text>
+
+  <rect class="laneUser" x="30" y="115" width="250" height="500" rx="14"/>
+  <text class="hAmber" x="112" y="152">用户端</text>
+  <line class="line" x1="56" y1="168" x2="254" y2="168"/>
+  <rect class="cardAmber" x="56" y="196" width="198" height="74" rx="10"/>
+  <text class="h" x="80" y="226">普通用户</text>
+  <text class="p" x="80" y="250">搜索、收藏、使用智能体</text>
+  <rect class="cardAmber" x="56" y="294" width="198" height="74" rx="10"/>
+  <text class="h" x="80" y="324">创建者</text>
+  <text class="p" x="80" y="348">创建、配置、调试、申请发布</text>
+  <rect class="cardAmber" x="56" y="392" width="198" height="74" rx="10"/>
+  <text class="h" x="80" y="422">审核/管理人员</text>
+  <text class="p" x="80" y="446">审核、下架、监控告警</text>
+  <rect class="cardAmber" x="56" y="500" width="198" height="72" rx="10" stroke-dasharray="5 4"/>
+  <text class="h" x="88" y="530">可见范围</text>
+  <text class="p" x="80" y="554">私有 / 单位共享 / 公开</text>
+
+  <rect class="laneOps" x="330" y="115" width="460" height="500" rx="14"/>
+  <text class="hBlue" x="493" y="152">运营管理平台</text>
+  <text class="label" x="451" y="176">管状态 · 管审批 · 管展示 · 管反馈 · 管看板</text>
+  <line class="line" x1="356" y1="191" x2="764" y2="191" stroke="#93c5fd"/>
+  <rect class="cardBlue" x="356" y="218" width="180" height="72" rx="10"/>
+  <text class="h" x="378" y="247">智能体中心</text>
+  <text class="p" x="378" y="271">列表 / 档案 / 状态</text>
+  <rect class="cardBlue" x="584" y="218" width="180" height="72" rx="10"/>
+  <text class="h" x="606" y="247">审核与发布</text>
+  <text class="p" x="606" y="271">范围 / 风险 / 上下架</text>
+  <rect class="cardBlue" x="356" y="314" width="180" height="72" rx="10"/>
+  <text class="h" x="378" y="343">反馈与专家</text>
+  <text class="p" x="378" y="367">反馈单 / 专家任务 / 回流</text>
+  <rect class="cardBlue" x="584" y="314" width="180" height="72" rx="10"/>
+  <text class="h" x="606" y="343">运营看板</text>
+  <text class="p" x="606" y="367">用量 / 效果 / 成本 / 健康度</text>
+  <rect class="cardBlue" x="356" y="414" width="408" height="74" rx="10"/>
+  <text class="h" x="378" y="443">智能体档案</text>
+  <text class="p" x="378" y="467">草稿、发布版本、审批记录、当前状态、开发平台关联关系</text>
+  <rect class="cardBlue" x="356" y="514" width="408" height="60" rx="10"/>
+  <text class="h" x="378" y="544">回流工单</text>
+  <text class="p" x="492" y="544">知识、模型、资源、权限、配置优化</text>
+
+  <rect class="lanePlat" x="950" y="115" width="520" height="500" rx="14"/>
+  <text class="hGreen" x="1110" y="152">平台能力群</text>
+  <text class="label" x="1054" y="176" fill="#15803d">开发配置 · 知识维护 · 模型评估 · 资源保障 · 系统治理</text>
+  <line class="line" x1="976" y1="191" x2="1444" y2="191" stroke="#86efac"/>
+  <rect class="cardGreen" x="976" y="218" width="210" height="72" rx="10"/>
+  <text class="h" x="1000" y="247">智能体开发平台</text>
+  <text class="p" x="1000" y="271">提示词 / 工作流 / 工具 / MCP</text>
+  <rect class="cardGreen" x="1216" y="218" width="210" height="72" rx="10"/>
+  <text class="h" x="1240" y="247">知识中心</text>
+  <text class="p" x="1240" y="271">知识库 / 文档采编 / 引用溯源</text>
+  <rect class="cardGreen" x="976" y="314" width="210" height="72" rx="10"/>
+  <text class="h" x="1000" y="343">模型服务平台</text>
+  <text class="p" x="1000" y="367">模型档位 / 微调 / 评估</text>
+  <rect class="cardGreen" x="1216" y="314" width="210" height="72" rx="10"/>
+  <text class="h" x="1240" y="343">资源服务中心</text>
+  <text class="p" x="1240" y="367">资源队列 / 部署 / 成本指标</text>
+  <rect class="cardGreen" x="976" y="414" width="210" height="72" rx="10"/>
+  <text class="h" x="1000" y="443">系统管理</text>
+  <text class="p" x="1000" y="467">组织 / 角色 / 菜单 / 审计</text>
+  <rect class="cardGreen" x="1216" y="414" width="210" height="72" rx="10"/>
+  <text class="h" x="1240" y="443">运行引擎</text>
+  <text class="p" x="1240" y="467">执行对话、调用能力、记录日志</text>
+  <rect class="cardGreen" x="976" y="514" width="450" height="60" rx="10"/>
+  <text class="h" x="1000" y="544">平台协同结果</text>
+  <text class="p" x="1135" y="544">配置生效、知识更新、模型优化、资源稳定</text>
+
+  <path class="arrow" d="M280 360 H330"/>
+  <text class="label" x="292" y="346">使用 / 反馈</text>
+  <path class="arrowBoth" d="M790 250 H950"/>
+  <rect class="pill" x="805" y="226" width="130" height="36" rx="18"/>
+  <text class="label" x="827" y="249">创建与配置</text>
+  <path class="arrowBoth" d="M790 350 H950"/>
+  <rect class="pill" x="805" y="326" width="130" height="36" rx="18"/>
+  <text class="label" x="827" y="349">资源与摘要</text>
+  <path class="arrowBoth" d="M790 450 H950"/>
+  <rect class="pill" x="805" y="426" width="130" height="36" rx="18"/>
+  <text class="label" x="827" y="449">运行与反馈</text>
+  <path class="arrowBoth" d="M790 545 H950"/>
+  <rect class="pill" x="805" y="521" width="130" height="36" rx="18"/>
+  <text class="label" x="827" y="544">回流优化</text>
+
+  <rect class="laneGov" x="330" y="650" width="1140" height="88" rx="14"/>
+  <text class="hPurple" x="762" y="686">系统治理与运营支撑</text>
+  <text class="p" x="380" y="716">组织角色 / 菜单功能 / 凭证管理 / API Key / 审计日志 / 反馈工单 / 成本估算 / 告警处置 / 服务质量复盘</text>
+
+  <rect class="laneBase" x="30" y="778" width="1440" height="150" rx="14"/>
+  <text class="hBlue" x="700" y="815">海能平台能力底座</text>
+  <rect class="card" x="70" y="842" width="690" height="62" rx="10"/>
+  <text class="h" x="96" y="872">上层AI能力支撑</text>
+  <text class="p" x="260" y="872">海能智能体能力 / 企业知识库 / 模型服务接口 / 工具与任务链能力</text>
+  <rect class="baseDeep" x="800" y="842" width="430" height="62" rx="10"/>
+  <text class="h" x="826" y="872">下层基础资源支撑</text>
+  <text class="p" x="1016" y="872">算力资源 / 推理部署 / 训练微调</text>
+  <rect class="baseDeep" x="1260" y="842" width="220" height="62" rx="10"/>
+  <text class="h" x="1284" y="872">治理支撑</text>
+  <text class="p" x="1284" y="896">认证 / 计量 / 隔离</text>
+  <path class="arrowGreen" d="M560 650 V615"/>
+  <path class="arrowGreen" d="M1180 778 V615"/>
+  <path class="arrowPurple" d="M415 738 V778"/>
+  <path class="arrowPurple" d="M1030 738 V778"/>
+</svg>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>专家工作台 · 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="expert" data-ops-page="12-expert-workbench.html" data-ops-subtitle="专家工作台">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main">
+  <div class="page-header"><div><h1>专家工作台</h1><p>我的任务与专家社区任务池</p></div></div>
+  <div class="ops-tabs" id="expertTabs">
+    <button type="button" class="active" data-ops-tab="my-tasks">我的任务</button>
+    <button type="button" data-ops-tab="community">专家社区 · 任务池</button>
+  </div>
+  <div class="ops-tab-panel active" data-ops-panel="my-tasks">
+    <div class="ops-subtabs" id="expertSubTabs">
+      <button type="button" class="active" data-ops-subtab="all">全部</button>
+      <button type="button" data-ops-subtab="in_progress">进行中</button>
+      <button type="button" data-ops-subtab="done">已完成</button>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;margin-top:12px;">
+      <table class="data-table">
+        <thead><tr><th>任务</th><th>团队</th><th>状态</th><th>截止时间</th><th style="width:140px;">操作</th></tr></thead>
+        <tbody id="expertMyTasksBody"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="ops-tab-panel" data-ops-panel="community">
+    <div class="filter-bar" id="poolFilterBar" style="margin-bottom:12px;">
+      <div class="filter-pills">
+        <button type="button" class="active" data-pool-filter="all">全部</button>
+        <button type="button" data-pool-filter="public">公共</button>
+        <button type="button" data-pool-filter="urgent">紧急</button>
+      </div>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table class="data-table">
+        <thead><tr><th>任务</th><th>团队</th><th>状态</th><th>截止时间</th><th style="width:160px;">操作</th></tr></thead>
+        <tbody id="expertPoolBody"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+</div></div>
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-context-menu.js"></script>
+<script src="assets/ops-dispatch.js"></script>
+<script src="assets/ops-expert-workbench.js"></script>
+<script>OpsExpertWorkbench.initWorkbenchPage();</script>
+</body>
+</html>

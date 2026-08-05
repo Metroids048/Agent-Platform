@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>敖钦 · 用户工作台</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/style.css?v=user-v3-ui">
+<link rel="stylesheet" href="../assets/figma-capture.css">
+<script src="../assets/user-auth.js?v=user-v4-auth"></script>
+<script src="../assets/figma-capture.js"></script>
+</head>
+<body class="aioq-page aioq-user-v2-page" data-user-nav="chat">
+<div class="aioq-shell aioq-user-shell" id="userChatRoot">
+  <aside class="aioq-sidebar aioq-user-sidebar">
+    <div class="aioq-brand">
+      <div class="aioq-brand-mark aioq-brand-mark--ao" aria-hidden="true">敖</div>
+      <div>
+        <strong>敖钦 AI 工作台</strong>
+        <span>面向业务用户的智能入口</span>
+      </div>
+    </div>
+
+    <nav class="aioq-sidebar-nav" aria-label="工作台导航">
+      <button class="aioq-nav-item active" type="button" id="btnNewChat">
+        <span class="aioq-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span>新对话</span>
+      </button>
+
+      <a class="aioq-nav-item" href="agent-square.html">
+        <span class="aioq-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/></svg>
+        </span>
+        <span>智能体中心</span>
+      </a>
+    </nav>
+
+    <div class="aioq-sidebar-scroll">
+      <section class="aioq-sidebar-block aioq-agents-sidebar-block">
+        <div class="aioq-sidebar-block-title">智能体</div>
+        <div class="aioq-sidebar-agent-list" id="sidebarAgentList"></div>
+      </section>
+
+      <section class="aioq-sidebar-block aioq-history-sidebar-block">
+        <div class="aioq-sidebar-block-title">最近对话</div>
+        <div class="aioq-sidebar-history-list" id="sidebarHistoryList"></div>
+        <button class="aioq-sidebar-mini-action" type="button" id="btnHistory">查看全部历史</button>
+      </section>
+    </div>
+
+    <div class="aioq-sidebar-bottom">
+      <button class="aioq-footer-row" type="button" id="btnFeedbackBox">意见箱</button>
+      <button class="aioq-footer-row" type="button" id="btnMessageCenter">消息中心</button>
+      <a class="aioq-footer-row" href="专家工作台/workbench.html" id="btnExpertWorkbench">专家工作台</a>
+      <button class="aioq-footer-row" type="button" id="btnHelp">帮助</button>
+    </div>
+  </aside>
+
+  <main class="aioq-main aioq-user-main">
+    <header class="aioq-topbar aioq-user-topbar">
+      <button class="aioq-menu-button" type="button" id="btnCollapseSidebar" title="收起侧栏" aria-label="收起侧栏">
+        <svg viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="aioq-user-top-title">
+        <span>对话</span>
+        <strong id="chatTopSubtitle">选择智能体，开始处理业务问题</strong>
+      </div>
+      <div class="aioq-model-wrap" id="modelPickerWrap">
+        <button type="button" class="aioq-model-trigger" id="btnModel" aria-haspopup="listbox" aria-expanded="false">
+          <span id="modelLabel">DeepSeek-V4-Flash 模型</span>
+          <span class="aioq-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="aioq-popover hidden" id="modelMenu" role="listbox" aria-label="模型选择"></div>
+      </div>
+      <a class="aioq-top-link aioq-space-top-entry" href="my-space.html">我的空间</a>
+    </header>
+
+    <section class="aioq-stage aioq-user-stage" id="chatStage">
+      <div class="aioq-stage-scroll">
+        <div class="aioq-welcome" id="welcomePanel">
+          <div class="aioq-hero-title">
+            <div class="aioq-hero-avatar" aria-hidden="true">
+              <svg viewBox="0 0 56 56" width="56" height="56" fill="none">
+                <rect width="56" height="56" rx="16" fill="#e8f3ff"/>
+                <path d="M14 34c5-7 10-10 14-10s9 3 14 10" stroke="#0f5c8c" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="28" cy="22" r="4" fill="#0f5c8c"/>
+              </svg>
+            </div>
+            <h2 id="welcomeName">敖钦智能助手</h2>
+          </div>
+          <p id="welcomeDesc">请选择一个智能体开始处理业务问题。</p>
+        </div>
+        <div class="aioq-messages" id="chatMsgs"></div>
+      </div>
+
+      <div class="aioq-composer-wrap aioq-user-composer-wrap">
+        <div class="skill-chip-list aioq-active-skills" id="sessionActiveSkills" style="display:none;"></div>
+        <div class="skill-chip-list aioq-active-files hidden" id="sessionActiveFiles" aria-label="已上传文件"></div>
+        <div class="aioq-composer-v2">
+          <textarea id="chatInput" rows="2" placeholder="和我聊聊吧…"></textarea>
+          <div class="aioq-composer-toolbar">
+            <div class="aioq-composer-toolbar-left">
+              <div class="aioq-attach-menu-wrap">
+                <button type="button" class="aioq-toolbar-btn aioq-toolbar-btn--icon" id="btnAttachMenu" title="附件与笔记" aria-label="附件与笔记" aria-expanded="false" aria-haspopup="true">
+                  <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </button>
+                <div class="aioq-attach-menu hidden" id="attachMenu" role="menu">
+                  <button type="button" class="aioq-attach-menu-item" data-attach-action="file" role="menuitem">上传文件</button>
+                  <button type="button" class="aioq-attach-menu-item" data-attach-action="note" role="menuitem">引用笔记</button>
+                </div>
+              </div>
+              <button type="button" class="aioq-toolbar-btn aioq-toolbar-pill" id="btnDeepThinking" data-toggle-deep-thinking aria-pressed="false">深度思考</button>
+              <div class="aioq-kb-picker-wrap aioq-toolbar-pill">
+                <span class="aioq-kb-icon" aria-hidden="true">
+                  <img src="../assets/icons/kb-book.svg" width="18" height="18" alt="">
+                </span>
+                <select id="knowledgeSelect" aria-label="指定知识库">
+                  <option value="kb_enterprise">企业知识库</option>
+                  <option value="kb_qhse">QHSE 知识库</option>
+                  <option value="kb_docs">制度文档库</option>
+                  <option value="kb_personal">个人笔记</option>
+                </select>
+              </div>
+              <button type="button" class="aioq-toolbar-btn aioq-toolbar-btn--skill" id="sessionSkillToggle" title="会话 Skills 增强" aria-label="会话 Skills 增强">
+                <img src="../assets/icons/skill-scroll.svg" width="20" height="20" alt="">
+              </button>
+              <div id="attachChip" class="aioq-composer-inline-chips hidden" aria-label="已引用笔记"></div>
+            </div>
+            <button type="button" class="aioq-toolbar-send" id="chatSend" title="发送" aria-label="发送">
+              <svg viewBox="0 0 20 20" width="18" height="18" fill="none"><path d="M4 10l12-6-6 12-1.5-5.5L4 10z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <input type="file" id="chatFileInput" class="hidden" aria-hidden="true" tabindex="-1" accept="image/*,.png,.jpg,.jpeg,.webp,.xlsx,.xls,.doc,.docx,.pdf">
+        <p class="aioq-composer-context-status" id="composerContextStatus"></p>
+        <button type="button" class="aioq-scroll-resume hidden" id="btnScrollResume">回到底部</button>
+        <div class="aioq-suggest-row">
+          <p class="aioq-suggest-hint">你可以试着问：</p>
+          <div class="aioq-suggest-chips" id="promptSuggestions"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="aioq-source-panel hidden" id="sourcePanel">
+  <div class="aioq-floating-head">
+    <strong>引用原文</strong>
+    <button type="button" id="btnCloseSource" aria-label="关闭">×</button>
+  </div>
+  <div class="aioq-source-tools">
+    <button type="button" aria-label="缩小">−</button>
+    <span>100%</span>
+    <button type="button" aria-label="放大">+</button>
+    <button type="button" aria-label="刷新" id="btnRefreshSource">↻</button>
+    <button type="button" aria-label="下载" id="btnSourceDownload">⇩</button>
+  </div>
+  <div id="sourcePanelBody"></div>
+  <button type="button" class="btn btn-sm hidden" id="btnRetrySource">重试加载</button>
+</div>
+
+<div id="noteRefPopover" class="aioq-note-ref-popover hidden" role="dialog" aria-label="笔记摘要"></div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="historyModal">
+  <div class="modal-box modal-md aioq-stack-modal">
+    <div class="aioq-stack-modal-head">
+      <h2>历史对话</h2>
+      <button type="button" class="icon-btn" id="btnCloseHistory" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body aioq-history-modal-body">
+      <input type="search" class="aioq-history-search" id="historySearchInput" placeholder="搜索对话标题或智能体" aria-label="搜索历史记录">
+      <div class="aioq-history-scroll" id="historyList"></div>
+      <button type="button" class="btn btn-sm aioq-history-load-more hidden" id="btnHistoryLoadMore">加载更多</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="helpModal">
+  <div class="modal-box modal-sm aioq-contact-modal">
+    <div class="modal-header">
+      <h2>联系运维</h2>
+      <button type="button" class="close" id="btnCloseHelp" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body aioq-contact-body">
+      <div class="aioq-contact-row">
+        <span class="aioq-contact-icon" aria-hidden="true">📞</span>
+        <div>
+          <span class="aioq-contact-label">电话</span>
+          <a class="aioq-contact-value" href="tel:0755-26023001">0755-26023001</a>
+        </div>
+      </div>
+      <div class="aioq-contact-row">
+        <span class="aioq-contact-icon" aria-hidden="true">✉</span>
+        <div>
+          <span class="aioq-contact-label">邮箱</span>
+          <a class="aioq-contact-value" href="mailto:lixf69@cnooc.com.cn">lixf69@cnooc.com.cn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="historyDeleteConfirmModal">
+  <div class="modal-box modal-sm">
+    <div class="modal-header">
+      <h2>删除对话</h2>
+      <button type="button" class="close" id="btnCloseHistoryDelete" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="aioq-muted">删除后无法恢复，确定要删除这条历史对话吗？</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" id="btnCancelHistoryDelete">取消</button>
+      <button type="button" class="btn btn-danger" id="btnConfirmHistoryDelete">删除</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="historySummaryModal">
+  <div class="modal-box modal-lg aioq-summary-modal">
+    <div class="aioq-stack-modal-head">
+      <div>
+        <h2>保存笔记</h2>
+        <p>可全选或多选历史轮次，包含已生成的编辑分支；保存后可在我的空间查看和编辑。</p>
+      </div>
+      <button type="button" class="icon-btn" id="btnCloseHistorySummary" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body aioq-summary-modal-body">
+      <label class="aioq-summary-title-field">
+        <span>笔记标题</span>
+        <input type="text" id="historySummaryTitle" maxlength="80" placeholder="输入笔记标题">
+      </label>
+      <div class="aioq-summary-round-toolbar">
+        <button type="button" class="btn btn-sm btn--ghost" id="btnSelectAllHistorySummary">全选</button>
+        <button type="button" class="btn btn-sm btn--ghost" id="btnClearHistorySummary">清空</button>
+      </div>
+      <div class="aioq-summary-transcript" id="historySummaryTranscript"></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" id="btnCancelHistorySummary">取消</button>
+      <button type="button" class="btn btn-primary" id="btnSaveHistorySummary">保存笔记</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="historyAgentModal">
+  <div class="modal-box modal-lg aioq-summary-modal aioq-agent-modal">
+    <div class="aioq-stack-modal-head">
+      <div>
+        <h2>保存个人智能体</h2>
+        <p>模型将根据整段对话总结、精炼为标准系统提示词，保存后可在我的空间查看。</p>
+      </div>
+      <button type="button" class="icon-btn" id="btnCloseHistoryAgent" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body aioq-agent-modal-body">
+      <p class="aioq-agent-source" id="historyAgentSource"></p>
+      <label class="aioq-agent-field">
+        <span>智能体名称</span>
+        <input type="text" id="historyAgentName" maxlength="40" placeholder="输入智能体名称">
+      </label>
+      <label class="aioq-agent-field">
+        <span>一句话简介</span>
+        <input type="text" id="historyAgentIntro" maxlength="80" placeholder="输入简介">
+      </label>
+      <label class="aioq-agent-field">
+        <span>系统提示词</span>
+        <textarea id="historyAgentPrompt" rows="6" placeholder="系统将根据对话自动提炼"></textarea>
+      </label>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" id="btnCancelHistoryAgent">取消</button>
+      <button type="button" class="btn btn-primary" id="btnSaveHistoryAgent">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="chatFeedbackModal">
+  <div class="modal-box modal-md">
+    <div class="modal-header">
+      <h2>反馈</h2>
+      <button type="button" class="close" id="btnCloseFeedback" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body">
+      <div id="chatFeedbackFormMount"></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" id="btnCancelFeedback">取消</button>
+      <button type="button" class="btn btn-primary" id="btnSubmitFeedback">提交</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="notePickerModal">
+  <div class="modal-box modal-md">
+    <div class="modal-header">
+      <h2>引用个人笔记</h2>
+      <button type="button" class="close" id="btnCloseNotePicker" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="aioq-note-picker-list" id="notePickerList"></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="personalAgentPickerModal">
+  <div class="modal-box modal-md">
+    <div class="modal-header">
+      <h2>添加个人智能体配置</h2>
+      <button type="button" class="close" id="btnClosePersonalAgentPicker" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="aioq-note-picker-list" id="personalAgentPickerList"></div>
+    </div>
+  </div>
+</div>
+
+<nav class="aioq-turn-navigator hidden" id="turnNavigator" aria-label="对话快速定位"></nav>
+<div class="aioq-branch-switcher hidden" id="branchSwitcher" aria-label="历史分支切换"></div>
+
+<script src="../assets/proto.js"></script>
+<script src="../assets/org-access-picker.js"></script>
+<script src="../assets/platform-api.js"></script>
+<script src="../assets/ops-user-feedback.js"></script>
+<script src="../assets/ops-expert-workbench.js"></script>
+<script src="../assets/ops-feedback-loop.js"></script>
+<script src="../assets/user-portal-context.js?v=user-v3-ui"></script>
+<script src="../assets/user-personal-space.js?v=user-v3-ui"></script>
+<script src="../assets/user-agent-resolver.js?v=user-v3-ui"></script>
+<script src="../assets/user-chat-portal.js?v=user-v3-ui"></script>
+<script src="../assets/user-feedback-form.js?v=user-v3-ui"></script>
+<script src="../assets/user-message-center.js?v=user-v3-ui"></script>
+<script src="../assets/user-portal-bridge.js?v=user-v3-ui"></script>
+<script>
+  var sessionSkills = Proto.bindSessionSkills();
+  UserPortalBridge.init(sessionSkills);
+</script>
+</body>
+</html>

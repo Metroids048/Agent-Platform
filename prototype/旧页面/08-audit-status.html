@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>审核进度（v1.0 归档）· 运营平台</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-ops-module="ops" data-ops-page="旧页面/08-audit-status.html">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+  <aside class="sidebar"></aside>
+  <main class="main audit-review-page">
+    <div class="breadcrumb">
+      <a href="../05-agent-detail.html" id="breadcrumbDetail">智能体详情</a><span class="sep">›</span>
+      <span class="current">审核进度</span>
+    </div>
+    <div class="page-header">
+      <div><h1 id="statusTitle">审核进度</h1>
+        <p style="font-size:13px;color:var(--text-muted);">申请人视角 · v1.0 归档页</p>
+      </div>
+    </div>
+    <div id="statusContent"></div>
+  </main>
+</div></div>
+<script src="../assets/proto.js"></script>
+<script src="../assets/ops-platform-shell.js"></script>
+<script src="../assets/ops-message-center.js"></script>
+<script>
+  if (window.OpsShell && OpsShell.initShell) {
+    OpsShell.initShell({ module: 'ops', activePage: '旧页面/08-audit-status.html' });
+  }
+  Proto.initTopbar('ops');
+
+  var id = Proto.params().get('id') || Proto.agentId();
+  var st = Proto.getState(id);
+  var item = Proto.getAuditItem(id);
+  document.getElementById('breadcrumbDetail').href = Proto.href('../05-agent-detail.html', { id: id });
+  document.getElementById('statusTitle').textContent = (Proto.agentName() || id) + ' · 审核进度';
+
+  var step = st.auditStep != null ? st.auditStep : (item && item.auditStep) || 1;
+  var statusLabel = st.status === 'rejected' ? '已驳回' : (st.status === 'published' ? '已通过' : '审核中');
+  var root = document.getElementById('statusContent');
+  root.innerHTML =
+    '<div class="audit-stepper" id="statusStepper">' +
+      '<div class="audit-step done" data-step="0"><div class="dot">✓</div><div class="label">提交申请</div><div class="sub">' + (st.auditSubmittedAt || (item && item.at) || '—') + '</div></div>' +
+      '<div class="audit-step' + (st.status === 'review' ? ' current' : (st.status === 'published' ? ' done' : '')) + '" data-step="1">' +
+        '<div class="dot">' + (st.status === 'published' ? '✓' : '2') + '</div><div class="label">平台审核</div><div class="sub">' + statusLabel + '</div></div>' +
+      '<div class="audit-step' + (st.status === 'published' ? ' done current' : '') + '" data-step="2">' +
+        '<div class="dot">3</div><div class="label">已上架</div><div class="sub">' + (st.publishedAt || '待通过') + '</div></div>' +
+    '</div>' +
+    '<section class="card" style="padding:20px;margin-top:16px;">' +
+      '<p style="margin:0 0 8px;font-size:14px;"><strong>当前状态：</strong>' + statusLabel + '</p>' +
+      (st.rejectionReason ? '<p style="margin:0;color:var(--danger);font-size:13px;">驳回原因：' + st.rejectionReason + '</p>' : '') +
+      '<p style="margin:12px 0 0;font-size:13px;color:var(--text-muted);">版本 ' + (st.releaseVersion || 'v1') + ' · ' + (st.releaseNote || '—') + '</p>' +
+    '</section>' +
+    '<div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">' +
+      '<a class="btn btn-primary" href="' + Proto.href('../index.html') + '">返回列表</a>' +
+      (st.status === 'review' && item ? '<a class="btn" href="' + Proto.href('08-audit-review.html', { id: id }) + '">运营审核入口</a>' : '') +
+    '</div>';
+  Proto.renderAuditStepper(step, '#statusStepper');
+</script>
+</body>
+</html>

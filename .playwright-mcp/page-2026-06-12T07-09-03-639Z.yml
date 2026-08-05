@@ -1,0 +1,403 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: 敖
+      - generic [ref=e6]:
+        - strong [ref=e7]: 敖钦 AI 工作台
+        - generic [ref=e8]: 智能体发现与选择
+    - link "工作台" [ref=e9] [cursor=pointer]:
+      - /url: index.html
+      - img [ref=e11]
+      - generic [ref=e13]: 工作台
+    - link "智能体广场" [ref=e14] [cursor=pointer]:
+      - /url: agent-square.html
+      - img [ref=e16]
+      - generic [ref=e21]: 智能体广场
+    - link "我的空间" [ref=e22] [cursor=pointer]:
+      - /url: my-space.html
+      - img [ref=e24]
+      - generic [ref=e26]: 我的空间
+    - generic [ref=e27]:
+      - link "历史记录 ›" [ref=e28] [cursor=pointer]:
+        - /url: index.html#history
+        - text: 历史记录
+        - generic [ref=e29]: ›
+      - button "消息中心" [ref=e30] [cursor=pointer]
+      - link "专家工作台" [ref=e31] [cursor=pointer]:
+        - /url: 专家工作台/workbench.html
+      - button "帮助" [ref=e32] [cursor=pointer]
+  - main [ref=e33]:
+    - generic [ref=e34]:
+      - button "收起侧栏" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - generic [ref=e38]:
+        - text: 智能体广场
+        - heading "发现适合当前任务的智能体" [level=1] [ref=e39]
+        - paragraph [ref=e40]: 这里只展示已上架且当前账号可见的智能体，选择后回到对话流程使用。
+    - region "智能体广场" [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - img [ref=e45]
+          - searchbox "搜索智能体" [ref=e48]
+        - generic [ref=e49]: 19 个可用智能体
+      - generic [ref=e50]:
+        - region "推荐轮播图" [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: 全部场景
+            - heading "发现最适合你业务场景的智能体" [level=2] [ref=e54]
+            - paragraph [ref=e55]: 推荐区优先展示高频业务、最近使用和运营精选，随运营配置持续更新。
+            - button "浏览推荐 →" [ref=e56] [cursor=pointer]
+        - generic "轮播导航" [ref=e57]:
+          - button "轮播第1张 全部场景" [ref=e58] [cursor=pointer]
+          - button "轮播第2张 报告文档" [ref=e59] [cursor=pointer]
+          - button "轮播第3张 安全生产" [ref=e60] [cursor=pointer]
+      - navigation "智能体广场主标签" [ref=e61]:
+        - button "推荐" [ref=e62] [cursor=pointer]
+        - button "全部" [ref=e63] [cursor=pointer]
+        - button "我的" [ref=e64] [cursor=pointer]
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - heading "精选推荐" [level=3] [ref=e68]
+          - generic [ref=e69]:
+            - article [ref=e70]:
+              - generic [ref=e71]:
+                - generic [ref=e72]: 客
+                - button "收藏" [ref=e73] [cursor=pointer]:
+                  - img [ref=e74]
+              - heading "客服助手" [level=3] [ref=e76]
+              - paragraph [ref=e77]: 企业产品咨询、问题解答与工单创建，支持多轮对话和知识库检索。
+              - generic [ref=e78]:
+                - generic [ref=e79]: 业务服务
+                - generic [ref=e80]: 我创建的
+                - generic [ref=e81]: 结构化回答
+              - generic [ref=e83]: 个人可用
+              - link "立即使用" [ref=e84] [cursor=pointer]:
+                - /url: index.html?id=agt_demo_001
+            - article [ref=e85]:
+              - generic [ref=e86]:
+                - generic [ref=e87]: 合
+                - button "收藏" [ref=e88] [cursor=pointer]:
+                  - img [ref=e89]
+              - heading "合同审查师" [level=3] [ref=e91]
+              - paragraph [ref=e92]: 上传合同文件，识别风险条款并生成审查意见书。
+              - generic [ref=e93]:
+                - generic [ref=e94]: 安全生产
+                - generic [ref=e95]: 授权给我
+                - generic [ref=e96]: 结构化回答
+              - generic [ref=e98]: 授权可用
+              - link "立即使用" [ref=e99] [cursor=pointer]:
+                - /url: index.html?id=agt_contract
+            - article [ref=e100]:
+              - generic [ref=e101]:
+                - generic [ref=e102]: 医
+                - button "收藏" [ref=e103] [cursor=pointer]:
+                  - img [ref=e104]
+              - heading "医疗分诊助手" [level=3] [ref=e106]
+              - paragraph [ref=e107]: 根据主诉进行初步分诊，推荐科室和检查项目。
+              - generic [ref=e108]:
+                - generic [ref=e109]: 业务服务
+                - generic [ref=e110]: 结构化回答
+              - generic [ref=e112]: 公开可用
+              - link "立即使用" [ref=e113] [cursor=pointer]:
+                - /url: index.html?id=agt_medical
+            - article [ref=e114]:
+              - generic [ref=e115]:
+                - generic [ref=e116]: 多
+                - button "收藏" [ref=e117] [cursor=pointer]:
+                  - img [ref=e118]
+              - heading "多系统集成助手" [level=3] [ref=e120]
+              - paragraph [ref=e121]: 协同 ERP、CRM 和邮件系统，完成跨平台数据同步。
+              - generic [ref=e122]:
+                - generic [ref=e123]: 业务服务
+                - generic [ref=e124]: 结构化回答
+              - generic [ref=e126]: 组织可用
+              - link "立即使用" [ref=e127] [cursor=pointer]:
+                - /url: index.html?id=agt_multi
+            - article [ref=e128]:
+              - generic [ref=e129]:
+                - generic [ref=e130]: 数
+                - button "收藏" [ref=e131] [cursor=pointer]:
+                  - img [ref=e132]
+              - heading "数据分析助手" [level=3] [ref=e134]
+              - paragraph [ref=e135]: 演示智能体。
+              - generic [ref=e136]:
+                - generic [ref=e137]: 业务服务
+                - generic [ref=e138]: 结构化回答
+              - generic [ref=e140]: 公开可用
+              - link "立即使用" [ref=e141] [cursor=pointer]:
+                - /url: index.html?id=agt_analytics
+            - article [ref=e142]:
+              - generic [ref=e143]:
+                - generic [ref=e144]: 采
+                - button "收藏" [ref=e145] [cursor=pointer]:
+                  - img [ref=e146]
+              - heading "采购申请助手" [level=3] [ref=e148]
+              - paragraph [ref=e149]: 演示智能体。
+              - generic [ref=e150]:
+                - generic [ref=e151]: 办公提效
+                - generic [ref=e152]: 结构化回答
+              - generic [ref=e154]: 公开可用
+              - link "立即使用" [ref=e155] [cursor=pointer]:
+                - /url: index.html?id=agt_procure
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - heading "业务服务" [level=3] [ref=e158]
+            - link "查看全部" [ref=e159] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=e160]:
+            - article [ref=e161]:
+              - generic [ref=e162]:
+                - generic [ref=e163]: 客
+                - button "收藏" [ref=e164] [cursor=pointer]:
+                  - img [ref=e165]
+              - heading "客服助手" [level=3] [ref=e167]
+              - paragraph [ref=e168]: 企业产品咨询、问题解答与工单创建，支持多轮对话和知识库检索。
+              - generic [ref=e169]:
+                - generic [ref=e170]: 业务服务
+                - generic [ref=e171]: 我创建的
+                - generic [ref=e172]: 结构化回答
+              - generic [ref=e174]: 个人可用
+              - link "立即使用" [ref=e175] [cursor=pointer]:
+                - /url: index.html?id=agt_demo_001
+            - article [ref=e176]:
+              - generic [ref=e177]:
+                - generic [ref=e178]: 医
+                - button "收藏" [ref=e179] [cursor=pointer]:
+                  - img [ref=e180]
+              - heading "医疗分诊助手" [level=3] [ref=e182]
+              - paragraph [ref=e183]: 根据主诉进行初步分诊，推荐科室和检查项目。
+              - generic [ref=e184]:
+                - generic [ref=e185]: 业务服务
+                - generic [ref=e186]: 结构化回答
+              - generic [ref=e188]: 公开可用
+              - link "立即使用" [ref=e189] [cursor=pointer]:
+                - /url: index.html?id=agt_medical
+            - article [ref=e190]:
+              - generic [ref=e191]:
+                - generic [ref=e192]: 多
+                - button "收藏" [ref=e193] [cursor=pointer]:
+                  - img [ref=e194]
+              - heading "多系统集成助手" [level=3] [ref=e196]
+              - paragraph [ref=e197]: 协同 ERP、CRM 和邮件系统，完成跨平台数据同步。
+              - generic [ref=e198]:
+                - generic [ref=e199]: 业务服务
+                - generic [ref=e200]: 结构化回答
+              - generic [ref=e202]: 组织可用
+              - link "立即使用" [ref=e203] [cursor=pointer]:
+                - /url: index.html?id=agt_multi
+            - article [ref=e204]:
+              - generic [ref=e205]:
+                - generic [ref=e206]: 数
+                - button "收藏" [ref=e207] [cursor=pointer]:
+                  - img [ref=e208]
+              - heading "数据分析助手" [level=3] [ref=e210]
+              - paragraph [ref=e211]: 演示智能体。
+              - generic [ref=e212]:
+                - generic [ref=e213]: 业务服务
+                - generic [ref=e214]: 结构化回答
+              - generic [ref=e216]: 公开可用
+              - link "立即使用" [ref=e217] [cursor=pointer]:
+                - /url: index.html?id=agt_analytics
+            - article [ref=e218]:
+              - generic [ref=e219]:
+                - generic [ref=e220]: 日
+                - button "收藏" [ref=e221] [cursor=pointer]:
+                  - img [ref=e222]
+              - heading "日报生成器" [level=3] [ref=e224]
+              - paragraph [ref=e225]: 演示智能体。
+              - generic [ref=e226]:
+                - generic [ref=e227]: 业务服务
+                - generic [ref=e228]: 结构化回答
+              - generic [ref=e230]: 公开可用
+              - link "立即使用" [ref=e231] [cursor=pointer]:
+                - /url: index.html?id=agt_daily
+        - generic [ref=e232]:
+          - generic [ref=e233]:
+            - heading "安全生产" [level=3] [ref=e234]
+            - link "查看全部" [ref=e235] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=e236]:
+            - article [ref=e237]:
+              - generic [ref=e238]:
+                - generic [ref=e239]: 合
+                - button "收藏" [ref=e240] [cursor=pointer]:
+                  - img [ref=e241]
+              - heading "合同审查师" [level=3] [ref=e243]
+              - paragraph [ref=e244]: 上传合同文件，识别风险条款并生成审查意见书。
+              - generic [ref=e245]:
+                - generic [ref=e246]: 安全生产
+                - generic [ref=e247]: 授权给我
+                - generic [ref=e248]: 结构化回答
+              - generic [ref=e250]: 授权可用
+              - link "立即使用" [ref=e251] [cursor=pointer]:
+                - /url: index.html?id=agt_contract
+            - article [ref=e252]:
+              - generic [ref=e253]:
+                - generic [ref=e254]: J
+                - button "收藏" [ref=e255] [cursor=pointer]:
+                  - img [ref=e256]
+              - heading "JSA 文档生成" [level=3] [ref=e258]
+              - paragraph [ref=e259]: 根据作业信息生成作业安全分析表，补全风险点和控制措施。
+              - generic [ref=e260]:
+                - generic [ref=e261]: 安全生产
+                - generic [ref=e262]: DOCX 文档
+              - generic [ref=e264]: 公开可用
+              - link "立即使用" [ref=e265] [cursor=pointer]:
+                - /url: index.html?id=agt_jsa
+            - article [ref=e266]:
+              - generic [ref=e267]:
+                - generic [ref=e268]: 钻
+                - button "收藏" [ref=e269] [cursor=pointer]:
+                  - img [ref=e270]
+              - heading "钻完井安全助手" [level=3] [ref=e272]
+              - paragraph [ref=e273]: 围绕钻完井安全制度、现场风险和整改建议提供问答与材料整理。
+              - generic [ref=e274]:
+                - generic [ref=e275]: 安全生产
+                - generic [ref=e276]: 风险清单
+              - generic [ref=e278]: 公开可用
+              - link "立即使用" [ref=e279] [cursor=pointer]:
+                - /url: index.html?id=agt_safe
+            - article [ref=e280]:
+              - generic [ref=e281]:
+                - generic [ref=e282]: 钻
+                - button "收藏" [ref=e283] [cursor=pointer]:
+                  - img [ref=e284]
+              - heading "钻完井报告助手" [level=3] [ref=e286]
+              - paragraph [ref=e287]: 根据日报、完井资料和附件生成标准化报告，并保留引用来源。
+              - generic [ref=e288]:
+                - generic [ref=e289]: 安全生产
+                - generic [ref=e290]: DOCX 文档
+              - generic [ref=e292]: 公开可用
+              - link "立即使用" [ref=e293] [cursor=pointer]:
+                - /url: index.html?id=agt_report
+            - article [ref=e294]:
+              - generic [ref=e295]:
+                - generic [ref=e296]: 勘
+                - button "收藏" [ref=e297] [cursor=pointer]:
+                  - img [ref=e298]
+              - heading "勘探井资料助手" [level=3] [ref=e300]
+              - paragraph [ref=e301]: 辅助检索勘探井资料、整理关键信息并形成摘要。
+              - generic [ref=e302]:
+                - generic [ref=e303]: 安全生产
+                - generic [ref=e304]: 资料摘要
+              - generic [ref=e306]: 公开可用
+              - link "立即使用" [ref=e307] [cursor=pointer]:
+                - /url: index.html?id=agt_explore
+        - generic [ref=e308]:
+          - generic [ref=e309]:
+            - heading "办公提效" [level=3] [ref=e310]
+            - link "查看全部" [ref=e311] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=e312]:
+            - article [ref=e313]:
+              - generic [ref=e314]:
+                - generic [ref=e315]: 采
+                - button "收藏" [ref=e316] [cursor=pointer]:
+                  - img [ref=e317]
+              - heading "采购申请助手" [level=3] [ref=e319]
+              - paragraph [ref=e320]: 演示智能体。
+              - generic [ref=e321]:
+                - generic [ref=e322]: 办公提效
+                - generic [ref=e323]: 结构化回答
+              - generic [ref=e325]: 公开可用
+              - link "立即使用" [ref=e326] [cursor=pointer]:
+                - /url: index.html?id=agt_procure
+            - article [ref=e327]:
+              - generic [ref=e328]:
+                - generic [ref=e329]: 请
+                - button "收藏" [ref=e330] [cursor=pointer]:
+                  - img [ref=e331]
+              - heading "请假审批流程" [level=3] [ref=e333]
+              - paragraph [ref=e334]: 演示智能体。
+              - generic [ref=e335]:
+                - generic [ref=e336]: 办公提效
+                - generic [ref=e337]: 结构化回答
+              - generic [ref=e339]: 公开可用
+              - link "立即使用" [ref=e340] [cursor=pointer]:
+                - /url: index.html?id=agt_leave
+            - article [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]: 值
+                - button "收藏" [ref=e344] [cursor=pointer]:
+                  - img [ref=e345]
+              - heading "值班安排助手" [level=3] [ref=e347]
+              - paragraph [ref=e348]: 查询值班记录、整理排班信息并生成交接摘要。
+              - generic [ref=e349]:
+                - generic [ref=e350]: 办公提效
+                - generic [ref=e351]: 表格回答
+              - generic [ref=e353]: 公开可用
+              - link "立即使用" [ref=e354] [cursor=pointer]:
+                - /url: index.html?id=agt_shift
+            - article [ref=e355]:
+              - generic [ref=e356]:
+                - generic [ref=e357]: 智
+                - button "收藏" [ref=e358] [cursor=pointer]:
+                  - img [ref=e359]
+              - heading "智慧楼宇助手" [level=3] [ref=e361]
+              - paragraph [ref=e362]: 查询楼宇设备、工单处理和常见运维问题。
+              - generic [ref=e363]:
+                - generic [ref=e364]: 办公提效
+                - generic [ref=e365]: 运维建议
+              - generic [ref=e367]: 公开可用
+              - link "立即使用" [ref=e368] [cursor=pointer]:
+                - /url: index.html?id=agt_building
+            - article [ref=e369]:
+              - generic [ref=e370]:
+                - generic [ref=e371]: 我
+                - button "收藏" [ref=e372] [cursor=pointer]:
+                  - img [ref=e373]
+              - heading "我的值班交接助手" [level=3] [ref=e375]
+              - paragraph [ref=e376]: 根据值班记录和个人笔记生成交接摘要，当前为个人草稿。
+              - generic [ref=e377]:
+                - generic [ref=e378]: 办公提效
+                - generic [ref=e379]: 我创建的
+                - generic [ref=e380]: 个人草稿
+                - generic [ref=e381]: 个人草稿
+              - generic [ref=e383]: 个人草稿
+              - link "查看草稿" [ref=e384] [cursor=pointer]:
+                - /url: my-space.html
+        - generic [ref=e385]:
+          - generic [ref=e386]:
+            - heading "报告文档" [level=3] [ref=e387]
+            - link "查看全部" [ref=e388] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=e389]:
+            - article [ref=e390]:
+              - generic [ref=e391]:
+                - generic [ref=e392]: 差
+                - button "收藏" [ref=e393] [cursor=pointer]:
+                  - img [ref=e394]
+              - heading "差旅报销助手" [level=3] [ref=e396]
+              - paragraph [ref=e397]: 解答差旅报销、费用标准、材料要求，并生成报销说明。
+              - generic [ref=e398]:
+                - generic [ref=e399]: 报告文档
+                - generic [ref=e400]: 报销说明
+              - generic [ref=e402]: 公开可用
+              - link "立即使用" [ref=e403] [cursor=pointer]:
+                - /url: index.html?id=agt_travel
+            - article [ref=e404]:
+              - generic [ref=e405]:
+                - generic [ref=e406]: 党
+                - button "收藏" [ref=e407] [cursor=pointer]:
+                  - img [ref=e408]
+              - heading "党建智能助手" [level=3] [ref=e410]
+              - paragraph [ref=e411]: 整理党建材料、会议纪要、学习记录和通知文稿。
+              - generic [ref=e412]:
+                - generic [ref=e413]: 报告文档
+                - generic [ref=e414]: 文稿草稿
+              - generic [ref=e416]: 公开可用
+              - link "立即使用" [ref=e417] [cursor=pointer]:
+                - /url: index.html?id=agt_party
+            - article [ref=e418]:
+              - generic [ref=e419]:
+                - generic [ref=e420]: 废
+                - button "收藏" [ref=e421] [cursor=pointer]:
+                  - img [ref=e422]
+              - heading "废旧物资清单助手" [level=3] [ref=e424]
+              - paragraph [ref=e425]: 读取表格或图片材料，整理废旧物资清单并提示缺失字段。
+              - generic [ref=e426]:
+                - generic [ref=e427]: 报告文档
+                - generic [ref=e428]: Excel 表格
+              - generic [ref=e430]: 公开可用
+              - link "立即使用" [ref=e431] [cursor=pointer]:
+                - /url: index.html?id=agt_waste

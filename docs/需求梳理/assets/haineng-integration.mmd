@@ -1,0 +1,25 @@
+flowchart TB
+  subgraph App["AI应用建设与运营层"]
+    Ops["运营管理<br/>审核/反馈/看板/专家"]
+    Dev["应用开发<br/>智能体/任务链/工具/MCP"]
+    Runtime["应用运行时<br/>上下文组装/会话接入"]
+  end
+  subgraph HN["海能AI能力底座"]
+    Portal["统一门户"]
+    Agent["海能智能体平台"]
+    Model["模型接口与推理"]
+    Compute["智算训练与部署"]
+    KB["企业知识库"]
+    IAM["统一认证/租户/计量"]
+  end
+  User["业务用户"] --> Portal
+  Portal --> Runtime
+  Ops --> Runtime
+  Dev --> Runtime
+  Runtime --> Agent
+  Runtime --> Model
+  Runtime --> KB
+  Model --> Compute
+  IAM --> Portal
+  IAM --> Ops
+  IAM --> Dev

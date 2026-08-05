@@ -1,0 +1,211 @@
+{
+  "generatedAt": "2026-05-29",
+  "scope": "prototype/ (18 HTML + assets/*.js + scripts/*-check.js)",
+  "summary": {
+    "critical": { "total": 4, "fixed": 4, "open": 0 },
+    "medium": { "total": 5, "fixed": 5, "open": 0 },
+    "low": { "total": 5, "fixed": 2, "open": 3 }
+  },
+  "pageAudit": [
+    { "page": "index.html", "priority": "P0", "status": "PASS", "entry": "运营列表+看板", "exit": "05/08/04/modals", "notes": "initOpsListPage；resolveAgentListStatus 操作列" },
+    { "page": "05-agent-detail.html", "priority": "P0", "status": "PASS", "entry": "列表/监控重定向", "exit": "06-dev/07-pick/08-status", "notes": "initAgentDetailPage；navigation A–E" },
+    { "page": "06-dev-editor.html", "priority": "P0", "status": "PASS", "entry": "创建/05前往开发", "exit": "05/index/07-pick", "notes": "EditorShell.initDevEditorPage" },
+    { "page": "04-create-modal.html", "priority": "P0", "status": "PASS", "entry": "index embed", "exit": "06-dev-editor?new=1", "notes": "successGoConfig 关闭遮罩后跳转" },
+    { "page": "08-audit-queue.html", "priority": "P0", "status": "PASS", "entry": "看板/侧栏", "exit": "08-audit-review", "notes": "hrefAuditReview" },
+    { "page": "08-audit-review.html", "priority": "P0", "status": "PASS", "entry": "queue去审核", "exit": "08-audit-status/queue", "notes": "linkStatus 运行时 Proto.href" },
+    { "page": "08-audit-status.html", "priority": "P0", "status": "PASS", "entry": "列表审核进度", "exit": "review/index", "notes": "申请人视角 stepper" },
+    { "page": "07-pick-resource.html", "priority": "P1", "status": "PASS", "entry": "05/06 pick", "exit": "回跳 picked 参数", "notes": "applyPickedResources 旅程 I" },
+    { "page": "06-dev-platform.html", "priority": "P1", "status": "PASS*", "entry": "顶栏开发", "exit": "06-dev-editor", "notes": "wireDevPlatformRows" },
+    { "page": "10-skills-management.html", "priority": "P1", "status": "PASS", "entry": "开发/运营顶栏", "exit": "06-dev-resources", "notes": "browser ≥6 行" },
+    { "page": "third-party-register.html", "priority": "P1", "status": "PASS", "entry": "index embed", "exit": "05 goDetail Proto.href", "notes": "非 embed 重定向 index" },
+    { "page": "02-sequence-create.html", "priority": "P1", "status": "PASS", "entry": "侧栏流程", "exit": "04/06/05/08", "notes": "JAM-014 首配链已改 06-dev-editor" },
+    { "page": "09-user-chat.html", "priority": "P2", "status": "PASS*", "entry": "发布后对话", "exit": "—", "notes": "无发布门禁（原型可接受）" },
+    { "page": "01-architecture.html", "priority": "P2", "status": "PASS*", "entry": "说明页", "exit": "占位 toast", "notes": "非主链" },
+    { "page": "03-agent-center.html", "priority": "P2", "status": "PASS", "entry": "旧书签", "exit": "index 重定向", "notes": "" },
+    { "page": "08-agent-monitor.html", "priority": "P2", "status": "PASS", "entry": "旧监控链", "exit": "05?tab=monitor Proto.href", "notes": "旅程 J" },
+    { "page": "06-dev-resources.html", "priority": "P2", "status": "PASS*", "entry": "开发资源", "exit": "toast 占位", "notes": "" },
+    { "page": "figma-skills-board.html", "priority": "P3", "status": "PASS*", "entry": "设计导出", "exit": "—", "notes": "不参与运营导航链" }
+  ],
+  "categories": [
+    {
+      "id": "global-flags",
+      "label": "跨页 global 标志早退",
+      "check": "window.__* / module-level wired flags that survive navigation",
+      "files": ["assets/proto.js", "assets/editor-shell.js", "figma-skills-board.html"]
+    },
+    {
+      "id": "session-sticky",
+      "label": "sessionStorage 粘状态",
+      "check": "firstConfig, boundSkillIds[], skillsCleared",
+      "files": ["assets/proto.js", "04-create-modal.html", "07-pick-resource.html"]
+    },
+    {
+      "id": "init-scatter",
+      "label": "页面 init 分散 / 顺序不一致",
+      "check": "bindTabs, wireSkill, migrate, overlay close",
+      "files": ["05-agent-detail.html", "06-dev-editor.html", "index.html", "assets/editor-shell.js"]
+    },
+    {
+      "id": "overlay-block",
+      "label": "遮罩未关闭挡点击",
+      "check": "resourceOverlay, publish-modal-mask, skillBindModal",
+      "files": ["05-agent-detail.html", "assets/proto.js", "assets/style.css"]
+    },
+    {
+      "id": "grep-only-gate",
+      "label": "仅 grep 的 PASS 漏导航",
+      "check": "smoke/e2e without jsdom journey",
+      "files": ["scripts/smoke-check.js", "scripts/e2e-check.js", "scripts/verify-all.js"]
+    }
+  ],
+  "findings": [
+    {
+      "id": "JAM-001",
+      "severity": "Critical",
+      "category": "global-flags",
+      "file": "assets/proto.js",
+      "issue": "__protoSkillBindWired 跨页泄漏，二次进 05 跳过 wireSkillBindButtons",
+      "status": "fixed",
+      "fix": "removeEventListener + 可重复 wireSkillBindButtons；navigation-journey 旅程 D 覆盖"
+    },
+    {
+      "id": "JAM-002",
+      "severity": "Critical",
+      "category": "session-sticky",
+      "file": "assets/proto.js",
+      "issue": "session firstConfig:true 残留导致 bindTabs 拦截非 config Tab",
+      "status": "fixed",
+      "fix": "isFirstConfig 仅 ?new=1；resolveFirstConfigMode 列表再进清除 firstConfig"
+    },
+    {
+      "id": "JAM-003",
+      "severity": "Critical",
+      "category": "init-scatter",
+      "file": "05-agent-detail.html",
+      "issue": "分散 init 导致 migrate/overlay/skill 顺序不一致",
+      "status": "fixed",
+      "fix": "Proto.initAgentDetailPage 统一 bootstrap"
+    },
+    {
+      "id": "JAM-004",
+      "severity": "Critical",
+      "category": "session-sticky",
+      "file": "assets/proto.js",
+      "issue": "agentName/agentType 使用 params.get 笔误，openSkillBindModal 抛错",
+      "status": "fixed",
+      "fix": "params().get('name'|'type') 经局部变量 p"
+    },
+    {
+      "id": "JAM-005",
+      "severity": "Medium",
+      "category": "session-sticky",
+      "file": "assets/proto.js",
+      "issue": "空 boundSkillIds 无 skillsCleared 时显示空 Skills",
+      "status": "fixed",
+      "fix": "getAgentSkillIds + migrateAgentSession 恢复 demo 默认 sk_report/sk_risk"
+    },
+    {
+      "id": "JAM-006",
+      "severity": "Medium",
+      "category": "init-scatter",
+      "file": "06-dev-editor.html",
+      "issue": "开发页未走统一 bootstrap",
+      "status": "fixed",
+      "fix": "EditorShell.initDevEditorPage：ensureOverlaysClosed + migrate + skill wire"
+    },
+    {
+      "id": "JAM-007",
+      "severity": "Medium",
+      "category": "init-scatter",
+      "file": "assets/proto.js",
+      "issue": "bindTabs 每次调用追加 click listener",
+      "status": "fixed",
+      "fix": "#agentTabs 事件委托 + data-tabs-wired 单次绑定"
+    },
+    {
+      "id": "JAM-008",
+      "severity": "Medium",
+      "category": "overlay-block",
+      "file": "05-agent-detail.html",
+      "issue": "resourceOverlay 可能残留 active",
+      "status": "fixed",
+      "fix": "ensureOverlaysClosed 对 resourceOverlay 显式 hideModal"
+    },
+    {
+      "id": "JAM-009",
+      "severity": "Medium",
+      "category": "grep-only-gate",
+      "file": "scripts/verify-all.js",
+      "issue": "verify-all 缺 index↔05 二次进入旅程",
+      "status": "fixed",
+      "fix": "navigation-journey-check.js 接入第 5 步"
+    },
+    {
+      "id": "JAM-010",
+      "severity": "Low",
+      "category": "global-flags",
+      "file": "figma-skills-board.html",
+      "issue": "window.__figmaBoardReady Promise 标志",
+      "status": "open",
+      "mitigation": "Figma 聚合板专用，不参与运营导航链"
+    },
+    {
+      "id": "JAM-011",
+      "severity": "Low",
+      "category": "init-scatter",
+      "file": "index.html",
+      "issue": "列表页 init 未集中为单函数",
+      "status": "fixed",
+      "fix": "Proto.initOpsListPage"
+    },
+    {
+      "id": "JAM-012",
+      "severity": "Low",
+      "category": "overlay-block",
+      "file": "04-create-modal.html",
+      "issue": "创建 modal 遮罩跳转开发页时未关闭",
+      "status": "fixed",
+      "fix": "successGoConfig / ops-modal-create data-ca-go-config 先 close 再 navigate"
+    },
+    {
+      "id": "JAM-013",
+      "severity": "Low",
+      "category": "grep-only-gate",
+      "file": "scripts/smoke-check.js",
+      "issue": "smoke 仍不模拟 session 污染",
+      "status": "fixed",
+      "fix": "navigation-journey 旅程 A–K + browser-check 运行时"
+    },
+    {
+      "id": "JAM-014",
+      "severity": "Medium",
+      "category": "grep-only-gate",
+      "file": "02-sequence-create.html",
+      "issue": "流程快捷「首次配置」仍指向 05?new=1",
+      "status": "fixed",
+      "fix": "改为 06-dev-editor.html?new=1 + wireFlowMapLinks；旅程 K 回归"
+    }
+  ],
+  "automatedCoverage": {
+    "verify-all": [
+      "smoke-check.js",
+      "e2e-check.js",
+      "regression-check.js",
+      "browser-check.js",
+      "navigation-journey-check.js"
+    ],
+    "journeys": [
+      "A: 首次进 05 Tab",
+      "B: session 污染后列表再进",
+      "C: ?new=1 运营页",
+      "D: publishModal",
+      "E: 前往开发平台链接",
+      "F: index 列表操作列",
+      "G: 审核链 getAuditItem/hrefAuditReview",
+      "H: dev-editor 返回运营 href",
+      "I: pick skills 回写",
+      "J: monitor 重定向 stub",
+      "K: 02-sequence 首配链回归"
+    ]
+  }
+}

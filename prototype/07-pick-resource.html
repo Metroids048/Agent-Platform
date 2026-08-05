@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>选择资源 · 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/figma-capture.css">
+<script src="assets/figma-capture.js"></script>
+<script>
+(function () {
+  if (/[?&]figma=1(?:&|$)/.test(location.search) || location.hash.indexOf('figmacapture=') >= 0) {
+    var s = document.createElement('script');
+    s.src = 'https://mcp.figma.com/mcp/html-to-design/capture.js';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-brand">
+      <div class="topbar-logo">A</div>
+      <div class="topbar-brand-text"><strong>敖钦 AI</strong><span>选择关联资源</span></div>
+    </div>
+    <div class="topbar-modules">
+      <a href="06-dev-platform.html" data-nav-dev>智能体开发</a>
+      <a href="index.html" class="active" data-nav-ops>运营平台</a>
+    </div>
+    <div class="topbar-right"><div class="avatar"></div></div>
+  </div>
+</header>
+
+<div class="picker-page">
+  <div class="picker-head">
+    <a href="05-agent-detail.html" id="pickBack" class="back-btn" style="width:36px;height:36px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;">←</a>
+    <div>
+      <h1 id="pickTitle" style="font-size:18px;">选择知识库</h1>
+      <p style="font-size:13px;color:var(--text-muted);">请在智能体开发平台维护资源；本页为原型演示入口</p>
+    </div>
+    <div style="margin-left:auto;display:flex;gap:8px;">
+      <a href="06-dev-resources.html" id="pickManage" class="btn btn-sm">在开发平台管理 ↗</a>
+      <button class="btn btn-primary" id="pickConfirm">确认添加 (<span id="pickCount">0</span>)</button>
+    </div>
+  </div>
+
+  <div class="picker-card">
+    <div class="filter-bar" style="padding:12px 16px;margin:0;border-bottom:1px solid var(--border);">
+      <input class="filter-search" placeholder="搜索名称..." style="max-width:280px;">
+      <span style="font-size:12px;color:var(--text-muted);margin-left:12px;">为 <strong data-agent-name>客服助手</strong> 关联资源</span>
+    </div>
+    <table class="data-table" id="pickTable">
+      <thead><tr id="pickHead"></tr></thead>
+      <tbody id="pickBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="assets/proto.js"></script>
+<script>
+  var pick = Proto.params().get('pick') || 'knowledge';
+  if (pick === 'skills' && Proto.params().get('figma') !== '1') {
+    location.replace(Proto.href('05-agent-detail.html', { skillBind: '1', tab: 'config' }));
+  }
+  var isKb = pick === 'knowledge';
+  var isSkill = pick === 'skills';
+  document.getElementById('pickTitle').textContent = isSkill ? '选择 Skill' : (isKb ? '选择知识库' : '选择工具');
+  document.getElementById('pickManage').href = isSkill
+    ? '10-skills-management.html' + Proto.qs()
+    : '06-dev-resources.html?res=' + (isKb ? 'knowledge' : 'tools') + '&' + Proto.qs().slice(1);
+
+  var rows = isSkill
+    ? [
+        ['报告结构化', '输出规范', '已启用'],
+        ['风险审查', '审查方法', '已启用']
+      ]
+    : isKb
+    ? [
+        ['售后服务政策', '8 篇', '处理中'],
+        ['产品 FAQ 补充', '32 条', '已向量化']
+      ]
+    : [
+        ['订单查询', 'order_query', 'HTTP'],
+        ['CRM 同步', 'crm_sync', 'MCP']
+      ];
+  var cols = isSkill ? ['', 'Skill', '分类', '状态'] : (isKb ? ['', '知识库', '规模', '状态'] : ['', '工具', '标识', '类型']);
+  document.getElementById('pickHead').innerHTML = cols.map(function (c, i) {
+    return '<th' + (i === 0 ? ' style="width:40px;"' : '') + '>' + (i === 0 ? '<input type="checkbox" id="pickAll">' : c) + '</th>';
+  }).join('');
+  document.getElementById('pickBody').innerHTML = rows.map(function (r, i) {
+    return '<tr><td><input type="checkbox" class="pick-row" data-name="' + r[0] + '"></td><td>' + r.join('</td><td>') + '</td></tr>';
+  }).join('');
+
+  function updateCount() {
+    var n = document.querySelectorAll('.pick-row:checked').length;
+    document.getElementById('pickCount').textContent = n;
+  }
+  document.querySelectorAll('.pick-row').forEach(function (cb) {
+    cb.addEventListener('change', updateCount);
+  });
+  document.getElementById('pickAll').addEventListener('change', function () {
+    document.querySelectorAll('.pick-row').forEach(function (cb) { cb.checked = this.checked; }.bind(this));
+    updateCount();
+  });
+
+  var ret = Proto.params().get('return') || '05-agent-detail.html';
+  document.getElementById('pickBack').href = Proto.href(ret);
+  document.getElementById('pickConfirm').onclick = function () {
+    var names = [];
+    document.querySelectorAll('.pick-row:checked').forEach(function (cb) { names.push(cb.dataset.name); });
+    if (!names.length) { Proto.toast('请至少选择一项'); return; }
+    window.location.href = Proto.href(ret, { picked: names.join('、'), tab: 'config', pick: pick });
+  };
+
+  Proto.initTopbar('ops');
+  Proto.applyAgentHeader();
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>查看上下文 · 专家工作台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="expert" data-ops-page="12-expert-context.html" data-ops-subtitle="查看上下文">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main">
+  <div class="breadcrumb">
+    <a href="12-expert-workbench.html" id="breadcrumbWorkbenchLink">专家工作台</a><span class="sep">›</span>
+    <a href="12-expert-task-detail.html" id="breadcrumbTaskLink">做任务</a><span class="sep">›</span>
+    <span class="current">查看上下文</span>
+  </div>
+  <div class="page-header"><div><h1 id="taskTitle">对话上下文</h1><p style="font-size:13px;color:var(--text-muted);">关联用户会话与智能体回复记录</p></div></div>
+  <div id="contextChat"></div>
+</main>
+</div></div>
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-expert-workbench.js"></script>
+<script>OpsExpertWorkbench.initContextPage();</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>新增开发者 · 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="permission" data-ops-page="13-permission-add.html" data-ops-subtitle="新增开发者">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main">
+  <div class="breadcrumb"><a href="13-permission-mgmt.html" id="breadcrumbListLink">开发者管理</a><span class="sep">›</span><span class="current">新增</span></div>
+  <div class="card">
+    <div class="form-row"><span class="form-label required">姓名</span><div class="form-control"><input class="input" id="devName"></div></div>
+    <div class="form-row"><span class="form-label required">邮箱</span><div class="form-control"><input class="input" id="devEmail"></div></div>
+    <div class="form-row"><span class="form-label">手机</span><div class="form-control"><input class="input" id="devPhone"></div></div>
+    <div class="form-row"><span class="form-label">部门</span><div class="form-control"><input class="input" id="devOrg"></div></div>
+    <div class="form-row"><span class="form-label">角色</span><div class="form-control"><select class="select" id="devRole"><option value="developer">开发者</option><option value="admin">管理员</option><option value="viewer">只读</option></select></div></div>
+    <div style="margin-top:20px;display:flex;gap:10px;"><button type="button" class="btn btn-primary" id="btnCreateDev">创建账号</button><a href="13-permission-mgmt.html" class="btn">取消</a></div>
+  </div>
+</main>
+</div></div>
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-permission-mgmt.js"></script>
+<script>OpsPermissionMgmt.initAddPage();</script>
+</body>
+</html>

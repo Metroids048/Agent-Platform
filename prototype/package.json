@@ -1,0 +1,15 @@
+{
+  "name": "agent-platform-prototype",
+  "version": "1.0.0",
+  "description": "Agent Platform HTML prototype — 16 pages, static + proto.js sessionStorage",
+  "private": true,
+  "scripts": {
+    "start": "python -m http.server 8766",
+    "verify": "node scripts/verify-all.js",
+    "package-check": "node scripts/package-check.js"
+  },
+  "keywords": ["prototype", "agent-platform"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

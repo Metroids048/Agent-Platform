@@ -1,0 +1,17 @@
+flowchart TB
+  Org["组织/人员/角色"] --> Perm["权限控制"]
+  Agent["智能体注册与应用范围"] --> Ops["运营管理平台"]
+  Config["开发配置摘要"] --> Ops
+  Runtime["运行数据<br/>会话/Token/延迟/知识命中"] --> Ops
+  Feedback["用户反馈"] --> Ops
+  Ops --> Audit["发布审核"]
+  Ops --> Expert["专家任务"]
+  Ops --> Dash["运营看板"]
+  Ops --> WorkOrder["回流工单"]
+  WorkOrder --> Dev["智能体开发"]
+  WorkOrder --> KB["知识中心"]
+  WorkOrder --> Model["模型服务"]
+  WorkOrder --> Resource["资源服务"]
+  WorkOrder --> System["系统管理"]
+  Perm --> RuntimeAccess["运行时访问<br/>模型档位/API Key/知识权限"]
+  RuntimeAccess --> Runtime

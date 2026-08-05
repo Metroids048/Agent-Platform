@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>反馈详情 · 运营平台</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="feedback" data-ops-page="11-user-feedback-detail.html" data-ops-subtitle="运营平台">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main ops-fb-detail-page">
+  <div class="ops-module-head">
+    <h1 class="ops-module-title">运营管理</h1>
+  </div>
+  <div class="breadcrumb">
+    <a href="11-user-feedback.html" id="breadcrumbListLink">用户反馈</a><span class="sep">›</span><span class="current">查看详情</span>
+  </div>
+
+  <section class="ops-fb-detail-hero card">
+    <div class="ops-fb-detail-hero-row">
+      <div class="ops-fb-detail-hero-text">
+        <h2 class="ops-fb-detail-title" id="fbHeroTitle">—</h2>
+        <div class="ops-fb-detail-badges" id="fbHeroBadges"></div>
+      </div>
+      <button type="button" class="btn btn-primary ops-fb-process-btn" id="btnProcessFeedback">处理反馈</button>
+    </div>
+    <div class="ops-fb-detail-bento" id="fbAttrGrid"></div>
+  </section>
+
+  <div class="ops-fb-detail-layout">
+    <div class="ops-fb-detail-main">
+      <section class="card ops-fb-detail-section">
+        <h3 class="ops-fb-section-title"><span class="ops-fb-section-bar"></span>反馈原文内容</h3>
+        <div class="ops-fb-original-panel">
+          <div class="ops-fb-original-inner" id="feedbackOriginalBody"></div>
+          <div class="ops-fb-diagnosis-row">
+            <p class="ops-fb-diagnosis-text" id="fbDiagnosisText"></p>
+            <button type="button" class="btn ops-fb-diagnosis-btn" id="btnViewDiagnosis">查看详细诊断报告</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card ops-fb-detail-section ops-fb-timeline-section">
+        <h3 class="ops-fb-section-title"><span class="ops-fb-section-bar"></span>处理记录</h3>
+        <div class="ops-fb-timeline" id="processTimeline"></div>
+      </section>
+    </div>
+
+    <aside class="ops-fb-detail-side">
+      <section class="card ops-fb-detail-section ops-fb-attach-section">
+        <h3 class="ops-fb-section-title"><span class="ops-fb-section-bar"></span>相关附件</h3>
+        <div class="ops-fb-attach-card" id="attachList"></div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="ops-fb-detail-secondary-actions">
+    <button type="button" class="btn btn-sm" id="btnDispatchTeam">分派团队</button>
+    <button type="button" class="btn btn-sm" id="btnDispatchExpert">指定专家</button>
+    <button type="button" class="btn btn-sm" id="btnMultiExpert">多人处理</button>
+    <span class="ops-fb-priority-label" id="fbPriority"></span>
+  </div>
+</main>
+</div></div>
+
+<div class="modal-overlay hidden" id="feedbackProcessModal">
+  <div class="modal-box ops-fb-process-modal" id="feedbackProcessModalBox">
+    <div class="modal-header"><h2>处理反馈</h2><button type="button" class="close" data-close-modal="feedbackProcessModal">✕</button></div>
+    <div class="modal-body">
+      <div id="processExtraFields"></div>
+      <div id="processDynamicPanel"></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" data-close-modal="feedbackProcessModal">取消</button>
+      <button type="button" class="btn btn-primary" id="confirmProcessFeedback">确定</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-dispatch.js"></script>
+<script src="assets/ops-feedback-loop.js"></script>
+<script src="assets/ops-user-feedback.js"></script>
+<script>OpsUserFeedback.initDetailPage();</script>
+</body>
+</html>

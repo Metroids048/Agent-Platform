@@ -1,0 +1,77 @@
+{
+  "at": "2026-06-26T07:46:50.561Z",
+  "results": [
+    {
+      "name": "旅程 A：运营页 Tab 数量 = 3",
+      "pass": true
+    },
+    {
+      "name": "旅程 A：Tab 可切换到基本信息",
+      "pass": true
+    },
+    {
+      "name": "旅程 B：无 __protoSkillBindWired 全局标志",
+      "pass": true
+    },
+    {
+      "name": "旅程 B：列表再进清除 firstConfig 残留",
+      "pass": true
+    },
+    {
+      "name": "旅程 B：二次进入 Tab 可切换",
+      "pass": true
+    },
+    {
+      "name": "旅程 C：?new=1 仍为首次配置",
+      "pass": true
+    },
+    {
+      "name": "旅程 C：运营页 Tab 自由切换",
+      "pass": true
+    },
+    {
+      "name": "旅程 D：publishModal 可打开",
+      "pass": true
+    },
+    {
+      "name": "旅程 E：前往开发平台链接正确",
+      "pass": true
+    },
+    {
+      "name": "旅程 F：index 为 v1.1 卡片列表",
+      "pass": true
+    },
+    {
+      "name": "旅程 F：审核中操作含审核进度链",
+      "pass": true
+    },
+    {
+      "name": "旅程 G：getAuditItem(agt_procure)",
+      "pass": true
+    },
+    {
+      "name": "旅程 G：hrefAuditReview 含 review 与 id",
+      "pass": true
+    },
+    {
+      "name": "旅程 H：devBackOps href 含 agent id",
+      "pass": true
+    },
+    {
+      "name": "旅程 I：applyPickedResources 写入 boundSkillIds",
+      "pass": true
+    },
+    {
+      "name": "旅程 J：08-agent-monitor 重定向至 05 monitor Tab",
+      "pass": true
+    },
+    {
+      "name": "旅程 K：02-sequence 首配指向开发平台",
+      "pass": true
+    },
+    {
+      "name": "旅程：bindTabs 容器 data-tabs-wired=1",
+      "pass": true
+    }
+  ]
+}

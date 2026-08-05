@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>运营管理 · 用户反馈</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-ops-module="feedback" data-ops-page="11-user-feedback.html" data-ops-subtitle="运营平台">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+<aside class="sidebar"></aside>
+<main class="main">
+  <div class="ops-module-head">
+    <h1 class="ops-module-title">运营管理</h1>
+  </div>
+  <div class="ops-content-tabs" id="feedbackScopeTabs">
+    <button type="button" class="active" data-scope-tab="agent">智能体</button>
+    <button type="button" data-scope-tab="model">模型</button>
+    <button type="button" data-scope-tab="dataset">数据集</button>
+  </div>
+
+  <section class="card ops-feedback-chart-card">
+    <div class="ops-feedback-chart-head">
+      <div class="ops-feedback-chart-year">
+        <span class="year-label">2026</span>
+        <span class="year-count" id="feedbackChartCount">用户反馈：18条</span>
+      </div>
+    </div>
+    <div id="feedbackTrendChart" class="ops-feedback-trend-chart" aria-label="用户反馈趋势图"></div>
+  </section>
+
+  <div class="filter-bar ops-feedback-toolbar">
+    <input class="filter-search" id="feedbackSearchInput" placeholder="搜索问题" aria-label="搜索问题">
+  </div>
+
+  <div class="card" style="padding:0;overflow:hidden;">
+    <table class="data-table ops-feedback-table">
+      <thead>
+        <tr>
+          <th>问题描述</th>
+          <th style="width:140px;">关联智能体</th>
+          <th style="width:90px;">类型</th>
+          <th style="width:90px;">状态</th>
+          <th style="width:120px;">提交时间</th>
+          <th style="width:100px;">操作</th>
+        </tr>
+      </thead>
+      <tbody id="feedbackListBody"></tbody>
+    </table>
+  </div>
+
+  <div class="ops-pagination-figma">
+    <span class="ops-pagination-total">共999条数据</span>
+    <div class="ops-pagination-controls">
+      <button type="button" class="btn btn-sm" disabled>上一页</button>
+      <button type="button" class="btn btn-sm btn-primary">第1页</button>
+      <span class="ops-pagination-ellipsis">...</span>
+      <button type="button" class="btn btn-sm">下一页</button>
+      <button type="button" class="btn btn-sm">最后1页</button>
+      <span class="ops-pagination-jump">跳转 <input type="number" class="input input-sm" value="1" min="1" aria-label="页码"> 页</span>
+    </div>
+  </div>
+</main>
+</div></div>
+<script src="assets/proto.js"></script>
+<script src="assets/ops-platform-shell.js"></script>
+<script src="assets/ops-message-center.js"></script>
+<script src="assets/ops-context-menu.js"></script>
+<script src="assets/ops-dispatch.js"></script>
+<script src="assets/ops-user-feedback.js"></script>
+<script>OpsUserFeedback.initListPage();</script>
+</body>
+</html>

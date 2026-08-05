@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+worktrees/
+
+# Ouro runtime state (per-project, not committed)
+.ouro/
+ouro-results.tsv
+
+# Agent prompt files (generated per-session)
+CLAUDE.md
+!examples/**/CLAUDE.md
+AGENTS.md
+.claude/settings.json
+.claude/settings.local.json
+
+# Experimental artifacts
+dev/
+results/
+queue/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# MkDocs build output
+site/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,16 @@
+flowchart LR
+  Build["建设<br/>智能体/知识/工具/模型档位"] --> Use["使用<br/>门户对话/应用调用"]
+  Use --> Data["数据沉淀<br/>会话/Token/知识命中/延迟"]
+  Data --> Feedback["反馈汇聚<br/>问题/异常/满意度"]
+  Feedback --> Expert["专家处理<br/>分类/归因/建议"]
+  Expert --> Route{"问题归属"}
+  Route --> Agent["智能体开发"]
+  Route --> KB["知识中心"]
+  Route --> Model["模型服务"]
+  Route --> Resource["资源服务"]
+  Route --> System["系统管理"]
+  Agent --> Build
+  KB --> Build
+  Model --> Build
+  Resource --> Build
+  System --> Build

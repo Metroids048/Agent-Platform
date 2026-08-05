@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跳转 · 智能体详情</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/proto.js"></script>
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search || '');
+      var extra = {};
+      ['id', 'name', 'type', 'tab', 'new', 'skillBind'].forEach(function (key) {
+        var val = p.get(key);
+        if (val != null && val !== '') extra[key] = val;
+      });
+      var target = (window.Proto && Proto.href)
+        ? Proto.href('05-agent-detail.html', extra)
+        : '05-agent-detail.html' + (location.search || '');
+      location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  <p style="padding:24px;font-size:14px;color:var(--text-muted);">正在跳转到智能体详情…</p>
+  <p style="padding:0 24px;"><a id="manualLink" href="05-agent-detail.html">05-agent-detail.html</a></p>
+</body>
+</html>

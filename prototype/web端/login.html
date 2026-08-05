@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>敖钦 · 登录</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/style.css?v=user-v4-auth">
+<script src="../assets/user-auth.js?v=user-v4-auth"></script>
+</head>
+<body class="aioq-page aioq-auth-page">
+<div class="aioq-auth-shell">
+  <div class="aioq-auth-card">
+    <div class="aioq-auth-brand">
+      <div class="aioq-brand-mark aioq-brand-mark--ao" aria-hidden="true">敖</div>
+      <div>
+        <strong>敖钦 AI 工作台</strong>
+      </div>
+    </div>
+    <h1>登录</h1>
+    <p class="aioq-auth-hint"></p>
+    <form id="loginForm" class="aioq-auth-form">
+      <label>
+        <span>账号</span>
+        <input type="email" id="loginEmail" autocomplete="username" placeholder="name@company.com">
+      </label>
+      <label>
+        <span>密码</span>
+        <input type="password" id="loginPassword" autocomplete="current-password" placeholder="">
+      </label>
+      <div class="aioq-auth-row">
+        <label class="aioq-auth-check"><input type="checkbox" id="loginRemember"> 记住我</label>
+        <a href="forgot-password.html">忘记密码？</a>
+      </div>
+      <p class="aioq-auth-error hidden" id="loginError"></p>
+      <button type="submit" class="btn btn-primary aioq-auth-submit">登录</button>
+    </form>
+  </div>
+</div>
+<script>
+(function () {
+  UserAuth.prepareLoginPage();
+  var form = document.getElementById('loginForm');
+  var err = document.getElementById('loginError');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    err.classList.add('hidden');
+    var result = UserAuth.login(
+      document.getElementById('loginEmail').value,
+      document.getElementById('loginPassword').value,
+      document.getElementById('loginRemember').checked
+    );
+    if (!result.ok) {
+      err.textContent = result.error;
+      err.classList.remove('hidden');
+      return;
+    }
+    var params = new URLSearchParams(location.search);
+    location.href = params.get('redirect') ? decodeURIComponent(params.get('redirect')) : 'index.html';
+  });
+})();
+</script>
+</body>
+</html>

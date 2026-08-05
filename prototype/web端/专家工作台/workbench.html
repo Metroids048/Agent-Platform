@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>专家工作台 · 用户端</title>
+<link rel="stylesheet" href="../../assets/style.css?v=user-v3-ui">
+<script src="../../assets/user-auth.js?v=user-v4-auth"></script>
+</head>
+<body class="aioq-page aioq-user-v2-page" data-portal-surface="user" data-user-nav="expert" data-ops-module="expert" data-ops-page="专家工作台/workbench.html">
+<div class="aioq-shell aioq-shell--workspace aioq-user-shell" id="userPortalShell">
+  <aside class="aioq-sidebar aioq-user-sidebar" id="userPortalSidebar">
+    <div class="aioq-brand">
+      <div class="aioq-brand-mark aioq-brand-mark--ao" aria-hidden="true">敖</div>
+      <div>
+        <strong>敖钦 AI 工作台</strong>
+        <span>专家任务处理</span>
+      </div>
+    </div>
+    <nav class="aioq-sidebar-nav" aria-label="工作台导航">
+      <a class="aioq-nav-item" href="../index.html">
+        <span class="aioq-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span>新对话</span>
+      </a>
+      <a class="aioq-nav-item" href="../agent-square.html">
+        <span class="aioq-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/></svg>
+        </span>
+        <span>智能体中心</span>
+      </a>
+    </nav>
+    <div class="aioq-sidebar-scroll">
+      <section class="aioq-sidebar-block aioq-agents-sidebar-block">
+        <div class="aioq-sidebar-block-title">智能体</div>
+        <div class="aioq-sidebar-agent-list" id="sidebarAgentList"></div>
+      </section>
+      <section class="aioq-sidebar-block aioq-history-sidebar-block">
+        <div class="aioq-sidebar-block-title">最近对话</div>
+        <div class="aioq-sidebar-history-list" id="sidebarHistoryList"></div>
+        <button class="aioq-sidebar-mini-action" type="button" id="btnHistory">查看全部历史</button>
+      </section>
+    </div>
+    <div class="aioq-sidebar-bottom">
+      <button class="aioq-footer-row" type="button" id="btnFeedbackBox">意见箱</button>
+      <button class="aioq-footer-row" type="button" id="btnMessageCenter">消息中心</button>
+      <a class="aioq-footer-row active" href="workbench.html" id="btnExpertWorkbench">专家工作台</a>
+      <button class="aioq-footer-row" type="button" id="btnHelp">帮助</button>
+    </div>
+  </aside>
+  <main class="aioq-main aioq-main--workspace">
+    <header class="aioq-topbar aioq-square-topbar">
+      <button class="aioq-menu-button" type="button" id="btnCollapseSidebar" title="收起侧栏" aria-label="收起侧栏">
+        <svg viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="aioq-user-top-title">
+        <span>专家工作台</span>
+        <strong>进行中的任务</strong>
+      </div>
+    </header>
+    <div class="aioq-workspace-body">
+    <div class="breadcrumb ops-ewb-breadcrumb">
+      <a href="workbench.html">我的任务</a><span class="sep">›</span><span class="current">进行中的任务</span>
+    </div>
+
+    <div class="ops-ewb-filter-bar" id="ewbFilterBar">
+      <div class="ops-ewb-filter-item">
+        <label>截止时间</label>
+        <div class="ops-ewb-date-range">
+          <input type="text" class="input input-sm" placeholder="开始日期" aria-label="开始日期" readonly>
+          <span class="ops-ewb-date-sep">-</span>
+          <input type="text" class="input input-sm" placeholder="结束日期" aria-label="结束日期" readonly>
+          <span class="ops-ewb-date-icon" aria-hidden="true">📅</span>
+        </div>
+      </div>
+      <div class="ops-ewb-filter-item">
+        <label>优先级</label>
+        <select class="input input-sm" id="ewbFilterPriority" aria-label="优先级">
+          <option value="all">全部</option>
+          <option value="P0">P0</option>
+          <option value="P1">P1</option>
+          <option value="P2">P2</option>
+        </select>
+      </div>
+      <div class="ops-ewb-filter-item">
+        <label>领取方式</label>
+        <select class="input input-sm" id="ewbFilterClaim" aria-label="领取方式">
+          <option value="all">全部</option>
+          <option value="self">自行领取</option>
+          <option value="assigned">指定任务</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-ghost btn-sm ops-ewb-refresh" id="ewbFilterRefresh" title="刷新" aria-label="刷新">↻</button>
+    </div>
+
+    <div class="card ops-ewb-table-card">
+      <table class="data-table ops-ewb-table">
+        <thead>
+          <tr>
+            <th>任务名称</th>
+            <th style="width:120px;">反馈类型</th>
+            <th style="width:100px;">优先级</th>
+            <th style="width:100px;">奖励积分</th>
+            <th style="width:120px;">领取方式</th>
+            <th style="width:120px;">截止时间</th>
+            <th style="width:72px;">操作</th>
+          </tr>
+        </thead>
+        <tbody id="expertPortalTasksBody"></tbody>
+      </table>
+    </div>
+
+    <div class="ops-pagination-figma">
+      <span class="ops-pagination-total">共99条数据</span>
+      <div class="ops-pagination-controls">
+        <button type="button" class="btn btn-sm" disabled>上一页</button>
+        <button type="button" class="btn btn-sm btn-primary">1</button>
+        <span class="ops-pagination-ellipsis">...</span>
+        <button type="button" class="btn btn-sm">9</button>
+        <button type="button" class="btn btn-sm">下一页</button>
+        <button type="button" class="btn btn-sm">最后1页</button>
+        <span class="ops-pagination-jump">跳转 <input type="number" class="input input-sm" value="1" min="1" aria-label="页码"> 页</span>
+      </div>
+    </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="historyModal">
+  <div class="modal-box modal-md aioq-stack-modal">
+    <div class="aioq-stack-modal-head">
+      <h2>历史对话</h2>
+      <button type="button" class="icon-btn" id="btnCloseHistory" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body aioq-history-modal-body">
+      <input type="search" class="aioq-history-search" id="historySearchInput" placeholder="搜索对话标题或智能体" aria-label="搜索历史记录">
+      <div class="aioq-history-scroll" id="historyList"></div>
+      <button type="button" class="btn btn-sm aioq-history-load-more hidden" id="btnHistoryLoadMore">加载更多</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden aioq-portal-stack-overlay" id="historyDeleteConfirmModal">
+  <div class="modal-box modal-sm">
+    <div class="modal-header">
+      <h2>删除对话</h2>
+      <button type="button" class="close" id="btnCloseHistoryDelete" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="aioq-muted">删除后无法恢复，确定要删除这条历史对话吗？</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" id="btnCancelHistoryDelete">取消</button>
+      <button type="button" class="btn btn-danger" id="btnConfirmHistoryDelete">删除</button>
+    </div>
+  </div>
+</div>
+
+<script src="../../assets/proto.js"></script>
+<script src="../../assets/user-portal-context.js"></script>
+<script src="../../assets/user-agent-resolver.js"></script>
+<script src="../../assets/user-personal-space.js"></script>
+<script src="../../assets/user-chat-portal.js"></script>
+<script src="../../assets/user-feedback-form.js"></script>
+<script src="../../assets/user-message-center.js"></script>
+<script src="../../assets/user-portal-bridge.js"></script>
+<script src="../../assets/user-portal-shell.js"></script>
+<script src="../../assets/ops-platform-shell.js"></script>
+<script src="../../assets/ops-context-menu.js"></script>
+<script src="../../assets/ops-dispatch.js"></script>
+<script src="../../assets/ops-expert-workbench.js"></script>
+<script>
+  OpsExpertWorkbench.initWorkbenchPage();
+  UserPortalBridge.mountSidebar();
+</script>
+</body>
+</html>

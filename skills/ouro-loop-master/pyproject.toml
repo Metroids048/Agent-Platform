@@ -1,0 +1,41 @@
+[project]
+name = "ouro-loop"
+version = "0.3.0"
+description = "Give AI coding agents (Claude Code, Cursor, Aider, Codex) a structured autonomous loop with guardrails — boundaries, verification gates, self-healing, and autonomous remediation. Zero dependencies."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["ai-agent", "autonomous-coding", "guardrails", "bounded-autonomy", "claude-code", "ai-safety", "llm-agent", "agent-framework", "self-healing-code", "vibe-coding"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/VictorVVedtion/ouro-loop"
+Repository = "https://github.com/VictorVVedtion/ouro-loop"
+Documentation = "https://github.com/VictorVVedtion/ouro-loop#readme"
+Issues = "https://github.com/VictorVVedtion/ouro-loop/issues"
+
+[project.scripts]
+ouro = "framework:main"
+ouro-sentinel = "sentinel:main"
+
+[tool.setuptools]
+py-modules = ["framework", "prepare", "sentinel"]
+packages = ["ouro_templates"]
+
+[tool.setuptools.package-data]
+"ouro_templates" = ["**/*.template"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

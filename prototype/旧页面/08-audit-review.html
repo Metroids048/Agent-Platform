@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>审核详情（v1.0 归档）· 运营平台</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-ops-module="audit" data-ops-page="旧页面/08-audit-review.html">
+<header class="topbar"></header>
+<div class="app-frame"><div class="layout">
+  <aside class="sidebar"></aside>
+  <main class="main audit-review-page" id="auditReviewRoot">
+    <div class="breadcrumb">
+      <a href="08-audit-queue.html">审核工作台</a><span class="sep">›</span>
+      <span class="current">审核详情</span>
+    </div>
+    <div class="page-header"><div><h1 id="auditReviewTitle">审核详情</h1></div></div>
+    <div id="auditReviewContent"><p style="color:var(--text-muted);">加载中…</p></div>
+  </main>
+</div></div>
+<script src="../assets/proto.js"></script>
+<script src="../assets/ops-platform-shell.js"></script>
+<script src="../assets/ops-message-center.js"></script>
+<script>
+  if (window.OpsShell && OpsShell.initShell) {
+    OpsShell.initShell({ module: 'audit', activePage: '旧页面/08-audit-review.html' });
+  }
+  Proto.initTopbar('audit');
+  Proto.ensureDemoAuditQueue();
+
+  var id = Proto.params().get('id') || Proto.agentId();
+  var item = Proto.getAuditItem(id);
+  var root = document.getElementById('auditReviewContent');
+  var title = document.getElementById('auditReviewTitle');
+
+  if (!item) {
+    root.innerHTML = '<section class="card" style="padding:24px;text-align:center;">' +
+      '<p>未找到待审核项。</p><a class="btn btn-primary" href="08-audit-queue.html" style="margin-top:12px;">返回审核工作台</a></section>';
+  } else {
+    title.textContent = (item.name || id) + ' · 发布审核';
+    var step = item.auditStep != null ? item.auditStep : 1;
+    root.innerHTML =
+      '<div class="audit-stepper" id="auditStepper">' +
+        '<div class="audit-step done" data-step="0"><div class="dot">✓</div><div class="label">提交申请</div><div class="sub">' + (item.at || '—') + '</div></div>' +
+        '<div class="audit-step current" data-step="1"><div class="dot">2</div><div class="label">平台审核</div><div class="sub">待处理</div></div>' +
+        '<div class="audit-step" data-step="2"><div class="dot">3</div><div class="label">已上架</div><div class="sub">通过后开放</div></div>' +
+      '</div>' +
+      '<section class="card audit-review-summary" style="padding:20px;">' +
+        '<h2 style="margin:0 0 12px;font-size:15px;">申请摘要</h2>' +
+        '<div class="ops-kv-grid">' +
+          '<div class="ops-kv"><span class="k">版本</span><span>' + (item.releaseVersion || 'v1') + '</span></div>' +
+          '<div class="ops-kv"><span class="k">发版描述</span><span>' + (item.releaseNote || '—') + '</span></div>' +
+          '<div class="ops-kv"><span class="k">申请人</span><span>' + (item.applicant || '张三') + '</span></div>' +
+          '<div class="ops-kv"><span class="k">可见范围</span><span>' + (item.scope || 'public') + '</span></div>' +
+        '</div></section>' +
+      '<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">' +
+        '<button type="button" class="btn btn-primary" id="btnApprove">审核通过</button>' +
+        '<button type="button" class="btn btn-danger" id="btnReject">驳回</button>' +
+        '<a class="btn" id="linkStatus" href="#">查看申请人进度</a>' +
+        '<a class="btn" href="08-audit-queue.html">返回队列</a>' +
+      '</div>';
+    Proto.renderAuditStepper(step, '#auditStepper');
+    document.getElementById('linkStatus').href = Proto.href('08-audit-status.html', { id: id });
+    document.getElementById('btnApprove').onclick = function () {
+      Proto.approveAuditItem(id);
+      Proto.toast('审核通过，已上架');
+      window.location.href = '08-audit-queue.html';
+    };
+    document.getElementById('btnReject').onclick = function () {
+      Proto.rejectAuditItem(id, '配置或说明不符合上架要求');
+      Proto.toast('已驳回');
+      window.location.href = '08-audit-queue.html';
+    };
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+- generic [ref=f2e78]:
+  - generic [ref=f2e80]:
+    - generic [ref=f2e82]: AI应用开发平台
+    - generic [ref=f2e83]:
+      - list [ref=f2e85]:
+        - listitem [ref=f2e86] [cursor=pointer]:
+          - generic [ref=f2e87]: 运营管理
+        - listitem [ref=f2e88] [cursor=pointer]:
+          - generic [ref=f2e89]: 智能体开发
+        - listitem [ref=f2e90] [cursor=pointer]:
+          - generic [ref=f2e91]: 模型协同
+        - listitem [ref=f2e92] [cursor=pointer]:
+          - generic [ref=f2e93]: 知识库
+        - listitem [ref=f2e94] [cursor=pointer]:
+          - generic [ref=f2e95]: 智能编码助手
+      - generic [ref=f2e97] [cursor=pointer]:
+        - generic [ref=f2e99]: 
+        - generic [ref=f2e100]: 欢迎您，单位管理员
+  - generic [ref=f2e101]:
+    - complementary [ref=f2e102]:
+      - generic [ref=f2e103]:
+        - menu [ref=f2e110]:
+          - menuitem " 知识检索" [ref=f2e1916] [cursor=pointer]:
+            - generic [ref=f2e1918]: 
+            - generic "知识检索" [ref=f2e1920]
+          - menuitem " 历史检索" [ref=f2e1921] [cursor=pointer]:
+            - generic [ref=f2e1923]: 
+            - generic "历史检索" [ref=f2e1925]
+          - menuitem " 个人知识库" [ref=f2e1926] [cursor=pointer]:
+            - generic [ref=f2e1928]: 
+            - generic "个人知识库" [ref=f2e1930]
+          - menuitem " 公共知识库" [ref=f2e1931] [cursor=pointer]:
+            - generic [ref=f2e1933]: 
+            - generic "公共知识库" [ref=f2e1935]
+          - menuitem " 知识库模型配置" [ref=f2e1936] [cursor=pointer]:
+            - generic [ref=f2e1938]: 
+            - generic "知识库模型配置" [ref=f2e1940]
+        - generic [ref=f2e280] [cursor=pointer]:
+          - img "sidebar" [ref=f2e281]:
+            - img [ref=f2e282]
+          - text: 关闭
+    - main [ref=f2e284]:
+      - main [ref=f2e1946]:
+        - generic [ref=f2e1947]:
+          - generic [ref=f2e1948]:
+            - button "知识库 未选择" [ref=f2e1952] [cursor=pointer]:
+              - img [ref=f2e1954]
+              - generic [ref=f2e1959]: 知识库
+              - generic [ref=f2e1960]: 未选择
+            - button "历史检索" [ref=f2e1963] [cursor=pointer]:
+              - generic [ref=f2e1964]:
+                - img [ref=f2e1965]
+                - text: 历史检索
+          - generic [ref=f2e1970]:
+            - generic [ref=f2e1971]:
+              - img [ref=f2e1972]
+              - generic [ref=f2e1975]: 知识库检索
+            - generic [ref=f2e1976]:
+              - textbox "请输入检索内容" [ref=f2e1978]
+              - generic [ref=f2e1979]:
+                - img [ref=f2e1981] [cursor=pointer]
+                - generic "发送" [ref=f2e1985] [cursor=pointer]:
+                  - img [ref=f2e1986]
+            - generic [ref=f2e1989]:
+              - generic [ref=f2e1990]: 试试这么问：
+              - generic [ref=f2e1991] [cursor=pointer]:
+                - img [ref=f2e1992]
+                - generic [ref=f2e1997]: 换一批

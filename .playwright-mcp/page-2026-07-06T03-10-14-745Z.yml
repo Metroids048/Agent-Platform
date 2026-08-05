@@ -1,0 +1,221 @@
+- generic [ref=f2e78]:
+  - generic [ref=f2e80]:
+    - generic [ref=f2e82]: AI应用开发平台
+    - generic [ref=f2e83]:
+      - list [ref=f2e85]:
+        - listitem [ref=f2e86] [cursor=pointer]:
+          - generic [ref=f2e87]: 运营管理
+        - listitem [ref=f2e88] [cursor=pointer]:
+          - generic [ref=f2e89]: 智能体开发
+        - listitem [ref=f2e90] [cursor=pointer]:
+          - generic [ref=f2e91]: 模型协同
+        - listitem [ref=f2e92] [cursor=pointer]:
+          - generic [ref=f2e93]: 知识库
+        - listitem [ref=f2e94] [cursor=pointer]:
+          - generic [ref=f2e95]: 智能编码助手
+      - generic [ref=f2e97] [cursor=pointer]:
+        - generic [ref=f2e99]: 
+        - generic [ref=f2e100]: 欢迎您，单位管理员
+  - main [ref=f2e284]:
+    - generic [ref=f2e2000]:
+      - generic [ref=f2e2002]:
+        - link "TS Code" [ref=f2e2003] [cursor=pointer]:
+          - /url: http://124.71.231.17/main/znbm?znbmPage=index.html
+          - img [ref=f2e2005]
+          - generic [ref=f2e2007]: TS Code
+        - navigation [ref=f2e2008]:
+          - link "功能特色" [ref=f2e2009] [cursor=pointer]:
+            - /url: http://124.71.231.17/main/znbm?znbmPage=index.html#features
+          - link "产品手册" [ref=f2e2010] [cursor=pointer]:
+            - /url: http://124.71.231.17/main/znbm?znbmPage=manual.html
+          - link "常见问题" [ref=f2e2011] [cursor=pointer]:
+            - /url: http://124.71.231.17/main/znbm?znbmPage=index.html#faq
+          - link "下载" [ref=f2e2012] [cursor=pointer]:
+            - /url: http://124.71.231.17/main/znbm?znbmPage=download.html
+        - link "下载扩展" [ref=f2e2014] [cursor=pointer]:
+          - /url: http://124.71.231.17/main/znbm?znbmPage=download.html
+      - main [ref=f2e2015]:
+        - generic [ref=f2e2017]:
+          - generic [ref=f2e2018]:
+            - generic [ref=f2e2019]: Visual Studio Code 扩展
+            - heading "AI 编程助手 智能编程伙伴" [level=1] [ref=f2e2020]:
+              - text: AI 编程助手
+              - generic [ref=f2e2021]: 智能编程伙伴
+            - paragraph [ref=f2e2022]: 灵活集成到你的 VS Code 中，符合原有开发习惯，为开发者学习、工作、开发、创造全流程提供本地化的智能协作。
+            - generic [ref=f2e2023]:
+              - link "下载 TS Code 扩展" [ref=f2e2024] [cursor=pointer]:
+                - /url: http://124.71.231.17/main/znbm?znbmPage=download.html
+                - img [ref=f2e2025]
+                - text: 下载 TS Code 扩展
+              - link "查看产品手册" [ref=f2e2027] [cursor=pointer]:
+                - /url: http://124.71.231.17/main/znbm?znbmPage=manual.html
+          - img "TS Code 设置界面" [ref=f2e2034]
+        - generic [ref=f2e2037]:
+          - img [ref=f2e2039]
+          - generic [ref=f2e2042]:
+            - text: 专为 Visual Studio Code 打造
+            - text: 当前版本仅以 VS Code 扩展形态提供，深度适配侧边栏对话、行内补全与可视化设置面板，并兼容 code-server。
+        - generic [ref=f2e2044]:
+          - generic [ref=f2e2045]:
+            - generic [ref=f2e2046]: Reliable TS Code
+            - heading "可靠的 TS Code" [level=2] [ref=f2e2047]
+            - paragraph [ref=f2e2048]: 通过多模式智能体、代码补全等能力，在编码的各个阶段给予可靠支持
+          - generic [ref=f2e2049]:
+            - generic [ref=f2e2050]:
+              - img [ref=f2e2052]
+              - heading "多模式智能体" [level=3] [ref=f2e2055]
+              - paragraph [ref=f2e2056]: 内置 Code / Ask / Debug / Plan 等工作模式，按场景一键切换，从需求到实现独立完成完整开发流程。
+            - generic [ref=f2e2057]:
+              - img [ref=f2e2059]
+              - heading "行内自动补全" [level=3] [ref=f2e2061]
+              - paragraph [ref=f2e2062]: 基于上下文的 Fill-in-the-Middle 补全，支持自托管模型与多种端点风格，预测下一处改动。
+            - generic [ref=f2e2063]:
+              - generic [ref=f2e2064]: Plus
+              - img [ref=f2e2066]
+              - heading "MCP 工具调用" [level=3] [ref=f2e2071]
+              - paragraph [ref=f2e2072]: 可视化配置 MCP 服务，串联外部系统与工具，扩展智能体能力，打通端到端开发流程。
+            - generic [ref=f2e2073]:
+              - img [ref=f2e2075]
+              - heading "技能 / 规则" [level=3] [ref=f2e2077]
+              - paragraph [ref=f2e2078]: 以「渐进式披露」方式创建技能，配置自定义规则与指令文件，让智能体更懂你的项目规范。
+            - generic [ref=f2e2079]:
+              - img [ref=f2e2081]
+              - heading "大模型调用记录" [level=3] [ref=f2e2083]
+              - paragraph [ref=f2e2084]: 内置 LLM Trace 面板，完整记录每一次模型调用的请求与响应，便于深度调试与性能排障。
+            - generic [ref=f2e2085]:
+              - img [ref=f2e2087]
+              - heading "多模型 / 自托管" [level=3] [ref=f2e2090]
+              - paragraph [ref=f2e2091]: 兼容任意 OpenAI 协议的自定义 provider（vLLM、Ollama 等），可对接内网模型，数据不出本地。
+        - generic [ref=f2e2093]:
+          - generic [ref=f2e2094]:
+            - generic [ref=f2e2095]: Capabilities
+            - heading "看看 TS Code 能做什么" [level=2] [ref=f2e2096]
+            - paragraph [ref=f2e2097]: 从补全、规划到开发、问答、审查与工具接入，覆盖编码全流程的真实场景。
+          - generic [ref=f2e2098]:
+            - generic [ref=f2e2099]:
+              - img "行内自动补全：幽灵文本预测下一处改动" [ref=f2e2106]
+              - generic [ref=f2e2107]:
+                - generic [ref=f2e2108]: 自动补全
+                - heading "行内智能补全" [level=3] [ref=f2e2109]
+                - paragraph [ref=f2e2110]: 编码时根据上下文实时预测下一处改动，以幽灵文本展示，按 Tab 即可采纳。支持自托管补全模型与多种端点风格，并可用快捷键手动唤起补全。
+            - generic [ref=f2e2111]:
+              - generic [ref=f2e2113]:
+                - img "Plan 规划模式：先产出计划再实现"
+              - generic [ref=f2e2118]:
+                - generic [ref=f2e2119]: Plan 模式
+                - heading "先规划，后实现" [level=3] [ref=f2e2120]
+                - paragraph [ref=f2e2121]: 在 Plan 模式下梳理方案、产出可确认的计划文件，确认后再进入实现。面对复杂需求也能条理清晰、步步可控。
+            - generic [ref=f2e2122]:
+              - generic [ref=f2e2124]:
+                - img "自主开发：读写文件并运行终端命令"
+              - generic [ref=f2e2129]:
+                - generic [ref=f2e2130]: 自主开发
+                - heading "从需求到落地" [level=3] [ref=f2e2131]
+                - paragraph [ref=f2e2132]: 用自然语言描述需求，智能体自动读写文件、运行终端命令并校验结果，从零搭建到功能实现一气呵成。
+            - generic [ref=f2e2133]:
+              - generic [ref=f2e2135]:
+                - img "智能问答：解释原理与代码"
+              - generic [ref=f2e2140]:
+                - generic [ref=f2e2141]: Ask 问答
+                - heading "随时智能问答" [level=3] [ref=f2e2142]
+                - paragraph [ref=f2e2143]: 纯理论或代码理解类问题无需改动工程，直接给出清晰解释；Ask 模式下安全提问，不触碰你的代码。
+            - generic [ref=f2e2144]:
+              - generic [ref=f2e2146]:
+                - img "审查并修复：定位问题并给出修复编辑"
+              - generic [ref=f2e2151]:
+                - generic [ref=f2e2152]: 审查修复
+                - heading "审查并修复代码" [level=3] [ref=f2e2153]
+                - paragraph [ref=f2e2154]: 自动审查代码、定位潜在问题，并以 diff 形式给出修复编辑，逐步应用，让质量与效率兼得。
+            - generic [ref=f2e2155]:
+              - generic [ref=f2e2157]:
+                - img "可视化 MCP 配置向导"
+              - generic [ref=f2e2162]:
+                - generic [ref=f2e2163]: MCP 配置
+                - heading "可视化接入 MCP" [level=3] [ref=f2e2164]
+                - paragraph [ref=f2e2165]: 通过向导选择传输方式、填写端点，一键写入配置并连接 MCP 服务，把外部系统与工具接入智能体能力。
+        - generic [ref=f2e2167]:
+          - generic [ref=f2e2168]:
+            - generic [ref=f2e2169]: FAQs
+            - heading "常见问题" [level=2] [ref=f2e2170]
+          - generic [ref=f2e2171]:
+            - generic [ref=f2e2172]:
+              - generic [ref=f2e2173] [cursor=pointer]:
+                - text: 如何安装 TS Code 扩展？
+                - generic [ref=f2e2174]: +
+              - generic [ref=f2e2175]: 可在 VS Code 扩展市场搜索「TS Code」安装，或在下载页获取 .vsix 安装包手动安装。详见下载页的三种安装方式。
+            - generic [ref=f2e2176]:
+              - generic [ref=f2e2177] [cursor=pointer]:
+                - text: 支持哪些编辑器？
+                - generic [ref=f2e2178]: +
+              - generic [ref=f2e2179]: 当前版本仅支持 Visual Studio Code（含兼容 code-server 的远程/容器环境）。暂不提供其他 IDE 形态。
+            - generic [ref=f2e2180]:
+              - generic [ref=f2e2181] [cursor=pointer]:
+                - text: 是否必须联网？数据会外传吗？
+                - generic [ref=f2e2182]: +
+              - generic [ref=f2e2183]: 是否联网取决于你配置的模型。TS Code 已移除云服务，可对接自托管 / 内网的 OpenAI 协议兼容模型，实现数据不出内网。
+            - generic [ref=f2e2184]:
+              - generic [ref=f2e2185] [cursor=pointer]:
+                - text: 如何配置模型与提供商？
+                - generic [ref=f2e2186]: +
+              - generic [ref=f2e2187]: 在「设置 → 提供商」添加自定义 provider（填写 Base URL、API Key、模型），再到「设置 → 模型」为默认 / 小模型 / 补全 / 各模式选择模型。详见产品手册。
+            - generic [ref=f2e2188]:
+              - generic [ref=f2e2189] [cursor=pointer]:
+                - text: 支持代码自动补全吗？
+                - generic [ref=f2e2190]: +
+              - generic [ref=f2e2191]: 支持。可在「设置 → 自动补全」开启内联补全，并配置自托管补全模型与端点风格。详见手册「自动补全」章节。
+            - generic [ref=f2e2192]:
+              - generic [ref=f2e2193] [cursor=pointer]:
+                - text: 什么是 MCP？如何接入？
+                - generic [ref=f2e2194]: +
+              - generic [ref=f2e2195]: MCP（Model Context Protocol）用于让智能体调用外部工具与系统。可通过「配置文件」或「可视化向导」两种方式接入，详见手册。
+            - generic [ref=f2e2196]:
+              - generic [ref=f2e2197] [cursor=pointer]:
+                - text: 配置和缓存存放在哪里？
+                - generic [ref=f2e2198]: +
+              - generic [ref=f2e2199]: TS Code 使用独立的 XDG 风格目录存放配置与缓存（Windows 为 %APPDATA%\ts-code，工作区局部配置在 .ts-code/），不会与其他 AI 编程工具相互影响。
+            - generic [ref=f2e2200]:
+              - generic [ref=f2e2201] [cursor=pointer]:
+                - text: 默认语言是什么？如何切换？
+                - generic [ref=f2e2202]: +
+              - generic [ref=f2e2203]: 扩展首屏默认使用简体中文。如需切换英文或跟随 VS Code 显示语言，请在「设置 → 语言」中调整。
+            - generic [ref=f2e2204]:
+              - generic [ref=f2e2205] [cursor=pointer]:
+                - text: 如何更新或卸载？
+                - generic [ref=f2e2206]: +
+              - generic [ref=f2e2207]: 扩展会自动检查更新，也可在扩展管理页手动更新到最新版本；卸载在扩展管理页移除后重启编辑器即可。
+        - generic [ref=f2e2210]:
+          - heading "准备好改变你的开发方式了吗？" [level=2] [ref=f2e2211]
+          - paragraph [ref=f2e2212]: 把 TS Code 装进 VS Code，开启本地化、自托管的 AI 编程协作。
+          - link "立即下载 TS Code" [ref=f2e2213] [cursor=pointer]:
+            - /url: http://124.71.231.17/main/znbm?znbmPage=download.html
+      - generic [ref=f2e2215]:
+        - generic [ref=f2e2216]:
+          - generic [ref=f2e2217]:
+            - link "TS Code" [ref=f2e2218] [cursor=pointer]:
+              - /url: http://124.71.231.17/main/znbm?znbmPage=index.html
+              - img [ref=f2e2220]
+              - generic [ref=f2e2222]: TS Code
+            - paragraph [ref=f2e2223]: 本地化 · 自托管的 AI 编程伙伴
+          - generic [ref=f2e2224]:
+            - heading "产品" [level=4] [ref=f2e2225]
+            - link "功能特色" [ref=f2e2226] [cursor=pointer]:
+              - /url: http://124.71.231.17/main/znbm?znbmPage=index.html#features
+            - link "下载扩展" [ref=f2e2227] [cursor=pointer]:
+              - /url: http://124.71.231.17/main/znbm?znbmPage=download.html
+          - generic [ref=f2e2228]:
+            - heading "文档" [level=4] [ref=f2e2229]
+            - link "产品手册" [ref=f2e2230] [cursor=pointer]:
+              - /url: http://124.71.231.17/main/znbm?znbmPage=manual.html
+            - link "常见问题" [ref=f2e2231] [cursor=pointer]:
+              - /url: http://124.71.231.17/main/znbm?znbmPage=index.html#faq
+          - generic [ref=f2e2232]:
+            - heading "配置指引" [level=4] [ref=f2e2233]
+            - link "工具配置" [ref=f2e2234] [cursor=pointer]:
+              - /url: http://124.71.231.17/main/znbm?znbmPage=manual.html#tools
+            - link "自动补全" [ref=f2e2235] [cursor=pointer]:
+              - /url: http://124.71.231.17/main/znbm?znbmPage=manual.html#autocomplete
+            - link "MCP / 技能 / 规则" [ref=f2e2236] [cursor=pointer]:
+              - /url: http://124.71.231.17/main/znbm?znbmPage=manual.html#mcp
+            - link "对话工作模式" [ref=f2e2237] [cursor=pointer]:
+              - /url: http://124.71.231.17/main/znbm?znbmPage=manual.html#modes
+        - generic [ref=f2e2238]: TS Code
