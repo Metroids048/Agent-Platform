@@ -25,3 +25,5 @@ python3 -m http.server 8766 --bind 127.0.0.1 --directory prototype
 原型的脚本、页面索引、启动方式以及 `npm run verify`、`npm run package-check` 的使用说明见 [prototype/README.md](prototype/README.md)。页面职责见 [页面索引](prototype/docs/PAGES.md)。
 
 如需单独检查自有 **HCAI** 服务，在运行环境中设置 `HCAI_CHAT_URL`、`HCAI_API_KEY` 和 `HCAI_MODEL`，然后运行 `python3 _test_hcai.py`。该脚本会向配置的 HTTPS 聊天接口发起一次最小请求，只输出检查结果。
+
+对于 Anthropic Messages 兼容服务，设置 `HCAI_MESSAGES_URL` 为完整的 HTTPS 地址，配合 `HCAI_API_KEY` 和 `HCAI_MODEL` 运行 `python3 _test_hcai_paths.py`。脚本只检查指定的接口。
