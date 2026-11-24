@@ -1,40 +1,27 @@
 # Agent Platform
 
-智能体运营/开发双平台 — **HTML 原型 + AI 工程护栏**。
+一个可在本地试用的 Agent 平台交互原型，覆盖运营、开发与用户对话三个视角。适合评审智能体从创建、配置、审核到上架的产品流程。仓库中的可运行展示入口位于 `prototype/`。
 
-## 给他人看页面（独立交付包）
+## 快速体验
 
-**可 zip 交付的文件夹：** [`prototype/`](prototype/)
+在仓库根目录运行以下命令，然后打开 [http://127.0.0.1:8766/index.html](http://127.0.0.1:8766/index.html)。需要 Python 3 和现代浏览器。
 
-```powershell
-cd prototype
-.\start.ps1
+```sh
+python3 -m http.server 8766 --bind 127.0.0.1 --directory prototype
 ```
 
-浏览器打开 http://127.0.0.1:8766/index.html — 16 个页面、全部交互，无需仓库其他目录。
+| 入口 | 可以看什么 |
+| --- | --- |
+| [运营首页](prototype/index.html) | 智能体列表、卡片和详情导航 |
+| [审核工作台](prototype/audit-workbench.html) | 审核队列与工作台布局 |
+| [智能体配置](prototype/05-agent-detail.html?id=agt_demo_001) | 配置项、Skills 与发布入口 |
+| [开发编排](prototype/06-dev-editor.html) | Agent 开发编辑器 |
+| [Web 对话门户](prototype/web端/index.html) | 用户端对话界面 |
 
-详见 [`prototype/README.md`](prototype/README.md) 与 [`prototype/docs/PAGES.md`](prototype/docs/PAGES.md)。
+页面和示例数据用于演示产品流程。启动原型无需 API 凭据。
 
----
+## 开发与验证
 
-## 开发者
+原型的脚本、页面索引、启动方式以及 `npm run verify`、`npm run package-check` 的使用说明见 [prototype/README.md](prototype/README.md)。页面职责见 [页面索引](prototype/docs/PAGES.md)。
 
-| 用途 | 命令 |
-|------|------|
-| 原型验证 | `node prototype/scripts/verify-all.js` |
-| 打包检查 | `node prototype/scripts/package-check.js` |
-| AI 规则 | [`AGENTS.md`](AGENTS.md) |
-| 导航事故复盘 | [`.github/agent/memory/postmortem-navigation-2026-05-28.md`](.github/agent/memory/postmortem-navigation-2026-05-28.md) |
-| 同步全局护栏 | `powershell scripts/sync-ai-guardrails.ps1 -Force` |
-| 可选 git hook | `git config core.hooksPath .githooks`（改 prototype 提交前跑 verify-all） |
-
----
-
-## 仓库结构
-
-| 路径 | 说明 |
-|------|------|
-| `prototype/` | **产品原型**（16 HTML + assets + 验证脚本） |
-| `design/` | Figma 工作流（非运行页面必需） |
-| `.cursor/`、`AGENTS.md` | AI 工程约束 |
-| `skills/` | PM / 第三方 Skill 库（非产品 UI） |
+如需单独检查自有 **HCAI** 服务，在运行环境中设置 `HCAI_CHAT_URL`、`HCAI_API_KEY` 和 `HCAI_MODEL`，然后运行 `python3 _test_hcai.py`。该脚本会向配置的 HTTPS 聊天接口发起一次最小请求，只输出检查结果。
